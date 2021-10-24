@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: whitesmoke;
+    font-family: 'ubuntu', sans-serif;
+    min-width: 350px;
+}
+
+/* ---header ---*/
+header{
+    background: rgb(150, 1, 1);
+    height: 100px;
+    border: 2px solid yellow;
+    width: 100vw;
+}
+
+nav {
+    width: 100vw;
+    height: 160%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px dotted royalblue;
+    min-width: 350px;
+}
+
+nav > div {
+    height: 100px;
+}
+
+.logo {
+    width: 200px;
+    height: 70px;
+    margin: auto;
+    border: 2px solid palevioletred;
+    position: relative;
+    top: 10px;
+}
+
+.burger, .search {
+    width: 70px;
+    height: 100px;
+    border: 2px solid violet;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.burger a p {
+    display: none;
+}
+
+.burger i, .search i, .user-cart a {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    border: 2px solid yellow;
+    color: white;
+}
+
+.search i {
+    cursor: pointer;
+}
+
+ul.user-cart {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    border: 1px solid olive;
+}
+
+.user-cart li {
+    position: relative;
+    left: 65%;
+    margin-left: 10px;
+}
+
+li #down {
+    scale: 0.5;
+}
+
+ul.burger {
+    order: -1;
+}
+
+ul li a {
+    display: block;
+}
+
+.user-cart li a i {
+    color: rgb(138, 120, 120);
+}
+
+/* --- main --- */
+
+main {
+    padding-top: 60px;
+    width: 100vw;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination a {
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    margin: 5px;
+    border: 2px solid rgb(168, 164, 164);
+    border-radius: 10%;
+    color: black;
+}
+
+.pagination .one {
+    background-color: gray;
+    color: white;
+}
+
+.pagination a#left, a#right{
+    color: black;
+    border: 0px solid white;
+}
+
+main {
+    text-align: center;
+}
+
+main h2 {
+    width: inherit;
+    padding: 20px;
+    margin: auto;
+}
+
+section article {
+    width: 250px;
+    height: 470px;
+    margin: auto;
+    padding: 20px 20px 10px;
+    margin-bottom: 30px;    
+    border: 2px solid pink; 
+}
+
+section article img {
+    width: 200px;
+    height: 300px;
+    margin: auto;
+}
+
+article .details h4, .details p {
+    margin-top: 10px;
+}
+
+.details h4 {
+    font-size: 1.3rem;
+    border: 2px solid salmon;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.details p {
+    font-style: italic;
+} 
+
+.details .price {
+    font-style: normal;
+    font-size: 1.3rem;
+    position: relative;
+    right: 7px;
+}
+
+div#pag-down {
+    margin: 25px 0;
+}
+
+/* --- footer --- */
+footer {
+    background-color: rgb(26, 22, 22);
+    width: 100vw;
+    height: 240px;
+    color: gainsboro;
+    font-size: 15px;
+    padding: 10px;
+}
+
+footer h4 {
+    text-align: center; 
+    padding: 3px;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer ul.redes {
+    display: flex;
+    justify-content: center;
+}
+
+.redes li i {
+    display: block;  
+    padding: 20px; 
+    font-size: 30px;
+}
+
+footer ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 5px;
+}
+
+/* --- Media queries --- */
+
+@media (min-width: 481px) {
+    /* --- Header --- */
+
+    nav {
+        flex-wrap: nowrap;
+    }
+
+    /* --- Main --- */
+    section {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    section article {
+        margin: 20px;
+    }
+
+}
