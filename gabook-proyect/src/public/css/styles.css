@@ -1,245 +1,589 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
 }
 
-body{
-    background-color: whitesmoke;
-    font-family: 'ubuntu', sans-serif;
-    min-width: 350px;
+body {
+  background-color: whitesmoke;
+  font-family: "ubuntu", sans-serif;
+  min-width: 350px;
 }
 
 /* ---header ---*/
-header{
-    background: rgb(150, 1, 1);
-    height: 100px;
-    border: 2px solid yellow;
-    width: 100vw;
+header {
+  background: rgb(150, 1, 1);
+  height: 100px;
+  border: 2px solid yellow;
+  width: 100vw;
 }
 
 nav {
-    width: 100vw;
-    height: 160%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    border: 1px dotted royalblue;
-    min-width: 350px;
+  width: 100vw;
+  height: 160%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 1px dotted royalblue;
+  min-width: 350px;
 }
 
 nav > div {
-    height: 100px;
+  height: 100px;
 }
 
 .logo {
-    width: 200px;
-    height: 70px;
-    margin: auto;
-    border: 2px solid palevioletred;
-    position: relative;
-    top: 10px;
+  width: 200px;
+  height: 70px;
+  margin: auto;
+  border: 2px solid palevioletred;
+  position: relative;
+  top: 10px;
 }
 
-.burger, .search {
-    width: 70px;
-    height: 100px;
-    border: 2px solid violet;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.burger,
+.search {
+  width: 70px;
+  height: 100px;
+  border: 2px solid violet;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .burger a p {
-    display: none;
+  display: none;
 }
 
-.burger i, .search i, .user-cart a {
-    display: block;
-    text-align: center;
-    font-size: 30px;
-    border: 2px solid yellow;
-    color: white;
+.burger i,
+.search i,
+.user-cart a {
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  border: 2px solid yellow;
+  color: white;
 }
 
 .search i {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 ul.user-cart {
-    width: 100%;
-    list-style: none;
-    display: flex;
-    border: 1px solid olive;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  border: 1px solid olive;
 }
 
 .user-cart li {
-    position: relative;
-    left: 65%;
-    margin-left: 10px;
+  position: relative;
+  left: 65%;
+  margin-left: 10px;
 }
 
 li #down {
-    scale: 0.5;
+  scale: 0.5;
 }
 
 ul.burger {
-    order: -1;
+  order: -1;
 }
 
 ul li a {
-    display: block;
+  display: block;
 }
 
 .user-cart li a i {
-    color: rgb(138, 120, 120);
+  color: rgb(138, 120, 120);
 }
 
 /* --- main --- */
 
 main {
-    padding-top: 60px;
-    width: 100vw;
+  padding-top: 60px;
+  width: 100vw;
 }
 
 .pagination {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .pagination a {
-    text-decoration: none;
-    display: block;
-    padding: 5px 10px;
-    margin: 5px;
-    border: 2px solid rgb(168, 164, 164);
-    border-radius: 10%;
-    color: black;
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  margin: 5px;
+  border: 2px solid rgb(168, 164, 164);
+  border-radius: 10%;
+  color: black;
 }
 
 .pagination .one {
-    background-color: gray;
-    color: white;
+  background-color: gray;
+  color: white;
 }
 
-.pagination a#left, a#right{
-    color: black;
-    border: 0px solid white;
+.pagination a#left,
+a#right {
+  color: black;
+  border: 0px solid white;
 }
 
 main {
-    text-align: center;
+  text-align: center;
 }
 
 main h2 {
-    width: inherit;
-    padding: 20px;
-    margin: auto;
+  width: inherit;
+  padding: 20px;
+  margin: auto;
 }
 
 section article {
-    width: 250px;
-    height: 470px;
-    margin: auto;
-    padding: 20px 20px 10px;
-    margin-bottom: 30px;    
-    border: 2px solid pink; 
+  width: 250px;
+  height: 470px;
+  margin: auto;
+  padding: 20px 20px 10px;
+  margin-bottom: 30px;
+  border: 2px solid pink;
 }
 
 section article img {
-    width: 200px;
-    height: 300px;
-    margin: auto;
+  width: 200px;
+  height: 300px;
+  margin: auto;
 }
 
-article .details h4, .details p {
-    margin-top: 10px;
+article .details h4,
+.details p {
+  margin-top: 10px;
 }
 
 .details h4 {
-    font-size: 1.3rem;
-    border: 2px solid salmon;
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-size: 1.3rem;
+  border: 2px solid salmon;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .details p {
-    font-style: italic;
-} 
+  font-style: italic;
+}
 
 .details .price {
-    font-style: normal;
-    font-size: 1.3rem;
-    position: relative;
-    right: 7px;
+  font-style: normal;
+  font-size: 1.3rem;
+  position: relative;
+  right: 7px;
 }
 
 div#pag-down {
-    margin: 25px 0;
+  margin: 25px 0;
 }
 
 /* --- footer --- */
 footer {
-    background-color: rgb(26, 22, 22);
-    width: 100vw;
-    height: 240px;
-    color: gainsboro;
-    font-size: 15px;
-    padding: 10px;
+  background-color: rgb(26, 22, 22);
+  width: 100vw;
+  height: 240px;
+  color: gainsboro;
+  font-size: 15px;
+  padding: 10px;
 }
 
 footer h4 {
-    text-align: center; 
-    padding: 3px;
+  text-align: center;
+  padding: 3px;
 }
 
 footer ul {
-    list-style: none;
+  list-style: none;
 }
 
 footer ul.redes {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .redes li i {
-    display: block;  
-    padding: 20px; 
-    font-size: 30px;
+  display: block;
+  padding: 20px;
+  font-size: 30px;
 }
 
 footer ul li a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    color: inherit;
-    padding: 5px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 5px;
 }
 
 /* --- Media queries --- */
 
 @media (min-width: 481px) {
-    /* --- Header --- */
+  /* --- Header --- */
 
-    nav {
-        flex-wrap: nowrap;
-    }
+  nav {
+    flex-wrap: nowrap;
+  }
 
-    /* --- Main --- */
-    section {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
+  /* --- Main --- */
+  section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 
-    section article {
-        margin: 20px;
-    }
+  section article {
+    margin: 20px;
+  }
+}
+
+/* product-detail-main */
+
+.main-product-detail {
+  width: 90vw;
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+}
+
+.main-product-detail section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.main-info-libro {
+  width: 100%;
+}
+
+.main-product-detail .main-info-libro h1 {
+  width: 100%;
+  margin: 0;
+  padding: 10px 0px 10px;
+}
+
+.main-product-detail .main-info-libro h2 {
+  width: 100%;
+  margin: 0;
+  padding: 10px 0px 10px;
+  color: rgb(78, 78, 78);
+}
+
+.main-product-detail .main-info-libro .main-div--img {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.main-product-detail .main-info-libro .main-div--img img {
+  width: 70%;
+}
+
+.main-product-detail section article {
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  margin: 0px;
+  border: 0px;
+}
+
+.main-product-detail section article p {
+  padding: 5px;
+  font-size: 28px;
+}
+
+.main-product-detail section article.comprar {
+  border: 1px solid rgb(129, 129, 129);
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-product-detail section article.comprar input {
+  width: 60%;
+  padding: 4px;
+}
+
+.main-product-detail section article.comprar a {
+  text-decoration: none;
+  padding: 8px;
+  color: rgb(0, 0, 0);
+}
+
+.main-product-detail section article.comprar a:hover {
+  text-decoration: none;
+  padding: 8px;
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+}
+
+.main-product-detail section article.comprar button {
+  border: 0px;
+  width: 60%;
+  background-color: rgb(165, 42, 42);
+  color: rgb(255, 255, 255);
+  border-radius: 4px;
+  height: 32px;
+}
+
+.main-product-detail section article.comprar button:hover {
+  background-color: rgb(161, 7, 7);
+  width: 70%;
+}
+
+.main-product-detail section .sipnosis p {
+  padding: 0px;
+  font-size: 16px;
+  text-align: left;
+}
+
+.main-product-detail section table {
+  text-align: left;
+  padding: 5px;
+  width: 100%;
+}
+
+.main-product-detail .libros-relacionados article {
+  padding: 8px;
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background-color: rgb(197, 197, 197);
+  width: 100%;
+}
+.main-product-detail .comentarios article .nombre {
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.main-product-detail .comentarios article .comentario {
+  text-align: left;
+  font-size: 16px;
+}
+
+@media (min-width: 481px) {
+  .main-product-detail .main-info-libro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .main-product-detail .main-info-libro h1 {
+    width: 100%;
+    margin: 0;
+    padding: 5px 0px 5px;
+    font-size: 4vw;
+    text-align: start;
+  }
+
+  .main-product-detail .main-info-libro h2 {
+    width: 100%;
+    margin: 0;
+    padding: 5px 0px 5px;
+    color: rgb(78, 78, 78);
+    font-size: 3vw;
+    text-align: start;
+  }
+
+  .main-product-detail .main-info-libro .main-div--img {
+    padding: 5px;
+    margin: 0;
+    width: 30%;
+  }
+
+  .main-product-detail .main-info-libro .main-div--img img {
+    width: 100%;
+  }
+
+  .main-product-detail section article {
+    width: 30%;
+    padding: 10px;
+    margin: 0px;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .main-product-detail section article p {
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .main-product-detail section article p.precio {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .main-product-detail section article.comprar {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    border: 2px solid gray;
+    border-radius: 4px;
+    margin-top: 8%;
+    margin-bottom: 8%;
+  }
+
+  .main-product-detail section article.comprar input {
+    width: 100%;
+    padding: 5px;
+    height: 15%;
+    border: 1px solid gray;
+  }
+
+  .main-product-detail section article.comprar a {
+    text-decoration: none;
+    padding: 8px;
+    color: rgb(0, 0, 0);
+    font-size: 3vw;
+  }
+
+  .main-product-detail section article.comprar a:hover {
+    text-decoration: none;
+    padding: 8px;
+    color: rgb(0, 0, 0);
+    font-size: 4vw;
+  }
+
+  .main-product-detail section article.comprar button {
+    border: 0px;
+    width: 100%;
+    background-color: rgb(165, 42, 42);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    height: 15%;
+  }
+
+  .main-product-detail section article.comprar button:hover {
+    background-color: rgb(161, 7, 7);
+    width: 100%;
+  }
+  .main-product-detail section .sipnosis {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    order:0;
+    width: 58%;
+    border-left: 1px solid rgb(0, 0, 0);
+  }
+  .main-product-detail section .sipnosis h2 {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .main-product-detail section .sipnosis p {
+    padding: 0px;
+    font-size: 16px;
+    text-align: left;
+    width: 100%;
+
+   
+  }
+
+  .main-product-detail section table {
+    text-align: left;
+    padding: 5px;
+    width: 35%;
+    order: -1;
+  }
+
+  .main-product-detail .libros-relacionados article {
+    padding: 8px;
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: rgb(197, 197, 197);
+    width: 49%;
+  }
+
+  .main-product-detail .libros-relacionados article img {
+    width: 80%;
+    height: auto;
+  }
+
+  .main-product-detail .comentarios article {
+    width: 100%;
+    background-color: rgb(238, 238, 238);
+    border-radius: 4px;
+    margin-bottom: 4px;
+    
+  }
+  .main-product-detail .comentarios article .nombre {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  .main-product-detail .comentarios article .comentario {
+    text-align: left;
+    font-size: 16px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 760px) {
+  .main-product-detail .libros-relacionados article {
+    padding: 8px;
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: rgb(197, 197, 197);
+    width: 24%;
+  }
+
+  .main-product-detail section article p.precio {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.main-product-detail section article p {
+  padding: 5px;
+  font-size: 32px;
+}
+
+.main-product-detail section .sipnosis {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  order: 0;
+  width: 70%;
+  font-size: 18px;
+  border-left: 1px solid rgb(0, 0, 0);
+}
+
+.main-product-detail section table {
+  text-align: left;
+  padding: 5px;
+  width: 30%;
+  order: -1;
+  font-size: 18px;
+}
 
 }
