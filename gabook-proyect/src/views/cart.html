@@ -1,21 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito GaBook</title>
-</head>
-<body>
-    <header>
-    </header>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/cart.css" />
+  </head>
+  <body>
+    <header></header>
 
-    <main>
+    <main class="main-cart">
+      <h1>Tu Carrito</h1>
+      <div class="total">
+        <p>TOTAL:</p>
+        <p>$ 120.000 COP</p>
+        <p>( 12 Productos)</p>
+      </div>
+      <section class="resumen-productos">
+        <article>
+          <div class="book-image">
+            <img src="./images/cien-anos-de-soledad.gif" alt="Imagen del libro" />
+          </div>
+          <section>
+            <h2>Titulo del libro</h2>
+            <p>Valoracion 10/10</p>
+            <h3>$100.000</h3>
+            <p class="descuento">33% Descuento</p>
+            <p class="descripcion-libro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iure
+              quae rem et laborum. Iusto, molestiae quam ducimus non soluta
+              nihil autem accusamus est inventore consequatur odit mollitia
+              blanditiis neque.
+            </p>
+            <input type="number" />
+          </section>
+        </article>
+        <article>
+          <div class="book-image">
+            <img src="./images/cien-anos-de-soledad.gif" alt="Imagen del libro" />
+          </div>
+          <section>
+            <h2>Titulo del libro</h2>
+            <p>Valoracion 10/10</p>
+            <h3>$100.000</h3>
+            <p class="descuento">33% Descuento</p>
+            <p class="descripcion-libro">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam iure
+              quae rem et laborum. Iusto, molestiae quam ducimus non soluta
+              nihil autem accusamus est inventore consequatur odit mollitia
+              blanditiis neque.
+            </p>
+            <input type="number" />
+          </section>
+        </article>
+        <button> <p> IR A PAGAR </p></button>
+      </section>
+      <section class="resumen-pedido">
+        <article>
+          <div class="resumen-precios">
+            <h2>RESUMEN DEL PEDIDO</h2>
+            <p>Precio</p>
+            <p class="valor">150.000</p>
+            <p>Descuento</p>
+            <p class="valor">50.000</p>
+            <p>Entrega</p>
+            <p class="valor">10.000</p>
+            <p>PRECIO TOTAL</p>
+            <p class="valor">110.000</p>
+            <button> <p> IR A PAGAR </p></button>
+          </div>
+          <a href="#"> <span> ¿Necesitas Ayuda?</span></a>
+        </article>
+        <article class="formas-de-pago">
+          <h3>Formas de Pago</h3>
+          <div><img src="./images/paypal-brands.svg" alt="paypal" /></div>
+          <div><img src="./images/paypal-brands.svg" alt="paypal" /></div>
+          <div><img src="./images/paypal-brands.svg" alt="paypal" /></div>
+          <div><img src="./images/paypal-brands.svg" alt="paypal" /></div>
+        </article>
+      </section>
     </main>
-    
-    <footer>
-    </footer>
-
-    <h1>Carrito Gabook</h1>
-</body>
+    <footer></footer>
+  </body>
 </html>
