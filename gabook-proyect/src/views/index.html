@@ -10,40 +10,59 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     rel="stylesheet"/>
 </head>
-<body>
+<body class="index-body">
     <header>
         <nav>
             <div>
                 <img class="logo" src="./images/gabooklogoBlanco1.png" alt="">
             </div>
             <form class="search">
+                <input type="search" name="search" placeholder="  Búsqueda..." id="search-bar">
                 <i class="fas fa-search"></i>
             </form>
             <ul class="burger">
-                <li><a href="#"><i class="fas fa-bars"></i><p>Categories</p></a></li>
+                <li><a href="#"><i class="fas fa-bars"></i><p>Categorías</p></a></li>
             </ul>
             <ul class="user-cart">
                 <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="#"><i class="fas fa-user"></i><i id="down" class="fas fa-chevron-down"></i></a></li>
+                <li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                <li><a href="#"><i class="fas fa-user-circle"></i><i id="down" class="fas fa-chevron-down"></i></a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <div class="pagination">
-            <a href="#" id="left"><i class="fas fa-chevron-left"></i></a>
-            <a href="#" class="one">1</a>
-            <a href="#" class="number" >2</a>
-            <a href="#"class="number">3</a>
-            <a href="#" id="right"><i class="fas fa-chevron-right"></i></a>
+    <main class="main-home">
+        <div class="top-bar">
+            <div class="filter">
+                <select name="ordenar-por" id="order-by">
+                    <option value="lower-to-higher">Menor a Mayor</option>
+                    <option value="higher-to-lower">Mayor a Menor</option>
+                    <option value="recommended">Recomendados</option>
+                    <option value="top-rated">Mejores Calificados</option>
+                </select>
+            </div>
+            <div class="pagination">
+                <a href="#" id="left"><i class="fas fa-chevron-left"></i></a>
+                <a href="#" class="one">1</a>
+                <a href="#" class="number" >2</a>
+                <a href="#"class="number">3</a>
+                <a href="#" id="right"><i class="fas fa-chevron-right"></i></a>
+            </div>
         </div>
-        <h2>Novedades</h2>
+        <h2>Libros Gabook</h2>
         <section>
             <article>
                 <img src="./images/cien-anos-de-soledad.gif" alt="">
                 <div class="details">
                     <h4>Cien Años de Soledad</h4>
                     <p>Editorial Gabo</p>
+                    <div class="stars">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
                     <p class="price">$ 100.000<p>
                 </div>
             </article>
@@ -52,6 +71,13 @@
                 <div class="details">
                     <h4>El Código Da Vinci</h4>
                     <p>Editorial Gabo</p>
+                    <div class="stars">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
                     <p class="price">$ 100.000<p>
                 </div>
             </article>
@@ -60,6 +86,13 @@
                 <div class="details">
                     <h4>El Cuervo</h4>
                     <p>Editorial Gabo</p>
+                    <div class="stars">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
                     <p class="price">$ 100.000<p>
                 </div>
             </article>
@@ -68,6 +101,13 @@
                 <div class="details">
                     <h4>El Diario de Ana Frank</h4>
                     <p>Editorial Gabo</p>
+                    <div class="stars">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
                     <p class="price">$ 100.000<p>
                 </div>
             </article>
@@ -76,6 +116,13 @@
                 <div class="details">
                     <h4>El Señor de las Moscas</h4>
                     <p>Editorial Gabo</p>
+                    <div class="stars">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
                     <p class="price">$ 100.000<p>
                 </div>
             </article>
@@ -84,6 +131,13 @@
                 <div class="details">
                     <h4>Harry Potter y la Piedra Filosofal</h4>
                     <p>Editorial Gabo</p>
+                    <div class="stars">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
                     <p class="price">$ 100.000<p>
                 </div>
             </article>
@@ -92,6 +146,13 @@
                 <div class="details">
                     <h4>La Teoría del Caos</h4>
                     <p>Editorial Gabo</p>
+                    <div class="stars">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
                     <p class="price">$ 100.000<p>
                 </div>
             </article>
@@ -100,6 +161,13 @@
                 <div class="details">
                     <h4>Los Viajes de Gulliver</h4>
                     <p>Editorial Gabo</p>
+                    <div class="stars">
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
                     <p class="price">$ 100.000<p>
                 </div>
             </article>
@@ -114,13 +182,18 @@
     </main>
 
     <footer>
-        <h4>También nos puedes encontrar en:</h4>
-        <ul class="redes">
-            <li><i class="fab fa-twitter"></i></li>
-            <li><i class="fab fa-instagram"></i></li>
-            <li><i class="fab fa-facebook-square"></i></li>
-        </ul>
-        <ul>
+        <div id="logo-footer">
+            <img class="logo" src="./images/gabooklogoBlanco1.png" alt="">
+        </div>
+        <div>
+            <h4>También nos puedes encontrar en:</h4>
+            <ul class="redes">
+                <li><i class="fab fa-twitter"></i></li>
+                <li><i class="fab fa-instagram"></i></li>
+                <li><i class="fab fa-facebook-square"></i></li>
+            </ul>
+        </div>
+        <ul id="footer-options">
             <li><a href="">Inicio</a></li>
             <li><a href="">Blog</a></li>
             <li><a href="">Sobre Nosotros</a></li>
