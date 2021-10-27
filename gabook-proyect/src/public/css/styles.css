@@ -16,7 +16,9 @@ body.index-body{
     overflow-x: hidden;
 }
 
-/* ---header ---*/
+/* ------ INDEX------------------------------ */
+
+/* ---header INDEX ---*/
 header{
     background: rgb(150, 1, 1);
     height: 100px;
@@ -34,6 +36,7 @@ nav {
     /* border: 1px dotted royalblue; */
     min-width: 350px;
     max-width: 1500px;
+    position: relative;
     margin: auto;
 }
 
@@ -58,6 +61,10 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.burger a {
+  text-decoration: none;
 }
 
 .burger a p {
@@ -113,7 +120,18 @@ li #down {
   color: rgb(138, 120, 120);
 }
 
-/* --- Main - Home --- */
+/* -------Banner------------------------------ */
+
+#index-banner {
+  position: relative;
+  top: 55px;
+}
+
+#index-banner img{
+  width: 100vw;
+}
+
+/* --- Main - Home -------------------------- */
 main.main-home {
     width: 90vw;
     margin: auto;
@@ -123,7 +141,6 @@ main.main-home {
 
 .filter {
     position: relative;
-    bottom: 45px;
     left: 3%;
 }
 
@@ -166,7 +183,8 @@ main.main-home {
     padding: 20px 20px 10px;
     margin-bottom: 30px;    
     border: 2px solid pink; 
-    transition: 0.6s;
+    transition: all 0.6s;
+    position: relative;
 }
 
 .main-home section article:hover {
@@ -182,6 +200,48 @@ main.main-home {
 .main-home article .details h4, .details p {
     margin-top: 6px;
     text-align: center;
+}
+
+section article #detalle--carrito {
+  display: none;
+  width: 100%;
+  height: 35%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(14, 3, 3, 0.9);
+}
+
+#detalle--carrito a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+
+#detalle--carrito button {
+  width: 90%;
+  margin: auto;
+  height: 50px;
+  background-color: brown;
+  border-style: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.7s;
+}
+
+.main-home section article:hover #detalle--carrito{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 15px;
+  /* border: 2px solid blue;   */
+}
+
+#detalle--carrito button:hover {
+  background: rgb(150, 1, 1);
 }
 
 .details .stars {
@@ -332,6 +392,12 @@ footer #footer-options a {
         font-size: 23px;
     }
 
+    /* ---Index-banner--------------------------- */
+
+    #index-banner {
+      top: 0;
+    }
+
     /* --- Index-Main --- */
 
     .main-home .top-bar {
@@ -433,7 +499,14 @@ footer #footer-options a {
         color: gray;
     }
 
-    /* --- Index-Main --- */
+/* ----- index-banner--------------------------*/
+
+    #index-banner {
+      top: 50px;
+    }
+
+
+    /* --- Index-Main ----------------- */
 
     .main-home section article {
         height: 490px;
@@ -451,6 +524,7 @@ footer #footer-options a {
     }
 }
 
+/* --------PRODUCT-DETAIL------------------ */
 
 /* product-detail-main */
 
@@ -793,3 +867,5 @@ footer #footer-options a {
 
 }
 
+
+/* ---------------CART------------------------ */
