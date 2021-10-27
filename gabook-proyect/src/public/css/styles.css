@@ -13,6 +13,7 @@ body {
   min-width: 350px;
   max-width: 1200px;
   margin: auto;
+  overflow-x: hidden;
 }
 
 /* ------ INDEX------------------------------ */
@@ -36,7 +37,6 @@ nav {
     min-width: 350px;
     max-width: 1500px;
     position: relative;
-    margin: auto;
 }
 
 nav > div {
@@ -276,10 +276,10 @@ div#pag-down {
   padding: 0;
 }
 
-/* --- Footer-Index --- */
+/* --- Footer-Index ----------------------------------- */
 footer {
   background-color: rgb(26, 22, 22);
-  width: 100%;
+  width: 100vw;
   color: gainsboro;
   font-size: 15px;
   padding: 10px;
@@ -332,6 +332,88 @@ footer #footer-options a {
   text-transform: uppercase;
   font-weight: bolder;
 }
+
+/* ___________LOGIN____________________________ */
+
+#body-login {
+  background-image: url(../images/backgrnd-login.jpg);
+  background-size: cover;
+}
+
+#main-login {
+  min-height: 700px;
+  font-family: "ubuntu", sans-serif;
+}
+
+#main-login .cuadro-login {
+  padding: 50px;
+  margin: 50px   30px; 
+  box-shadow: 0px 0px 25px 5px rgba(36, 31, 31, 0.7);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  max-width: 500px;
+  /* border: 2px solid lime; */
+}
+
+.login-atras {
+  position: relative;
+  bottom: 30px;
+  right: 20px;
+}
+
+.login-atras a {
+  text-decoration: none;
+  color: black;
+}
+
+.login-atras i {
+  scale: 1.5;
+  margin-right: 10px;
+}
+
+.cuadro-login img {
+  display: block;
+  width: 95%;
+  margin: auto;
+}
+
+.cuadro-login h2 {
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 0 0 20px;
+}
+
+.cuadro-login label {
+  color: gray;
+  font-style: italic;
+}
+
+.cuadro-login input {
+  width: 100%;
+  font-size: 1.8rem;
+  border-style: none;
+  border-bottom: 2px solid black;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+.sin-cuenta {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cuadro-login button {
+  width: 100%;
+  height: 40px;
+  margin-top: 30px;
+  background-color: brown;
+  border-style: none;
+  color: white;
+  border-radius: 7px;
+  font-weight: bold;
+}
+
+/* _________________________________________ */
 
 /* --- Media queries --- */
 
@@ -465,16 +547,18 @@ footer #footer-options a {
         padding: 10px 0;
         border-top: 1px solid gray;
     }
+
+    /* ___________LOGIN____________________________ */
+    #body-login {
+      display: flex;
+      justify-content: center;
+    }
 }
 
-@media (min-width: 770px) {
-  /* --- Index Header --- */
-  .search {
-    max-width: 450px;
-    margin-left: 30px;
-  }
 
-    /* --- Index Header --- */
+@media (min-width: 770px) {
+
+    /* --- Index Header ----------------- */
     .search {
         max-width: 450px;
         margin-left: 30px;
@@ -530,7 +614,7 @@ footer #footer-options a {
     }
 }
 
-/* --------PRODUCT-DETAIL------------------ */
+/* --------PRODUCT-DETAIL-------------------------- */
 
 /* product-detail-main */
 

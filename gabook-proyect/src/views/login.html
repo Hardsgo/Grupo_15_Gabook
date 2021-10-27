@@ -5,18 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio se Sesión - GaBook</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet"/>
 </head>
-<body>
-    <header>
-    </header>
-
-    <main>
+<body id="body-login">
+    <main id="main-login">
+        <div class="cuadro-login">
+            <div class="login-atras">
+                <a href="/"><i class="fas fa-arrow-circle-left"></i>Atrás</a>
+                
+            </div>
+            <img src="./images/gabooklogo1.png" alt="">
+            <h2>¡Hola Bienvenido! Inicia tu Sesión:</h2>
+            <form action="/login" method="POST">
+                <p>
+                    <label for="login-user">Usuario:</label>
+                    <br>
+                    <input type="text" name="name" minlength="2" required>
+                </p>
+                <br>
+                <p>
+                    <label for="login-passwd">Contraseña:</label>
+                    <br>
+                    <input type="password" name="login-passwd" id="login-passwd" required>
+                </p>
+                <button type="submit">Ingresa</button>
+            </form>
+            <div class="sin-cuenta">
+                <p>
+                    ¿No estás registrado(a)? <a href="./sign-in.html">Regístrare en GaBook</a>
+                </p>
+            </div>
+        </div>
+        
     </main>
-    
-    <footer>
-    </footer>
-
-    <h1>Inicio de Sesión - Gabook</h1>
-    <img src="./images/gabooklogo1.png" alt="">
 </body>
 </html>
