@@ -7,13 +7,12 @@
   /* border: 1px solid red; */
 }
 
-body.index-body{
-    background-color: whitesmoke;
-    font-family: 'ubuntu', sans-serif;
-    min-width: 350px;
-    width: 100vw;
-    margin: auto;
-    overflow-x: hidden;
+body {
+  background-color: whitesmoke;
+  font-family: "ubuntu", sans-serif;
+  min-width: 350px;
+  max-width: 1200px;
+  margin: auto;
 }
 
 /* ------ INDEX------------------------------ */
@@ -40,27 +39,28 @@ nav {
     margin: auto;
 }
 
-    nav > div {
-        height: 100px;
-    }
-
-.logo {
-    width: 200px;
-    height: 70px;
-    margin: auto;
-    /* border: 2px solid palevioletred; */
-    position: relative;
-    top: 10px;
+nav > div {
+  height: 100px;
 }
 
-.burger, .search {
-    width: 70px;
-    height: 100px;
-    /* border: 2px solid violet; */
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.logo {
+  width: 200px;
+  height: 70px;
+  margin: auto;
+  /* border: 2px solid palevioletred; */
+  position: relative;
+  top: 10px;
+}
+
+.burger,
+.search {
+  width: 70px;
+  height: 100px;
+  /* border: 2px solid violet; */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .burger a {
@@ -71,49 +71,50 @@ nav {
   display: none;
 }
 
-.burger i, .search i, .user-cart a {
-    display: block;
-    text-align: center;
-    font-size: 30px;
-    /* border: 2px solid yellow; */
-    color: white;
+.burger i,
+.search i,
+.user-cart a {
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  /* border: 2px solid yellow; */
+  color: white;
 }
 
 ul.burger {
-    order: -1;
+  order: -1;
 }
 
-.search input{
-    display: none;
-    border: 2px solid brown;
-    height: 35px;
-    border-radius: 7px;
+.search input {
+  display: none;
+  border: 2px solid brown;
+  height: 35px;
+  border-radius: 7px;
 }
 
 .search i {
-    cursor: pointer;    
+  cursor: pointer;
 }
 
 ul.user-cart {
-    width: 85%;
-    list-style: none;
-    display: flex;
-    /* border: 2px solid yellowgreen; */
+  width: 85%;
+  list-style: none;
+  display: flex;
+  /* border: 2px solid yellowgreen; */
 }
 
 .user-cart li {
-    position: relative;
-    left: 65%;
-    margin-right: 20px;
+  position: relative;
+  left: 65%;
+  margin-right: 20px;
 }
 
 li #down {
   scale: 0.5;
 }
 
-
 .user-cart ul li a {
-    display: block;
+  display: block;
 }
 
 .user-cart li a i {
@@ -133,10 +134,9 @@ li #down {
 
 /* --- Main - Home -------------------------- */
 main.main-home {
-    width: 90vw;
-    margin: auto;
-    padding-top: 60px;
-    max-width: 1290px;
+  width: 100%;
+  margin: auto;
+  padding-top: 60px;
 }
 
 .filter {
@@ -164,16 +164,17 @@ main.main-home {
   color: white;
 }
 
-.pagination a#left, a#right{
-    color: black;
-    border: 0px solid white;
-}   
+.pagination a#left,
+a#right {
+  color: black;
+  border: 0px solid white;
+}
 
 .main-home h2 {
-    width: inherit;
-    padding: 20px;
-    margin: auto;
-    text-align: center;
+  width: inherit;
+  padding: 20px;
+  margin: auto;
+  text-align: center;
 }
 
 .main-home section article {
@@ -188,18 +189,19 @@ main.main-home {
 }
 
 .main-home section article:hover {
-    box-shadow: 0px 0px 23px 4px salmon;
+  box-shadow: 0px 0px 23px 4px salmon;
 }
 
 .main-home section article img {
-    width: 200px;
-    height: 300px;
-    margin: auto;
+  width: 200px;
+  height: 300px;
+  margin: auto;
 }
 
-.main-home article .details h4, .details p {
-    margin-top: 6px;
-    text-align: center;
+.main-home article .details h4,
+.details p {
+  margin-top: 6px;
+  text-align: center;
 }
 
 section article #detalle--carrito {
@@ -245,16 +247,16 @@ section article #detalle--carrito {
 }
 
 .details .stars {
-    display: none;
+  display: none;
 }
 
 .details h4 {
-    font-size: 1.3rem;
-    /* border: 2px solid salmon; */
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-size: 1.3rem;
+  /* border: 2px solid salmon; */
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .details p {
@@ -269,37 +271,37 @@ section article #detalle--carrito {
 }
 
 div#pag-down {
-    width: 100vw;
-    margin: 25px 0;
-    padding: 0;
+  width: 100vw;
+  margin: 25px 0;
+  padding: 0;
 }
 
 /* --- Footer-Index --- */
 footer {
-    background-color: rgb(26, 22, 22);
-    width: 100vw;
-    color: gainsboro;
-    font-size: 15px;
-    padding: 10px;
-    text-align: center;
+  background-color: rgb(26, 22, 22);
+  width: 100%;
+  color: gainsboro;
+  font-size: 15px;
+  padding: 10px;
+  text-align: center;
 }
 
 footer #logo-footer {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
 footer .logo {
-    position: static;
-    margin: auto;
+  position: static;
+  margin: auto;
 }
 
-footer h4{
-    text-align: center; 
-    padding: 3px;
-    /* border: 2px solid red; */
+footer h4 {
+  text-align: center;
+  padding: 3px;
+  /* border: 2px solid red; */
 }
 
 footer ul {
@@ -307,9 +309,9 @@ footer ul {
 }
 
 footer ul.redes {
-    display: flex;
-    justify-content: center;
-    /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  /* border: 2px solid red; */
 }
 
 .redes li i {
@@ -327,8 +329,8 @@ footer ul li a {
 }
 
 footer #footer-options a {
-    text-transform: uppercase;
-    font-weight: bolder;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
 /* --- Media queries --- */
@@ -417,7 +419,7 @@ footer #footer-options a {
     #pag-down {
         justify-content: center;
         position: relative;
-        left: -60px;
+        left: -20px;
     }
 
     .main-home h2 {
@@ -466,6 +468,11 @@ footer #footer-options a {
 }
 
 @media (min-width: 770px) {
+  /* --- Index Header --- */
+  .search {
+    max-width: 450px;
+    margin-left: 30px;
+  }
 
     /* --- Index Header --- */
     .search {
@@ -505,7 +512,6 @@ footer #footer-options a {
       top: 50px;
     }
 
-
     /* --- Index-Main ----------------- */
 
     .main-home section article {
@@ -540,7 +546,6 @@ footer #footer-options a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
 }
 
 .main-info-libro {
@@ -763,7 +768,7 @@ footer #footer-options a {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    order:0;
+    order: 0;
     width: 68%;
     border-left: 1px solid rgb(0, 0, 0);
   }
@@ -786,11 +791,10 @@ footer #footer-options a {
     padding: 5px;
     width: 30%;
     order: -1;
-
-
   }
 
-  .main-product-detail section table tr, td {
+  .main-product-detail section table tr,
+  td {
     width: 40%;
   }
 
@@ -813,7 +817,6 @@ footer #footer-options a {
     background-color: rgb(238, 238, 238);
     border-radius: 4px;
     margin-bottom: 4px;
-    
   }
   .main-product-detail .comentarios article .nombre {
     text-align: left;
@@ -863,6 +866,215 @@ footer #footer-options a {
     padding: 5px;
     width: 30%;
     order: -1;
+  }
+}
+
+
+.main-cart {
+  font-family: "ubuntu", sans-serif;
+  /* max-width debe ir ates del width para que se aplique */
+  /* max-width: 1200px; */
+  /* Con 100vw en desktop parece la barra horizontal */
+  width: 100%;
+  /* margin: auto; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.main-cart h1 {
+  margin: 5px;
+  width: 100%;
+}
+
+.main-cart .total {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.main-cart .total p {
+  display: block;
+  margin: 5px;
+}
+
+.main-cart .resumen-productos {
+  width: 65%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-cart .resumen-productos article {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  border: 1px solid rgb(179, 179, 179);
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+.main-cart .resumen-productos article .book-image {
+  width: 35%;
+  padding: 5px;
+}
+.main-cart .resumen-productos article .book-image img {
+  display: block;
+  margin: auto;
+  max-height: 270px;
+  max-width: 90%;
+
+}
+.main-cart .resumen-productos article section {
+  width: 65%;
+  padding: 5px;
+}
+
+.main-cart .resumen-productos article section p,
+h2 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.main-cart .resumen-productos article section .descuento {
+  color: rgb(0, 136, 0);
+  font-weight: bold;
+}
+
+.main-cart .resumen-productos article section .descripcion-libro {
+  margin-top: 20px;
+}
+
+.main-cart .resumen-productos article section input {
+  width: 60px;
+}
+
+.main-cart .resumen-productos article section .delete p {
+  margin-top: 5px;
+  background-color: rgb(190, 190, 190);
+  border-radius: 4px;
+  text-align: center;
+  width: 120px;
+  padding: 4px;
+}
+
+.main-cart .resumen-productos article section .delete p:hover {
+  background-color: rgb(248, 64, 64);
+  transition: 0.4s;
+}
+
+.main-cart .resumen-productos  button {
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: rgb(0, 167, 0);
+  border: 0px;
+  box-shadow: rgb(163, 163, 163);
+}
+
+.main-cart .resumen-productos  button:hover {
+
+  background-color: rgb(0, 218, 0);
+  transition: 0.5s;
+
+}
+.main-cart .resumen-pedido {
+  width: 35%;
+}
+
+.main-cart .resumen-pedido article {
+  width: 100%;
+  padding: 10px;
+}
+
+.main-cart .resumen-pedido article .resumen-precios {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: rgb(212, 212, 212);
+  border-radius: 6px;
+}
+
+.main-cart .resumen-pedido article .resumen-precios h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.main-cart .resumen-pedido article .resumen-precios p {
+  width: 50%;
+}
+
+.main-cart .resumen-pedido article .resumen-precios .valor {
+  text-align: right;
+}
+
+.main-cart .resumen-pedido article button {
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: rgb(0, 167, 0);
+  border: 0px;
+  box-shadow: rgb(163, 163, 163);
+}
+
+.main-cart .resumen-pedido article button:hover {
+  background-color: rgb(0, 224, 0);
+  transition: 0.5s;
+}
+.main-cart .resumen-pedido article button p {
+  margin: auto;
+}
+
+.main-cart .resumen-pedido article a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.main-cart .resumen-pedido .formas-de-pago {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main-cart .resumen-pedido .formas-de-pago h3 {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.main-cart .resumen-pedido .formas-de-pago div {
+  width: 20%;
+}
+
+.main-cart .resumen-pedido .formas-de-pago img {
+  width: 100%;
+}
+
+@media (max-width: 761px) {
+
+
+  .main-cart .resumen-productos {
+    width: 100%;
+  }
+  .main-cart .resumen-pedido {
+    width: 100%;
+  }
+
+  .main-cart .resumen-productos  button {
+    order: -1;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 481px) {
+  .main-cart .resumen-productos article section .descripcion-libro {
+    display: none;
   }
 
 }
