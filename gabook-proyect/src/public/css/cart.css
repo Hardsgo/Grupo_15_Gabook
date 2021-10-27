@@ -7,8 +7,13 @@
   /* border: 1px solid red; */
 }
 
-.main-cart {
+body {
   background-color: whitesmoke;
+  font-family: "ubuntu", sans-serif;
+  min-width: 350px;
+}
+
+.main-cart {
   font-family: "ubuntu", sans-serif;
   /* max-width debe ir ates del width para que se aplique */
   max-width: 1200px;
@@ -59,7 +64,11 @@
   padding: 5px;
 }
 .main-cart .resumen-productos article .book-image img {
-  width: 100%;
+  display: block;
+  margin: auto;
+  max-height: 270px;
+  max-width: 90%;
+
 }
 .main-cart .resumen-productos article section {
   width: 65%;
@@ -81,6 +90,23 @@ h2 {
   margin-top: 20px;
 }
 
+.main-cart .resumen-productos article section input {
+  width: 60px;
+}
+
+.main-cart .resumen-productos article section .delete p {
+  margin-top: 5px;
+  background-color: rgb(190, 190, 190);
+  border-radius: 4px;
+  text-align: center;
+  width: 120px;
+  padding: 4px;
+}
+
+.main-cart .resumen-productos article section .delete p:hover {
+  background-color: rgb(248, 64, 64);
+}
+
 .main-cart .resumen-productos  button {
   width: 100%;
   border-radius: 6px;
@@ -89,6 +115,13 @@ h2 {
   background-color: rgb(0, 167, 0);
   border: 0px;
   box-shadow: rgb(163, 163, 163);
+}
+
+.main-cart .resumen-productos  button:hover {
+
+  background-color: rgb(0, 218, 0);
+  transition: 0.5s;
+
 }
 .main-cart .resumen-pedido {
   width: 35%;
