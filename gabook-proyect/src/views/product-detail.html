@@ -13,16 +13,39 @@
     />
   </head>
   <body>
-    <header></header>
+    <header>
+      <nav>
+          <div>
+              <a href="/">
+                  <img class="logo" src="./images/gabooklogoBlanco1.png" alt="">
+              </a>
+          </div>
+          <form class="search">
+              <input type="search" name="search" placeholder="  Búsqueda..." id="search-bar">
+              <i class="fas fa-search"></i>
+          </form>
+          <!-- <ul class="burger">
+              <li><a href="#"><i class="fas fa-bars"></i><p>Categorías</p></a></li>
+          </ul> -->
+          <ul class="user-cart">
+              <li><a href="./cart"><i class="fas fa-shopping-cart"></i></a></li>
+              <li><a href="./sign-in"><i class="fas fa-plus-circle"></i></a></li>
+              <li><a href="./login"><i class="fas fa-user-circle"></i></a></li>
+          </ul>
+      </nav>
+  </header>
+  
 
     <main class="main-product-detail">
       <section class="main-info-libro">
-        <h1>Cien años de soledad</h1>
-        <h2>Gabriel Garcia Marquez - Editorial Sudamericana</h2>
+        <h1 class="titulo">Cien años de soledad</h1>
+        <h2 class="autor">Gabriel Garcia Marquez - Editorial Sudamericana</h2>
         <div class="main-div--img">
           <img src="./images/cien-anos-de-soledad.gif" alt="Imagen del libro" />
         </div>
         <article>
+          <h1 class="titulo">Cien años de soledad</h1>
+          <h2 class="autor">Gabriel Garcia Marquez - Editorial Sudamericana</h2>
           <p class="precio">$ 100.000 COP</p>
           <p>Valoración</p>
           <p>10/10</p>
@@ -34,19 +57,28 @@
           >
           <button>COMPRAR</button>
         </article>
-      </section  >
-      <section class = "sipnosis-table">
+      </section>
+      <section class="sipnosis-table">
         <article class="sipnosis">
           <h2>Sipnosis</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
             ducimus magnam. Adipisci neque minus ut? Qui dolore illum tempora
             amet. Ipsam unde inventore ut harum tenetur corrupti praesentium
-            tempora doloremque.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatem amet ratione qui, accusantium blanditiis iusto vitae earum, quaerat nemo est illo ab maiores eius architecto, esse exercitationem quos harum.
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis corrupti inventore iusto adipisci eaque at qui nemo excepturi aliquam, itaque alias delectus sit maiores laboriosam harum obcaecati, laborum voluptatibus quam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem officiis eligendi nostrum nihil. Odit fugiat earum molestias, eaque fugit quam alias aliquid adipisci veritatis consectetur. Impedit vitae praesentium amet.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsum enim quidem perferendis eligendi similique veniam officia necessitatibus a tenetur! Illum quia assumenda sit itaque voluptatem a totam soluta accusantium!
+            tempora doloremque. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Facere voluptatem amet ratione qui, accusantium
+            blanditiis iusto vitae earum, quaerat nemo est illo ab maiores eius
+            architecto, esse exercitationem quos harum. Lorem ipsum dolor sit,
+            amet consectetur adipisicing elit. Officiis corrupti inventore iusto
+            adipisci eaque at qui nemo excepturi aliquam, itaque alias delectus
+            sit maiores laboriosam harum obcaecati, laborum voluptatibus quam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+            rem officiis eligendi nostrum nihil. Odit fugiat earum molestias,
+            eaque fugit quam alias aliquid adipisci veritatis consectetur.
+            Impedit vitae praesentium amet. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Dolorem ipsum enim quidem perferendis
+            eligendi similique veniam officia necessitatibus a tenetur! Illum
+            quia assumenda sit itaque voluptatem a totam soluta accusantium!
           </p>
         </article>
         <table>
@@ -76,31 +108,6 @@
           </tr>
         </table>
       </section>
-      <section class="libros-relacionados">
-        <h2>
-          Libros Relacionados:
-        </h2>
-        <article>
-          <img src="./images/cien-anos-de-soledad.gif"  alt="cien años">
-          <p>Titulo Libro</p>
-          <p>$ 100.000 COP</p>
-        </article>
-        <article>
-          <img src="./images/cien-anos-de-soledad.gif"  alt="cien años">
-          <p>Titulo Libro</p>
-          <p>$ 100.000 COP</p>
-        </article>
-        <article>
-          <img src="./images/cien-anos-de-soledad.gif"  alt="cien años">
-          <p>Titulo Libro</p>
-          <p>$ 100.000 COP</p>
-        </article>
-        <article>
-          <img src="./images/cien-anos-de-soledad.gif"  alt="cien años">
-          <p>Titulo Libro</p>
-          <p>$ 100.000 COP</p>
-        </article>
-      </section>
       <section class="comentarios">
         <h2>Comentarios</h2>
         <article>
@@ -113,13 +120,35 @@
         </article>
         <article>
           <p class="nombre">Jose Salcedo</p>
-          <p class="comentario">"Estando el coronel Aureliano Buendía frente al peloton de fusilamiento recordo aquella tarde en que su padre lo llevo a conocer el hielo"</p>
+          <p class="comentario">
+            "Estando el coronel Aureliano Buendía frente al peloton de
+            fusilamiento recordo aquella tarde en que su padre lo llevo a
+            conocer el hielo"
+          </p>
         </article>
-        <p>Ver más</p>
+        <p>Ver más ...</p>
       </section>
     </main>
 
-    <footer></footer>
+    <footer>
+      <div id="logo-footer">
+        <img class="logo" src="./images/gabooklogoBlanco1.png" alt="" />
+      </div>
+      <div>
+        <h4>También nos puedes encontrar en:</h4>
+        <ul class="redes">
+          <li><i class="fab fa-twitter"></i></li>
+          <li><i class="fab fa-instagram"></i></li>
+          <li><i class="fab fa-facebook-square"></i></li>
+        </ul>
+      </div>
+      <ul id="footer-options">
+        <li><a href="">Inicio</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Sobre Nosotros</a></li>
+      </ul>
+      <h4>©Gabook 2021 | Todos los derechos reservados</h4>
+    </footer>
 
     <!-- <h1>Detalle del producto - Gabook</h1>
     <img src="./images/gabooklogo1.png" alt="" /> -->

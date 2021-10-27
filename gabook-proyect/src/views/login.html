@@ -1,22 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio se Sesión - GaBook</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-wid th, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <title>Inicio Sesion - GaBook</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="index-body">
     <header>
+      <nav>
+        <div>
+          <a href="/">
+            <img class="logo" src="./images/gabooklogoBlanco1.png" alt="" />
+          </a>
+        </div>
+        <form class="search">
+          <input
+            type="search"
+            name="search"
+            placeholder="  Búsqueda..."
+            id="search-bar"
+          />
+          <i class="fas fa-search"></i>
+        </form>
+        <!-- <ul class="burger">
+          <li>
+            <a href="#"
+              ><i class="fas fa-bars"></i>
+              <p>Categorías</p></a
+            >
+          </li>
+        </ul> -->
+        <ul class="user-cart">
+          <li>
+            <a href="./cart"><i class="fas fa-shopping-cart"></i></a>
+          </li>
+          <li>
+            <a href="./sign-in"><i class="fas fa-plus-circle"></i></a>
+          </li>
+          <li>
+            <a href="./login"><i class="fas fa-user-circle"></i></a>
+          </li>
+        </ul>
+      </nav>
     </header>
-
+    <!-- <div id="index-banner">
+      <img src="./images/book-banner.jpg" alt="" />
+    </div> -->
     <main>
+        <h1>
+            Iniciar Sesion
+        </h1>
     </main>
-    
-    <footer>
-    </footer>
 
-    <h1>Inicio de Sesión - Gabook</h1>
-    <img src="./images/gabooklogo1.png" alt="">
-</body>
+    <footer>
+      <div id="logo-footer">
+        <img class="logo" src="./images/gabooklogoBlanco1.png" alt="" />
+      </div>
+      <div>
+        <h4>También nos puedes encontrar en:</h4>
+        <ul class="redes">
+          <li><i class="fab fa-twitter"></i></li>
+          <li><i class="fab fa-instagram"></i></li>
+          <li><i class="fab fa-facebook-square"></i></li>
+        </ul>
+      </div>
+      <ul id="footer-options">
+        <li><a href="">Inicio</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Sobre Nosotros</a></li>
+      </ul>
+      <h4>©Gabook 2021 | Todos los derechos reservados</h4>
+    </footer>
+  </body>
 </html>
