@@ -13,7 +13,6 @@ body {
   min-width: 350px;
   max-width: 1200px;
   margin: auto;
-  overflow-x: hidden;
 }
 
 /* ------ INDEX------------------------------ */
@@ -23,7 +22,7 @@ header{
     background: rgb(150, 1, 1);
     height: 100px;
     /* border: 2px solid yellow; */
-    width: 100%;
+    width: 100vw;
 }
 
 nav {
@@ -124,6 +123,7 @@ li #down {
 /* -------Banner------------------------------ */
 
 #index-banner {
+
   position: relative;
   top: 55px;
 }
@@ -279,7 +279,7 @@ div#pag-down {
 /* --- Footer-Index ----------------------------------- */
 footer {
   background-color: rgb(26, 22, 22);
-  width: 100vw;
+  width: 100%;
   color: gainsboro;
   font-size: 15px;
   padding: 10px;

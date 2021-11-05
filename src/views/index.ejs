@@ -3,35 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-wid th, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
     <title>Home - GaBook</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     rel="stylesheet"/>
 </head>
 <body class="index-body">
-    <header>
-        <nav>
-            <div>
-                <a href="/">
-                    <img class="logo" src="./images/gabooklogoBlanco1.png" alt="">
-                </a>
-            </div>
-            <form class="search">
-                <input type="search" name="search" placeholder="  Búsqueda..." id="search-bar">
-                <i class="fas fa-search"></i>
-            </form>
-            <ul class="burger">
-                <li><a href="#"><i class="fas fa-bars"></i><p>Categorías</p></a></li>
-            </ul>
-            <ul class="user-cart">
-                <li><a href="./cart"><i class="fas fa-shopping-cart"></i></a></li>
-                <li><a href="./sign-in"><i class="fas fa-plus-circle"></i></a></li>
-                <li><a href="./login"><i class="fas fa-user-circle"></i></a></li>
-            </ul>
-        </nav>
-    </header>
+    <%- include('./partials/header') %> 
     <div id="index-banner">
         <img src="./images/book-banner.jpg" alt="">
     </div>
@@ -70,7 +50,7 @@
                     <p class="price">$ 100.000<p>
                 </div>
                 <div id="detalle--carrito">
-                    <button type="submit"><a href="./product-detail">Detalles</a></button>
+                    <button type="submit"><a href="./productDetail">Detalles</a></button>
                     <button type="submit"><a href="./cart">Añadir al Carrito</a></button>
                 </div>
             </article>
@@ -89,7 +69,7 @@
                     <p class="price">$ 100.000<p>
                 </div>
                 <div id="detalle--carrito">
-                    <button type="submit"><a href="./product-detail">Detalles</a></button>
+                    <button type="submit"><a href="./productDetail">Detalles</a></button>
                     <button type="submit"><a href="./cart">Añadir al Carrito</a></button>
                 </div>
             </article>
@@ -108,7 +88,7 @@
                     <p class="price">$ 100.000<p>
                 </div>
                 <div id="detalle--carrito">
-                    <button type="submit"><a href="./product-detail">Detalles</a></button>
+                    <button type="submit"><a href="./productDetail">Detalles</a></button>
                     <button type="submit"><a href="./cart">Añadir al Carrito</a></button>
                 </div>
             </article>
@@ -127,7 +107,7 @@
                     <p class="price">$ 100.000<p>
                 </div>
                 <div id="detalle--carrito">
-                    <button type="submit"><a href="./product-detail">Detalles</a></button>
+                    <button type="submit"><a href="./productDetail">Detalles</a></button>
                     <button type="submit"><a href="./cart">Añadir al Carrito</a></button>
                 </div>
             </article>
@@ -146,7 +126,7 @@
                     <p class="price">$ 100.000<p>
                 </div>
                 <div id="detalle--carrito">
-                    <button type="submit"><a href="./product-detail">Detalles</a></button>
+                    <button type="submit"><a href="./productDetail">Detalles</a></button>
                     <button type="submit"><a href="./cart">Añadir al Carrito</a></button>
                 </div>
             </article>
@@ -165,7 +145,7 @@
                     <p class="price">$ 100.000<p>
                 </div>
                 <div id="detalle--carrito">
-                    <button type="submit"><a href="./product-detail">Detalles</a></button>
+                    <button type="submit"><a href="./productDetail">Detalles</a></button>
                     <button type="submit"><a href="./cart">Añadir al Carrito</a></button>
                 </div>
             </article>
@@ -184,7 +164,7 @@
                     <p class="price">$ 100.000<p>
                 </div>
                 <div id="detalle--carrito">
-                    <button type="submit"><a href="./product-detail">Detalles</a></button>
+                    <button type="submit"><a href="./productDetail">Detalles</a></button>
                     <button type="submit"><a href="./cart">Añadir al Carrito</a></button>
                 </div>
             </article>
@@ -203,7 +183,7 @@
                     <p class="price">$ 100.000<p>
                 </div>
                 <div id="detalle--carrito">
-                    <button type="submit"><a href="./product-detail">Detalles</a></button>
+                    <button type="submit"><a href="./productDetail">Detalles</a></button>
                     <button type="submit"><a href="./cart">Añadir al Carrito</a></button>
                 </div>
             </article>
