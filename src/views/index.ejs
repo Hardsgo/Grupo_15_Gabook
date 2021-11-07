@@ -52,7 +52,7 @@
                             <p class="price">$ <%= libro.price %><p>
                         </div>
                         <div id="detalle--carrito">
-                            <button type="submit"><a href="./productDetail">Detalles</a></button>
+                            <button type="submit"><a href="./productDetail/<%= libro.id %> ">Detalles</a></button>
                             <button type="submit"><a href="./cart">Añadir al Carrito</a></button>
                         </div>
                     </article>
@@ -69,25 +69,7 @@
             <a href="#" id="right"><i class="fas fa-chevron-right"></i></a>
         </div>
     </main>
-
-    <footer>
-        <div id="logo-footer">
-            <img class="logo" src="./images/gabooklogoBlanco1.png" alt="">
-        </div>
-        <div>
-            <h4>También nos puedes encontrar en:</h4>
-            <ul class="redes">
-                <li><i class="fab fa-twitter"></i></li>
-                <li><i class="fab fa-instagram"></i></li>
-                <li><i class="fab fa-facebook-square"></i></li>
-            </ul>
-        </div>
-        <ul id="footer-options">
-            <li><a href="">Inicio</a></li>
-            <li><a href="">Blog</a></li>
-            <li><a href="">Sobre Nosotros</a></li>
-        </ul>
-        <h4>©Gabook 2021 | Todos los derechos reservados</h4>
-    </footer>
+    <!-- footer -->
+    <%- include('./partials/footer') %> 
 </body>
 </html>

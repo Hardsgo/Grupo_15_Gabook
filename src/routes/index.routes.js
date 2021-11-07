@@ -7,7 +7,7 @@ router.get('/', controller.getIndex);
 
 router.get('/login', controller.getLogin);
 
-router.get('/productDetail', controller.getProductDetail);
+router.get('/productDetail/:id', controller.getProductDetail);
 
 router.get('/signIn', controller.getSignIn);
 
