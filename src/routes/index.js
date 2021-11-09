@@ -22,4 +22,8 @@ router.get('/cart', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../views/cart.html'));
 });
 
+router.get('/adminProdcuts', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../views/adminProducts.html'));
+});
+
 module.exports = router;
