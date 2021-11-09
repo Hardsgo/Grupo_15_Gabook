@@ -89,8 +89,8 @@ const controller = {
     getLogin : function(req, res) {
         res.render('./users/login');
     },
-    getAddBook : function(req, res){
-        res.render('./users/add-book');
+    adminProducts : function(req, res){
+        res.render('./users/adminProducts');
     },
     createBook : function(req, res){
         const libroAdded = {
