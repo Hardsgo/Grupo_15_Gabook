@@ -1147,3 +1147,141 @@ h2 {
 
 
 /* ---------------CART------------------------ */
+
+/* ----------------Crear-Prodcucto------------- */
+
+/* ___________LOGIN____________________________ */
+
+.main-adminProdcuts {
+padding: 20px;
+width: 100%;
+
+}
+
+.main-adminProdcuts section form {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.main-adminProdcuts section form div {
+  width: 30%;
+  margin-bottom: 15px;
+}
+
+.main-adminProdcuts section form .description {
+  width: 100%;
+}
+.main-adminProdcuts section form .description textarea {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid rgb(0, 0, 0);
+  height: 100px;
+  padding: 4px;
+
+}
+
+.main-adminProdcuts section form .new-product {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 8px;
+  background-color: rgb(104, 207, 0);
+  margin-bottom: 20px;
+
+}
+
+.main-adminProdcuts section h1 {
+  width: 100%;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgb(209, 209, 209);
+}
+
+.main-adminProdcuts section form div input {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 4px;
+}
+
+.main-adminProdcuts section .search-product-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+border-radius: 6px;
+  width: 70%;
+  border: 1px solid gray;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+
+}
+.main-adminProdcuts section .search-product-form input {
+  width: 80%;
+  border: none;
+  margin-left: 8px;
+  text-decoration: none;
+  padding: 4px;
+  
+  
+}
+
+.main-adminProdcuts section .search-product-form button {
+ 
+  border: none;
+  margin-left: 8px;
+  background-color: rgb(255, 255, 255);
+  
+  
+}
+
+.main-adminProdcuts .editar-producto table {
+  display: block;
+  width: 100%;
+}
+
+.main-adminProdcuts .editar-producto table tbody {
+  width: 100%;
+  display: block;
+}
+.main-adminProdcuts .editar-producto table tbody tr{
+display: block;
+width: 100%;
+border-bottom: 1px solid rgb(167, 167, 167);
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin-bottom: 4px;
+
+}
+
+.main-adminProdcuts .editar-producto table tbody tr td {
+  display: block;
+  width: 30%;
+}
+
+.main-adminProdcuts .editar-producto table tbody tr td button {
+background-color: rgb(113, 226, 0);
+padding: 4px;
+border: none;
+width: 100%;
+border-radius: 6px;
+margin-bottom: 4px;
+}
+
+@media (max-width: 761px) {
+ 
+  .main-adminProdcuts section form div {
+    width: 45%;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 481px) {
+ 
+  .main-adminProdcuts section form div {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

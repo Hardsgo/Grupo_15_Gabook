@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito GaBook</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <%- include('./partials/header') %> 
+  </nav>
+</header>
+    <main class="main-adminProdcuts">
+      <section class="main-crear-producto">
+        <h1>Crear Producto</h1>
+        <form action="#" method="POST">
+          <div>
+            <label for="book-tittle">Titulo del libro:</label>
+            <br />
+            <input type="text" name="tittle" required />
+          </div>
+
+          <div>
+            <label for="book-autor">Autor del libro:</label>
+            <br />
+            <input type="text" name="autor" required />
+          </div>
+
+          <div>
+            <label for="book-editorial">Editorial:</label>
+            <br />
+            <input type="text" name="editorial" required />
+          </div>
+
+          <div>
+            <label for="book-year">Año de publicación:</label>
+            <br />
+            <input type="text" name="year" required />
+          </div>
+
+          <div>
+            <label for="book-gender">Genero:</label>
+            <br />
+            <input type="text" name="genero" required />
+          </div>
+
+          <div>
+            <label for="book-language">Idioma:</label>
+            <br />
+            <input type="text" name="language" required />
+          </div>
+
+          <div>
+            <label for="book-ISBN">ISBN:</label>
+            <br />
+            <input type="text" name="isbn" required />
+          </div>
+
+          <div>
+            <label for="book-id">ID:</label>
+            <br />
+            <input type="number" name="id" required />
+          </div>
+
+          <div>
+            <label for="book-price">Precio:</label>
+            <br />
+            <input type="number" name="precio" required />
+          </div>
+
+          <div>
+            <label for="book-discount">Descuento:</label>
+            <br />
+            <input type="number" name="discount" required />
+          </div>
+
+          <div class="description">
+            <label for="book-description">Descripcion:</label>
+            <br />
+            <textarea name="description"> </textarea>
+          </div>
+
+          <div class="book-image">
+            <label for="book-image">Imagen del libro:</label>
+            <br />
+            <input type="file" name="image" />
+          </div>
+
+          <button class="new-product" type="submit">CREAR PRODUCTO</button>
+        </form>
+      </section>
+      <section class="editar-producto">
+        <h1>Editar Producto</h1>
+        <form class="search-product-form" action="#" method="GET">
+          <button type="submit"><i class="fas fa-search"></i></button>
+          <input
+            type="text"
+            name="name"
+            placeholder="Nombre del libro"
+            required
+          />
+        </form>
+        <table>
+          <tbody>
+            <tr>
+              <td>ID</td>
+              <td>Titulo</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>0001</td>
+              <td>Titulo 1</td>
+              <td><button>Editar</button></td>
+            </tr>
+            <tr>
+              <td>0002</td>
+              <td>Titulo 2</td>
+              <td><button>Editar</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <%- include('./partials/footer') %> 
+  </body>
+</html>
