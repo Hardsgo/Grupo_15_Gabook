@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/normalize.css" />
     <title>Detalle del Producto - GaBook</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
   </head>
   <body>
+
     <header>
       <nav>
           <div>
               <a href="/">
-                  <img class="logo" src="./images/gabooklogoBlanco1.png" alt="">
+                  <img class="logo" src="/images/gabooklogoBlanco1.png" alt="">
               </a>
           </div>
           <form class="search">
@@ -29,32 +30,32 @@
           </ul> -->
           <ul class="user-cart">
               <li><a href="./cart"><i class="fas fa-shopping-cart"></i></a></li>
-              <li><a href="./sign-in"><i class="fas fa-plus-circle"></i></a></li>
+              <li><a href="./signIn"><i class="fas fa-plus-circle"></i></a></li>
               <li><a href="./login"><i class="fas fa-user-circle"></i></a></li>
           </ul>
       </nav>
   </header>
-  
 
     <main class="main-product-detail">
       <section class="main-info-libro">
-        <h1 class="titulo">Cien años de soledad</h1>
-        <h2 class="autor">Gabriel Garcia Marquez - Editorial Sudamericana</h2>
+        <% if (locals.book) { %> 
+        <h1 class="titulo"><%= book.title %></h1>
+        <h2 class="autor"><%= book.author %> - <%= book.editorial %></h2>
         <div class="main-div--img">
-          <img src="./images/cien-anos-de-soledad.gif" alt="Imagen del libro" />
+          <img src="/images/<%= book.image %> " alt="Imagen del libro" />
         </div>
         <article>
-          <h1 class="titulo">Cien años de soledad</h1>
-          <h2 class="autor">Gabriel Garcia Marquez - Editorial Sudamericana</h2>
-          <p class="precio">$ 100.000 COP</p>
+          <h1 class="titulo"><%= book.title %></h1>
+          <h2 class="autor"><%= book.author %> - <%= book.editorial %></h2>
+          <p class="precio">$ <%= book.price %> COP</p>
           <p>Valoración</p>
           <p>10/10</p>
         </article>
         <article class="comprar">
           <input type="number" placeholder="1" />
-          <a href="#"
-            ><i class="fas fa-shopping-cart"></i> Agregar al carrito</a
-          >
+          <a href="#">
+            <i class="fas fa-shopping-cart"></i> Agregar al carrito
+          </a>
           <button>COMPRAR</button>
         </article>
       </section>
@@ -84,7 +85,7 @@
         <table>
           <tr>
             <td>Autor:</td>
-            <td>Gabriel Garcia Marquez</td>
+            <td><%= book.author %></td>
           </tr>
           <tr>
             <td>Género:</td>
@@ -92,7 +93,7 @@
           </tr>
           <tr>
             <td>Editorial:</td>
-            <td>Editorial Gabook</td>
+            <td><%= book.editorial %> </td>
           </tr>
           <tr>
             <td>Año:</td>
@@ -107,6 +108,9 @@
             <td>123456789-1</td>
           </tr>
         </table>
+        <% } else { %>
+          <p>Detalles de libro inexistente</p>
+        <% } %> 
       </section>
       <section class="comentarios">
         <h2>Comentarios</h2>
@@ -130,25 +134,8 @@
       </section>
     </main>
 
-    <footer>
-      <div id="logo-footer">
-        <img class="logo" src="./images/gabooklogoBlanco1.png" alt="" />
-      </div>
-      <div>
-        <h4>También nos puedes encontrar en:</h4>
-        <ul class="redes">
-          <li><i class="fab fa-twitter"></i></li>
-          <li><i class="fab fa-instagram"></i></li>
-          <li><i class="fab fa-facebook-square"></i></li>
-        </ul>
-      </div>
-      <ul id="footer-options">
-        <li><a href="">Inicio</a></li>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Sobre Nosotros</a></li>
-      </ul>
-      <h4>©Gabook 2021 | Todos los derechos reservados</h4>
-    </footer>
+    <!-- footer -->
+    <%- include('../partials/footer') %> 
 
     <!-- <h1>Detalle del producto - Gabook</h1>
     <img src="./images/gabooklogo1.png" alt="" /> -->
