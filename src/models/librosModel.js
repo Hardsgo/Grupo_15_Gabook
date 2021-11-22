@@ -18,7 +18,7 @@ const booksModel = {
     createBook : function(newBook) {
         let books = this.getBooks()
         if(this.exists(newBook.id)) return 'Libro ya existe';
-        books.push(newBook);
+        books.splice(newBook.id, 0, newBook);
         this.writeBookList(books);
         return "Creado satisfactoriamente."
     },
