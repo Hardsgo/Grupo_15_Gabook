@@ -4,9 +4,9 @@
 <%- include('../partials/head', {title : 'Añadir Libro'}) %>
 <!-- HEAD -->
 <body>
-    <form action="/addBook" method="POST">
-        <p>ID:</p>
-        <input type="text" name="id">
+    <form action="/create-book" method="POST">
+        <p>ISBN:</p>
+        <input type="text" name="isbn">
         <p>Titulo del libro:</p>
         <input type="text" name="title">
         <p>Autor:</p>
@@ -23,8 +23,6 @@
         <input type="text" name="price">
         <p>Descuento:</p>
         <input type="text" name="discount">
-        <p>ISBN:</p>
-        <input type="text" name="isbn">
         <p>Descripción:</p>
         <textarea type="text" name="description" placeholder="Escribe la descripción"></textarea>
         <br>

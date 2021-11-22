@@ -1,12 +1,35 @@
-// const fs = require('fs');
-// const path = require('path');
-// const model = require('../models/libros.json')
-const libros = require('../models/libros.js');
+const model = require('../models/librosModel.js');
 
+const libros = model.getBooks();
+
+//crear un ID
+let createId = () => {
+	let ID = 0;
+	libros.forEach((book, index) => {
+		if(book.id == ID) {
+			++ID
+		} else {
+            ID
+        }
+	});
+	return ID;
+}
 
 const controller = {
     getIndex : function(req, res) {
         res.render('index', {libros});
+    },
+    search: (req, res) => {
+		const textToSearch = req.query.keywords;
+		const result = [];
+		libros.forEach((book) => {
+			let lowerBook = book.title.toLowerCase();
+			if (lowerBook.includes(textToSearch.toLowerCase())){
+				result.push(book);
+			} 
+		});
+		// console.log(textToSearch);
+		res.render('results', {result, textToSearch});
     },
     getProductDetail : function(req, res) {
         const {id} = req.params;
@@ -23,38 +46,44 @@ const controller = {
     getLogin : function(req, res) {
         res.render('./users/login');
     },
-    adminProducts : function(req, res){
-        res.render('./users/adminProducts');
+    getCreateBook : function(req, res){
+        res.render('./products/create-book')
     },
-    /* createBook : function(req, res){
-        const libroAdded = {
-            id : req.body.id,
-            title : req.body.title,
-            author : req.body.author,
-            editorial : req.body.editorial,
-            year : req.body.year,
-            language : req.body.language,
-            genre : req.body.genre,
-            price : parseInt(req.body.price),
-            discount : parseInt(req.body.discount),
-            isbn : req.body.isbn,
-            description : req.body.description,
-            image : req.body.image
+    createBook : function(req, res){
+        const id = createId();
+        const newBook = {
+            id,
+            ...req.body
         }
-        //Leer JSON del modelo, guardarlo en variable como objeto
-        // const model = JSON.parse(fs.readFileSync(path.join(__dirname, '../models/libros.json'), 'utf-8'), null, 4);
-        //Agregar el libro agregado al objeto modelo
-        model.push(libroAdded);
-        //Convertir model a objeto JSON
-        const modelJSON = JSON.stringify(model, null, 4);
-        //Escribir el archivo JSON
-        fs.writeFileSync(path.join(__dirname,'../models/libros.json'), modelJSON, function(err){
-            console.log('Añadido');
-        });
-        //Redirigiendo a la pagina
-
-        res.redirect('/addBook');
-    }, */
+        console.log(newBook);
+        model.createBook(newBook);
+        // Redirigiendo a la pagina
+        res.redirect('/create-book');
+    },
+    getUpdateBook : function(req, res){
+        const {id} = req.params;
+        const oldBook = libros.find(book => book.id == id);
+        res.render('./products/edit-book', {oldBook});
+    },
+    updateBook : function(req, res){
+        const {id} = req.params;
+        const oldBook = libros.find(book => book.id == id);
+        const bookEdited = {
+            id: oldBook.id,
+            isbn: oldBook.isbn,
+            ...req.body,
+            image: oldBook.image
+        }
+        console.log(bookEdited);
+        model.updateBook(bookEdited);        
+        res.redirect('/');
+    },
+    deleteBook : function(req, res){
+        const {id} = req.params;
+        model.deleteBook(id);
+        console.log(id);
+        res.redirect('/');
+    },
     getAdminProducts : function(req, res) {
         res.render('adminProducts');
     }
