@@ -13,6 +13,8 @@ router.get('/signIn', controller.getSignIn);
 
 router.get('/cart', controller.getCart);
 
-router.get('/adminProducts', controller.getAdminProducts);
+router.get('/products/create', controller.getAdminProducts);
+
+router.post('/products/:book', controller.getAdminProducts);
 
 module.exports = router;
