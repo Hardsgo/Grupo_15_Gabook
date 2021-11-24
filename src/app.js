@@ -1,16 +1,19 @@
 const express = require('express');
 const path = require('path');
-const color = require('colors');
-const routes = require('./routes/index.routes.js');
+const methodOverride = require('method-override');
 
-const port = process.env.PORT || 3000;
 const app = express();
 
+//Seleccción el motor de plantillas EJS y setear la carpeta de vistas (views)
 app.set('view engine', 'ejs');
 app.set('views', path.resolve(__dirname, 'views'));
-
+//Method override para put y delete
+app.use(methodOverride('_method'));
 app.use(express.static(path.resolve(__dirname, '../public')));
 // app.use(express.static(path.resolve(__dirname, '..', 'public'))); 
+app.use(express.urlencoded({extended : false}));
+app.use(express.json());
 
-app.use('/', routes);
-app.listen(port, () => console.log(`Starting in port ${port}`.bold.magenta));
+app.use('/', require('./routes'));
+
+module.exports = app;

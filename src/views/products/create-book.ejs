@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- HEAD -->
+<%- include('../partials/head', {title : 'Añadir Libro'}) %>
+<!-- HEAD -->
+<body>
+    <form action="/create-book" method="POST">
+        <p>ISBN:</p>
+        <input type="text" name="isbn">
+        <p>Titulo del libro:</p>
+        <input type="text" name="title">
+        <p>Autor:</p>
+        <input type="text" name="author">
+        <p>Editorial:</p>
+        <input type="text" name="editorial">
+        <p>Año de publicación:</p>
+        <input type="text" name="year">
+        <p>Idioma</p>
+        <input type="text" name="language">
+        <p>Género:</p>
+        <input type="text" name="genre">
+        <p>Precio:</p>
+        <input type="text" name="price">
+        <p>Descuento:</p>
+        <input type="text" name="discount">
+        <p>Descripción:</p>
+        <textarea type="text" name="description" placeholder="Escribe la descripción"></textarea>
+        <br>
+        <input type="file" value="Subir" name="image"><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
