@@ -98,6 +98,34 @@
         "image": "la-teoria-del-caos.jpg"
     },
     {
+        "id": 7,
+        "isbn": "12345678-34",
+        "title": "prueba-3",
+        "author": "Jose",
+        "editorial": "Gabook",
+        "year": "2021",
+        "language": "Español",
+        "genre": "Misterio",
+        "price": "38000",
+        "discount": "20",
+        "description": "Prueba de creación de libro",
+        "image": ""
+    },
+    {
+        "id": 8,
+        "isbn": "12345678-34",
+        "title": "titulo prueba",
+        "author": "Jose",
+        "editorial": "Gabook",
+        "year": "2021",
+        "language": "Español",
+        "genre": "Misterio",
+        "price": "38000",
+        "discount": "20",
+        "description": "prueba 3",
+        "image": ""
+    },
+    {
         "id": 9,
         "isbn": "123456789-1",
         "title": "Los Viajes de Gulliver",

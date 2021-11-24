@@ -56,7 +56,7 @@ const controller = {
       ...req.body,
     };
     console.log(newBook);
-    model.createBook(newBook);
+    booksModel.createBook(newBook);
     // Redirigiendo a la pagina
     res.redirect("/create-book");
   },
