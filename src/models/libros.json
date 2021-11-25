@@ -98,6 +98,34 @@
         "image": "la-teoria-del-caos.jpg"
     },
     {
+        "id": 7,
+        "isbn": "12345678-34",
+        "title": "libro 4",
+        "author": "autor 4",
+        "editorial": "Gabook",
+        "year": "2021",
+        "language": "Español",
+        "genre": "Misterio",
+        "price": "38000",
+        "discount": "20",
+        "description": "prueba\"\"",
+        "image": ""
+    },
+    {
+        "id": 8,
+        "isbn": "1234565656-23",
+        "title": "libro 7",
+        "author": "autor 7",
+        "editorial": "Gabook",
+        "year": "2021",
+        "language": "Español",
+        "genre": "Misterio",
+        "price": "38000",
+        "discount": "20",
+        "description": "prueba\"",
+        "image": ""
+    },
+    {
         "id": 9,
         "isbn": "123456789-1",
         "title": "Los Viajes de Gulliver",
