@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- HEAD -->
+  <%- include('../partials/head', {title : 'Añadir Libro'}) %>
+  <!-- HEAD -->
+  <body>
+    <header>
+      <nav><%- include('../partials/header') %></nav>
+    </header>
+    <main class="main-adminProdcuts">
+      <section class="main-crear-producto">
+        <h1>Crear Producto</h1>
+        <form action="/create-book" method="POST">
+          <div>
+            <p>ISBN:</p>
+            <input type="text" name="isbn" />
+          </div>
+          <div>
+            <p>Titulo del libro:</p>
+            <input type="text" name="title" />
+          </div>
+          <div>
+            <p>Autor:</p>
+            <input type="text" name="author" />
+          </div>
+          <div>
+            <p>Editorial:</p>
+            <input type="text" name="editorial" />
+          </div>
+          <div>
+            <p>Año de publicación:</p>
+            <input type="text" name="year" />
+          </div>
+          <div>
+            <p>Idioma</p>
+            <input type="text" name="language" />
+          </div>
+          <div>
+            <p>Género:</p>
+            <input type="text" name="genre" />
+          </div>
+          <div>
+            <p>Precio:</p>
+            <input type="text" name="price" />
+          </div>
+          <div>
+            <p>Descuento:</p>
+            <input type="text" name="discount" />
+          </div>
+          <div class="description">
+            <p>Descripción:</p>
+            <textarea
+              type="text"
+              name="description"
+              placeholder="Escribe la descripción"
+            ></textarea>
+          </div>
+          <br />
+          <input type="file" value="Subir" name="image" /><br />
+          <input class="new-product" type="submit" value="Enviar" />
+        </form>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

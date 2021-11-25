@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <%- include('./partials/head') %>
-    <title>Carrito GaBook</title>
-  </head>
+  <!-- HEAD -->
+  <%- include('./partials/head', {title : 'Carrito'}) %>
+  <!-- HEAD -->
   <body>
     <header>
       <nav>
@@ -71,7 +70,7 @@
           <div>
             <label for="book-discount">Descuento:</label>
             <br />
-            <input type="number" name="discount" required />
+            <input type="number" name="discount"  />
           </div>
 
           <div class="description">
@@ -121,6 +120,6 @@
         </table>
       </section>
     </main>
-    <%- include('./partials/footer') %> 
+    <%- include('./partials/footer') %>
   </body>
 </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- HEAD -->
+  <%- include('../partials/head', {title : 'Listado de libros'}) %>
+  <!-- HEAD -->
+  <body>
+    <header>
+      <nav><%- include('../partials/header') %></nav>
+    </header>
+    <main class="main-adminProdcuts">
+      <h1>Listado de Libros</h1>
+      <section class="editar-producto">
+        <h1>Editar/Eliminar Producto</h1>
+        <!-- <form class="search-product-form" action="#" method="GET">
+          <button type="submit"><i class="fas fa-search"></i></button>
+          <input
+            type="text"
+            name="name"
+            placeholder="Nombre del libro"
+            required
+          />
+        </form> -->
+        <table>
+          <tbody>
+            <tr>
+              <td>ID</td>
+              <td>Titulo</td>
+              <td class="author">Autor</td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <% if(locals.libros && libros.length) { %> <% libros.forEach(libro=>
+            { %>
+            <tr>
+              <td><p><%= libro.id %></p></td>
+              <td class="tittle"><p><%= libro.title %></p></td>
+              <td class="author"><p><%= libro.author %></p></td>
+              <td>
+                <button class="edit" type="submit">
+                  <a href="./edit-book/<%= libro.id %> ">Editar</a>
+                </button>
+              </td>
+              <td>
+                <form action="/<%= libro.id %>?_method=DELETE" method="POST">
+                  <button class="delete">Eliminar</button>
+                </form>
+              </td>
+            </tr>
+            <% }); %> <% } else { %>
+            <h4>No se encontraron datos de los libros</h4>
+            <% } %>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

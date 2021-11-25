@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <%- include('../partials/head') %>
-    <title>Detalle del Producto - GaBook</title>
-  </head>
-  <body>
-
+    <!-- HEAD -->
+    <%- include('../partials/head', {title : 'Detalle del Producto'}) %>
+    <!-- HEAD -->
+    <body>
     <header>
       <nav>
         <%- include('../partials/header') %> 
@@ -39,23 +37,7 @@
         <article class="sipnosis">
           <h2>Sipnosis</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
-            ducimus magnam. Adipisci neque minus ut? Qui dolore illum tempora
-            amet. Ipsam unde inventore ut harum tenetur corrupti praesentium
-            tempora doloremque. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Facere voluptatem amet ratione qui, accusantium
-            blanditiis iusto vitae earum, quaerat nemo est illo ab maiores eius
-            architecto, esse exercitationem quos harum. Lorem ipsum dolor sit,
-            amet consectetur adipisicing elit. Officiis corrupti inventore iusto
-            adipisci eaque at qui nemo excepturi aliquam, itaque alias delectus
-            sit maiores laboriosam harum obcaecati, laborum voluptatibus quam.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-            rem officiis eligendi nostrum nihil. Odit fugiat earum molestias,
-            eaque fugit quam alias aliquid adipisci veritatis consectetur.
-            Impedit vitae praesentium amet. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Dolorem ipsum enim quidem perferendis
-            eligendi similique veniam officia necessitatibus a tenetur! Illum
-            quia assumenda sit itaque voluptatem a totam soluta accusantium!
+            <%= book.description %> 
           </p>
         </article>
         <table>
@@ -65,7 +47,7 @@
           </tr>
           <tr>
             <td>Género:</td>
-            <td>Literatura</td>
+            <td><%= book.genre %> </td>
           </tr>
           <tr>
             <td>Editorial:</td>
@@ -73,15 +55,15 @@
           </tr>
           <tr>
             <td>Año:</td>
-            <td>2021</td>
+            <td><%= book.year %> </td>
           </tr>
           <tr>
             <td>Idioma:</td>
-            <td>Español</td>
+            <td><%= book.language %> </td>
           </tr>
           <tr>
             <td>ISBN:</td>
-            <td>123456789-1</td>
+            <td><%= book.isbn %> </td>
           </tr>
         </table>
         <% } else { %>

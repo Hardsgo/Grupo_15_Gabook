@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- HEAD -->
-<%- include('./partials/head', {title : 'Home'}) %>
+<%- include('./partials/head', {title : 'Resultados de la búsqueda'}) %>
 <!-- HEAD -->
 <body class="index-body">
     <header>
@@ -33,10 +33,10 @@
                 <a href="#" id="right"><i class="fas fa-chevron-right"></i></a>
             </div>
         </div>
-        <h2>LIBROS GABOOK</h2>
+        <h2>RESULTADOS DE LA BÚSQUEDA: <span style="margin-left: 20px; font-style: italic;"><%= textToSearch %></span></h2> 
         <section>
-            <% if(locals.libros && libros.length) { %>
-                <% libros.forEach(libro => { %>
+            <% if(locals.result && result.length) { %>
+                <% result.forEach(libro => { %>
                     <article>
                         <img src="./images/<%= libro.image %>" alt="">
                         <div class="details">
@@ -58,7 +58,9 @@
                     </article>
                 <% }); %> 
             <% } else { %>
-                <h4>No se encontraron datos de los libros</h4>
+                <div style="padding: 50px;">
+                    <h3 style="color: crimson; font-style: italic;">No se encontraron datos de los libros</h4>
+                </div>
             <% } %> 
         </section>
         <div class="pagination" id="pag-down">
