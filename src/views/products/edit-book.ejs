@@ -20,43 +20,52 @@
             <input type="text" name="author" value="<%= oldBook.author %>" />
           </div>
           <div>
-          <p>Editorial:</p>
-          <input
-            type="text"
-            name="editorial"
-            value="<%= oldBook.editorial %>"
-          />
-        </div>
-        <div>
-          <p>Año de publicación:</p>
-          <input type="text" name="year" value="<%= oldBook.year %>" />
-        </div>
-        <div>
-          <p>Idioma</p>
-          <input type="text" name="language" value="<%= oldBook.language %>" />
-        </div>
-        <div>
-          <p>Género:</p>
-          <input type="text" name="genre" value="<%= oldBook.genre %>" />
-        </div>
-        <div>
-          <p>Precio:</p>
-          <input type="text" name="price" value="<%= oldBook.price %>" />
-        </div>
-        <div>
-          <p>Descuento:</p>
-          <input type="text" name="discount" value="<%= oldBook.discount %>" />
-        </div>
-        <div class="description">
-          <p>Descripción:</p>
-          <textarea
-            type="text"
-            name="description"
-            placeholder="Escribe la descripción"
-          >
+            <p>Editorial:</p>
+            <input
+              type="text"
+              name="editorial"
+              value="<%= oldBook.editorial %>"
+            />
+          </div>
+          <div>
+            <p>Año de publicación:</p>
+            <input type="text" name="year" value="<%= oldBook.year %>" />
+          </div>
+          <div>
+            <p>Idioma</p>
+            <input
+              type="text"
+              name="language"
+              value="<%= oldBook.language %>"
+            />
+          </div>
+          <div>
+            <p>Género:</p>
+            <input type="text" name="genre" value="<%= oldBook.genre %>" />
+          </div>
+          <div>
+            <p>Precio:</p>
+            <input type="text" name="price" value="<%= oldBook.price %>" />
+          </div>
+          <div>
+            <p>Descuento:</p>
+            <input
+              type="text"
+              name="discount"
+              value="<%= oldBook.discount %>"
+            />
+          </div>
+          <div class="description">
+            <p>Descripción:</p>
+            <textarea
+              type="text"
+              name="description"
+              placeholder="Escribe la descripción"
+            >
 <%= oldBook.description %>"</textarea
-          >
-        </div>
+            >
+          </div>
+          <input type="file" value="Subir" name="image" /><br />
           <input class="edit-product" type="submit" value="Editar" />
         </form>
         <form action="/<%= oldBook.id %>?_method=DELETE" method="POST">
