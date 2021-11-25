@@ -5,7 +5,7 @@ const libros = booksModel.getBooks();
 //crear un ID
 let createId = () => {
   let ID = 0;
-  libros.forEach((book, index) => {
+  booksModel.getBooks().forEach((book, index) => {
     if (book.id == ID) {
       ++ID;
     } else {
@@ -28,7 +28,7 @@ const controller = {
   search: (req, res) => {
     const textToSearch = req.query.keywords;
     const result = [];
-    libros.forEach((book) => {
+    booksModel.getBooks().forEach((book) => {
       let lowerBook = book.title.toLowerCase();
       if (lowerBook.includes(textToSearch.toLowerCase())) {
         result.push(book);
@@ -69,13 +69,13 @@ const controller = {
   getUpdateBook: function (req, res) {
     const { id } = req.params;
     
-    const oldBook = libros.find((book) => book.id == id);
+    const oldBook = booksModel.getBooks().find((book) => book.id == id);
     // console.log (oldBook)
     res.render("./products/edit-book", { oldBook });
   },
   updateBook: function (req, res) {
     const { id } = req.params;
-    const oldBook = libros.find((book) => book.id == id);
+    const oldBook = booksModel.getBooks().find((book) => book.id == id);
     const bookEdited = {
       id: oldBook.id,
       isbn: oldBook.isbn,
