@@ -16,6 +16,10 @@ router.post('/create-book', main.createBook);
 router.get('/edit-book/:id', main.getUpdateBook);
 router.put('/edit-book/:id', main.updateBook);
 router.delete('/:id', main.deleteBook);
-router.get('/adminProducts', main.getAdminProducts);
+// router.get('/adminProducts', main.getAdminProducts);
+
+//Listado de Productos
+router.get('/products', main.getProducts)
+
 
 module.exports = router;

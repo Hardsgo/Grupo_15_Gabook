@@ -19,6 +19,12 @@ const controller = {
   getIndex: function (req, res) {
     res.render("index", { libros: booksModel.getBooks() });
   },
+
+  getProducts: function (req, res) {
+    res.render("./products/list-of-books", { libros: booksModel.getBooks() });
+  },
+
+  
   search: (req, res) => {
     const textToSearch = req.query.keywords;
     const result = [];
@@ -58,7 +64,7 @@ const controller = {
     console.log(newBook);
     booksModel.createBook(newBook);
     // Redirigiendo a la pagina
-    res.redirect("/create-book");
+    res.redirect("/products");
   },
   getUpdateBook: function (req, res) {
     const { id } = req.params;
@@ -75,14 +81,16 @@ const controller = {
       image: oldBook.image,
     };
     console.log(bookEdited);
-    model.updateBook(bookEdited);
-    res.redirect("/");
+    booksModel.updateBook(bookEdited);
+    // res.redirect("/");
+    res.redirect("/products");
   },
   deleteBook: function (req, res) {
     const { id } = req.params;
-    model.deleteBook(id);
+    booksModel.deleteBook(id);
     console.log(id);
-    res.redirect("/");
+    // res.redirect("/");
+    res.redirect("/products");
   },
   getAdminProducts: function (req, res) {
     res.render("adminProducts");

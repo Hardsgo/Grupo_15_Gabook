@@ -1,33 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- HEAD -->
-<%- include('../partials/head', {title : 'Editar Libro'}) %>
-<!-- HEAD -->
-<body>
-    <form action="/edit-book/<%= oldBook.id %>?_method=PUT" method="POST">
-        <p>Titulo del libro:</p>
-        <input type="text" name="title" value="<%= oldBook.title %>">
-        <p>Autor:</p>
-        <input type="text" name="author" value="<%= oldBook.author %>">
-        <p>Editorial:</p>
-        <input type="text" name="editorial" value="<%= oldBook.editorial %>">
-        <p>Año de publicación:</p>
-        <input type="text" name="year" value="<%= oldBook.year %>">
-        <p>Idioma</p>
-        <input type="text" name="language" value="<%= oldBook.language %>">
-        <p>Género:</p>
-        <input type="text" name="genre" value="<%= oldBook.genre %>">
-        <p>Precio:</p>
-        <input type="text" name="price" value="<%= oldBook.price %>">
-        <p>Descuento:</p>
-        <input type="text" name="discount" value="<%= oldBook.discount %>">
-        <p>Descripción:</p>
-        <textarea type="text" name="description" placeholder="Escribe la descripción"><%= oldBook.description %>"</textarea>
-        <br>
-        <input type="submit" value="Editar">
-    </form>
-    <form action="/<%= oldBook.id %>?_method=DELETE" method="POST">
-        <button>Eliminar Libro</button>
-    </form>
-</body>
+  <!-- HEAD -->
+  <%- include('../partials/head', {title : 'Editar Libro'}) %>
+  <!-- HEAD -->
+  <body>
+    <header>
+      <nav><%- include('../partials/header') %></nav>
+    </header>
+    <main class="main-adminProdcuts">
+      <section class="main-crear-producto">
+        <h1>Editar Libro</h1>
+        <form action="/edit-book/<%= oldBook.id %>?_method=PUT" method="POST">
+          <div>
+            <p>Titulo del libro:</p>
+            <input type="text" name="title" value="<%= oldBook.title %>" />
+          </div>
+          <div>
+            <p>Autor:</p>
+            <input type="text" name="author" value="<%= oldBook.author %>" />
+          </div>
+          <div>
+          <p>Editorial:</p>
+          <input
+            type="text"
+            name="editorial"
+            value="<%= oldBook.editorial %>"
+          />
+        </div>
+        <div>
+          <p>Año de publicación:</p>
+          <input type="text" name="year" value="<%= oldBook.year %>" />
+        </div>
+        <div>
+          <p>Idioma</p>
+          <input type="text" name="language" value="<%= oldBook.language %>" />
+        </div>
+        <div>
+          <p>Género:</p>
+          <input type="text" name="genre" value="<%= oldBook.genre %>" />
+        </div>
+        <div>
+          <p>Precio:</p>
+          <input type="text" name="price" value="<%= oldBook.price %>" />
+        </div>
+        <div>
+          <p>Descuento:</p>
+          <input type="text" name="discount" value="<%= oldBook.discount %>" />
+        </div>
+        <div class="description">
+          <p>Descripción:</p>
+          <textarea
+            type="text"
+            name="description"
+            placeholder="Escribe la descripción"
+          >
+<%= oldBook.description %>"</textarea
+          >
+        </div>
+          <input class="edit-product" type="submit" value="Editar" />
+        </form>
+        <form action="/<%= oldBook.id %>?_method=DELETE" method="POST">
+          <button class="delete-product">Eliminar Libro</button>
+        </form>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
 </html>

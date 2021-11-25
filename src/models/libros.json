@@ -98,34 +98,6 @@
         "image": "la-teoria-del-caos.jpg"
     },
     {
-        "id": 7,
-        "isbn": "12345678-34",
-        "title": "prueba-3",
-        "author": "Jose",
-        "editorial": "Gabook",
-        "year": "2021",
-        "language": "Español",
-        "genre": "Misterio",
-        "price": "38000",
-        "discount": "20",
-        "description": "Prueba de creación de libro",
-        "image": ""
-    },
-    {
-        "id": 8,
-        "isbn": "12345678-34",
-        "title": "titulo prueba",
-        "author": "Jose",
-        "editorial": "Gabook",
-        "year": "2021",
-        "language": "Español",
-        "genre": "Misterio",
-        "price": "38000",
-        "discount": "20",
-        "description": "prueba 3",
-        "image": ""
-    },
-    {
         "id": 9,
         "isbn": "123456789-1",
         "title": "Los Viajes de Gulliver",
@@ -134,9 +106,9 @@
         "year": "2021",
         "language": "Español",
         "genre": "Literatura",
-        "price": 40000,
-        "discount": "0",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, ducimus magnam. Adipisci neque minus ut? Qui dolore illum tempora amet. Ipsam unde inventore ut harum tenetur corrupti praesentium tempora doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatem amet ratione qui, accusantium blanditiis iusto vitae earum, quaerat nemo est illo ab maiores eius architecto, esse exercitationem quos harum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis corrupti inventore iusto adipisci eaque at qui nemo excepturi aliquam, itaque alias delectus sit maiores laboriosam harum obcaecati, laborum voluptatibus quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem officiis eligendi nostrum nihil. Odit fugiat earum molestias, eaque fugit quam alias aliquid adipisci veritatis consectetur. Impedit vitae praesentium amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsum enim quidem perferendis eligendi similique veniam officia necessitatibus a tenetur! Illum quia assumenda sit itaque voluptatem a totam soluta accusantium! ",
+        "price": "40000",
+        "discount": "80",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, ducimus magnam. Adipisci neque minus ut? Qui dolore illum tempora amet. Ipsam unde inventore ut harum tenetur corrupti praesentium tempora doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatem amet ratione qui, accusantium blanditiis iusto vitae earum, quaerat nemo est illo ab maiores eius architecto, esse exercitationem quos harum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis corrupti inventore iusto adipisci eaque at qui nemo excepturi aliquam, itaque alias delectus sit maiores laboriosam harum obcaecati, laborum voluptatibus quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem officiis eligendi nostrum nihil. Odit fugiat earum molestias, eaque fugit quam alias aliquid adipisci veritatis consectetur. Impedit vitae praesentium amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsum enim quidem perferendis eligendi similique veniam officia necessitatibus a tenetur! Illum quia assumenda sit itaque voluptatem a totam soluta accusantium! \"\"\"",
         "image": "Los-viajes-de-Gulliver-Jonathan-Swift.jpg"
     }
 ]
