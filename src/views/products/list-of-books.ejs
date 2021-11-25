@@ -37,9 +37,14 @@
               <td class="tittle"><p><%= libro.title %></p></td>
               <td class="author"><p><%= libro.author %></p></td>
               <td>
-                <button class="edit" type="submit">
+                <!-- <button class="edit" type="submit">
                   <a href="./edit-book/<%= libro.id %> ">Editar</a>
-                </button>
+                </button> -->
+                <form action="./edit-book/<%= libro.id %>" method="GET">
+                  <button class="edit" type="submit">
+                    <p>Editar</p>
+                  </button>
+                </form>
               </td>
               <td>
                 <form action="/<%= libro.id %>?_method=DELETE" method="POST">
