@@ -1298,7 +1298,13 @@ h2 {
   transition: 0.3s;
   width: 95%;
 }
-.main-adminProdcuts .editar-producto table tbody tr td .delete {
+
+.main-adminProdcuts .editar-producto table tbody tr td form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.main-adminProdcuts .editar-producto table tbody tr td form .delete {
   background-color: rgb(209, 0, 0);
   padding: 4px;
   border: none;
@@ -1306,7 +1312,7 @@ h2 {
   border-radius: 6px;
   margin: 4px;
 }
-.main-adminProdcuts .editar-producto table tbody tr td .delete:hover {
+.main-adminProdcuts .editar-producto table tbody tr td form .delete:hover {
   background-color: rgb(255, 0, 0);
   transition: 0.3s;
   width: 95%;
