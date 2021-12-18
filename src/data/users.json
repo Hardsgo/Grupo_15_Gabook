@@ -1,0 +1,26 @@
+[
+    {
+        "id": 0,
+        "name": "Jose Andres Salcedo Parada",
+        "login-passwd": "1234",
+        "image": "1639852052871_img_.jpg"
+    },
+    {
+        "id": 1,
+        "user": "Harold",
+        "password": 1234,
+        "admin": 1
+    },
+    {
+        "id": 1,
+        "user": "Diego",
+        "password": 5678,
+        "admin": 0
+    },
+    {
+        "id": 1,
+        "user": "Jose",
+        "password": 9012,
+        "admin": 0
+    }
+]

@@ -46,20 +46,17 @@ const controller = {
   getCart: function (req, res) {
     res.render("./products/cart");
   },
-  getSignIn: function (req, res) {
-    res.render("./users/sign-in");
-  },
-  getLogin: function (req, res) {
-    res.render("./users/login");
-  },
+
   getCreateBook: function (req, res) {
     res.render("./products/create-book");
   },
   createBook: function (req, res) {
     const id = createId();
+    let image = req.file.filename
     const newBook = {
       id,
       ...req.body,
+      image,
     };
     console.log(newBook);
     booksModel.createBook(newBook);
