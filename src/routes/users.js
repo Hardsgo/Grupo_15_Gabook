@@ -3,8 +3,20 @@ const router = express.Router();
 const multer = require("multer");
 const { users} = require("../controllers/index");
 const path = require('path');
-// const {body} = require ('express-validator')
+const {body} = require ('express-validator')
 
+
+//-Validaciones
+
+const validateResgisterUser = [
+    body('name').notEmpty().withMessage('Debes colocar un nombre mayor a cuatro caracteres'),
+    body('login-passwd').notEmpty().withMessage('Debes colocar una contraseña'),
+    // body('email').isEmail().withMessage('Debes colocar correo valido'),
+]
+
+
+
+//-Validaciones
 
 
 // --------------multer--------------------
@@ -21,7 +33,7 @@ const uploadFile = multer({ storage });
 
 router.get("/login", users.getLogin);
 router.get("/signIn", users.getSignIn);
-router.post("/signIn", uploadFile.single('login-image'),users.createUser);
+router.post("/signIn", uploadFile.single('login-image'), validateResgisterUser, users.createUser);
 
 
 

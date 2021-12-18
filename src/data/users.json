@@ -12,6 +12,24 @@
         "admin": 1
     },
     {
+        "id": 2,
+        "name": "",
+        "login-passwd": "",
+        "image": "1639853675340_img_.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Jose Andres Salcedo Parada",
+        "login-passwd": "1234",
+        "image": "1639859094659_img_.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Jose Andres Salcedo Parada",
+        "login-passwd": "12345",
+        "image": "1639859142251_img_.jpg"
+    },
+    {
         "id": 1,
         "user": "Diego",
         "password": 5678,
