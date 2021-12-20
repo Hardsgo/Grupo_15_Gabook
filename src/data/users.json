@@ -1,44 +1,22 @@
 [
     {
         "id": 0,
-        "name": "Jose Andres Salcedo Parada",
-        "login-passwd": "1234",
-        "image": "1639852052871_img_.jpg"
+        "name": "Jose Salcedo",
+        "loginPasswd": "1234",
+        "image": "1640029429106_img_.jpg"
     },
     {
         "id": 1,
         "user": "Harold",
         "password": 1234,
+        "image": "1640029429106_img_.jpg",
         "admin": 1
     },
     {
         "id": 2,
-        "name": "",
-        "login-passwd": "",
-        "image": "1639853675340_img_.jpg"
-    },
-    {
-        "id": 3,
-        "name": "Jose Andres Salcedo Parada",
-        "login-passwd": "1234",
-        "image": "1639859094659_img_.jpg"
-    },
-    {
-        "id": 4,
-        "name": "Jose Andres Salcedo Parada",
-        "login-passwd": "12345",
-        "image": "1639859142251_img_.jpg"
-    },
-    {
-        "id": 1,
         "user": "Diego",
         "password": 5678,
-        "admin": 0
-    },
-    {
-        "id": 1,
-        "user": "Jose",
-        "password": 9012,
+        "image": "1640029429106_img_.jpg",
         "admin": 0
     }
 ]

@@ -1363,3 +1363,8 @@ h2 {
   text-decoration: none;
   font-size: 28px;
 }
+
+.sign-in-error-text{
+  color: rgb(138, 0, 0);
+  font-weight: bold;
+}

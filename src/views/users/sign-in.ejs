@@ -11,36 +11,33 @@
         </div>
         <img src="./images/gabooklogo1.png" alt="" />
         <h2>¡Bienvenido! Registrate:</h2>
-        <% if (locals.errors) { errors.forEach(error => {%>
-        <p><%= error.msg%></p>
-        <%}) }%>
+
         <form action="/signIn" method="POST" enctype="multipart/form-data">
           <p>
             <label for="login-user">Usuario: *</label>
             <br />
-            <input type="text" name="name" minlength="3" />
+            <input type="text" name="name" minlength="3" value="<%=locals.oldData ? oldData.name : null %>"/>
+            <% if (locals.errors && errors.name ) {%>
+              <p class="sign-in-error-text"><%= errors.name.msg%></p>
+              <%}%>
           </p>
           <br />
           <p>
             <label for="login-passwd">Contraseña: *</label>
             <br />
-            <input type="password" name="login-passwd" id="login-passwd" />
+            <input type="password" name="loginPasswd" id="login-passwd" />
+            <% if (locals.errors && errors.loginPasswd ) {%>
+              <p class="sign-in-error-text"><%= errors.loginPasswd.msg%></p>
+              <%}%>
           </p>
           <br />
-          <!-- <p>
-            <label for="login-passwd">Confirmar contraseña: *</label>
-            <br />
-            <input
-              type="password"
-              name="login-passwd"
-              id="login-passwd"
-              required
-            />
-          </p> -->
           <p>
             <label for="login-image">Imagen:</label>
             <br />
-            <input type="file" name="login-image" id="login-image" />
+            <input type="file" name="loginImage" id="login-image" />
+            <% if (locals.errors && errors.loginImage) {%>
+              <p class="sign-in-error-text"><%= errors.loginImage.msg%></p>
+              <%}%>
           </p>
           <button type="submit">Registrarme</button>
         </form>

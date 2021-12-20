@@ -9,15 +9,23 @@ const {body} = require ('express-validator')
 //-Validaciones
 
 const validateResgisterUser = [
-    body('name').notEmpty().withMessage('Debes colocar un nombre mayor a cuatro caracteres'),
-    body('login-passwd').notEmpty().withMessage('Debes colocar una contraseña'),
+    body('name').notEmpty().withMessage('Debes escribir un nombre mayor a cuatro caracteres'),
+    body('loginPasswd').isLength({ min: 6 }).withMessage('Debes escribir una contraseña con minimo 6 caracteres'),
     // body('email').isEmail().withMessage('Debes colocar correo valido'),
+    body('loginImage').custom((value,{req}) =>{
+      let file = req.file;
+      let acceptedExtensions = ['.jpg', '.png', '.gif'];
+      if (!file){
+        throw new Error('Debes que subir una imagen');
+      }else{
+        let fileExtension = path.extname(file.originalname)
+        if (!acceptedExtensions.includes(fileExtension)){
+          throw new Error('Las extensiones de archivos son .jpg, .png, .gif');
+        }
+      }
+      return true;
+    })
 ]
-
-
-
-//-Validaciones
-
 
 // --------------multer--------------------
 const storage = multer.diskStorage({
@@ -25,7 +33,8 @@ const storage = multer.diskStorage({
       cb(null, path.resolve(__dirname, "../../public/images/users"));
     },
     filename: function (req, file, cb) {
-      cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);
+      let filename = `${Date.now()}_img_${path.extname(file.originalname)}`
+      cb(null, filename);
     },
   });
 const uploadFile = multer({ storage });
@@ -33,7 +42,8 @@ const uploadFile = multer({ storage });
 
 router.get("/login", users.getLogin);
 router.get("/signIn", users.getSignIn);
-router.post("/signIn", uploadFile.single('login-image'), validateResgisterUser, users.createUser);
+router.post("/signIn", uploadFile.single('loginImage'), validateResgisterUser, users.createUser);
+
 
 
 

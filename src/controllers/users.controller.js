@@ -38,10 +38,15 @@ const usersController = {
       };
       console.log(newUser);
       usersModel.createUser(newUser);
+      
       res.redirect("/login");
       // res.send(newUser)
     } else {
-        res.render("./users/sign-in",{errors:errors.array()});
+      
+      res.render("./users/sign-in", { 
+        errors: errors.mapped() ,
+        oldData: req.body
+      });
     }
   },
 };

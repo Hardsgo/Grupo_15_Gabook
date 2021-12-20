@@ -12,6 +12,10 @@
         <img src="./images/gabooklogo1.png" alt="" />
         <h2>¡Hola Bienvenido! Inicia tu Sesión:</h2>
         <form action="/login" method="POST">
+          <% if (locals.data ) {%>
+            <p ><%= data.name%></p>
+            <%}%>
+          <br>
           <p>
             <label for="login-user">Nombre de usuario:</label>
             <br />
