@@ -1341,3 +1341,37 @@ h2 {
     justify-content: center; */
   }
 }
+
+.main-404 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.main-404 h2 {
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.main-404 h1 {
+  text-align: center;
+  text-decoration: none;
+  font-size: 28px;
+}
+
+.sign-in-error-text{
+  color: rgb(138, 0, 0);
+  font-weight: bold;
+}
+
+.header-login-image{
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}

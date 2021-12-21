@@ -1,8 +1,37 @@
+<header>
+  <nav>
+    <div>
+      <a href="/">
+        <img class="logo" src="/images/gabooklogoBlanco1.png" alt="" />
+      </a>
+    </div>
+    <form class="search" action="/search" method="GET">
+      <input
+        type="search"
+        name="keywords"
+        placeholder="  Búsqueda..."
+        id="search-bar"
+      />
+      <i class="fas fa-search"></i>
+    </form>
+    <ul class="user-cart">
+      <li>
+        <a href="./cart"><i class="fas fa-shopping-cart"></i></a>
+      </li>
+
+      <% if (locals.isLogged ) {%>
+      <li><p><%= locals.userLogged.name%></p></li>
+      <%}%> 
+      <% if (locals.isLogged ) {%>
+      <li>
         <div>
-            <a href="/">
-                <img class="logo" src="/images/gabooklogoBlanco1.png" alt="">
-            </a>
+          <img
+            class="header-login-image"
+            src="/images/users/<%= locals.userLogged.image%>"
+            alt="ImageProfile"
+          />
         </div>
+<<<<<<< HEAD
         <form class="search" action="/search" method="GET">
             <input type="search" name="keywords" placeholder="  Búsqueda..." id="search-bar">
             <i class="fas fa-search"></i>
@@ -13,3 +42,23 @@
             <li><a href="./login"><i class="fas fa-user-circle"></i></a></li>
         </ul>
 
+=======
+      </li>
+      <%}%> 
+      <% if (locals.isLogged ) {%>
+      <li>
+        <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+      </li>
+      <%}%> <% if (!locals.isLogged ) {%>
+      <li>
+        <a href="/signIn"><i class="fas fa-plus-circle"></i></a>
+      </li>
+      <%}%> <% if (!locals.isLogged ) {%>
+      <li>
+        <a href="/login"><i class="fas fa-user-circle"></i></a>
+      </li>
+      <%}%>
+    </ul>
+  </nav>
+</header>
+>>>>>>> dev

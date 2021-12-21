@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- HEAD -->
-<%- include('../partials/head', {title : 'Inicio de Sesión'}) %>
-<!-- HEAD -->
-<body id="body-login">
+  <!-- HEAD -->
+  <%- include('../partials/head', {title : 'Inicio de Sesión'}) %>
+  <!-- HEAD -->
+  <body id="body-login">
     <main id="main-login">
-        <div class="cuadro-login">
-            <div class="login-atras">
-                <a href="/"><i class="fas fa-arrow-circle-left"></i>Atrás</a>
-                
-            </div>
-            <img src="./images/gabooklogo1.png" alt="">
-            <h2>¡Hola Bienvenido! Inicia tu Sesión:</h2>
-            <form action="/login" method="POST">
-                <p>
-                    <label for="login-user">Nombre de usuario:</label>
-                    <br>
-                    <input type="text" name="name" minlength="2" required>
-                </p>
-                <br>
-                <p>
-                    <label for="login-passwd">Contraseña:</label>
-                    <br>
-                    <input type="password" name="login-passwd" id="login-passwd" required>
-                </p>
-                <button type="submit">Ingresa</button>
-            </form>
-            <div class="sin-cuenta">
-                <p>
-                    <a href="#">¿Olvidaste tu contrasña?</a>
-                </p>
-                <br>
-                <p>
-                    ¿No estás registrado(a)? <a href="./signIn">Regístrare en GaBook</a>
-                </p>
-            </div>
+      <div class="cuadro-login">
+        <div class="login-atras">
+          <a href="/"><i class="fas fa-arrow-circle-left"></i>Atrás</a>
         </div>
-        
+        <img src="./images/gabooklogo1.png" alt="" />
+        <h2>¡Hola Bienvenido! Inicia tu Sesión:</h2>
+        <form action="/login" method="POST">
+          <% if (locals.data ) {%>
+            <p ><%= data.name%></p>
+            <%}%>
+          <br>
+          <p>
+            <label for="login-user">Nombre de usuario:</label>
+            <br />
+            <input type="text" name="name" value="<%=locals.oldData ? oldData.name : null %>"/>
+            <% if (locals.errors && errors.name ) {%>
+              <p class="sign-in-error-text"><%= errors.name.msg%></p>
+              <%}%>
+          </p>
+          <br />
+          <p>
+            <label for="loginPasswd">Contraseña:</label>
+            <br />
+            <input
+              type="password"
+              name="loginPasswd"
+              id="login-passwd"
+            />
+            <% if (locals.errors && errors.loginPasswd ) {%>
+              <p class="sign-in-error-text"><%= errors.loginPasswd.msg%></p>
+              <%}%>
+          </p>
+          <br />
+
+          <button type="submit">Ingresa</button>
+        </form>
+        <div class="sin-cuenta">
+          <p>
+            <a href="#">¿Olvidaste tu contrasña?</a>
+          </p>
+          <br />
+          <p>
+            ¿No estás registrado(a)? <a href="./signIn">Regístrare en GaBook</a>
+          </p>
+        </div>
+      </div>
     </main>
-</body>
+  </body>
 </html>

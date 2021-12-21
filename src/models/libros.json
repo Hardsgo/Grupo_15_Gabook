@@ -2,8 +2,13 @@
     {
         "id": 0,
         "isbn": "123456789-1",
+<<<<<<< HEAD
         "title": "Cien Años de Soledad",
         "author": "Gabriel García Márquez ",
+=======
+        "title": "Cien Años de Soledad-2022",
+        "author": "Gabriel García Márquez - GaBo",
+>>>>>>> dev
         "editorial": "Editorial Gabo",
         "year": "2021",
         "language": "Español",
@@ -98,6 +103,36 @@
         "image": "la-teoria-del-caos.jpg"
     },
     {
+<<<<<<< HEAD
+=======
+        "id": 7,
+        "isbn": "12345678-34",
+        "title": "titulo 13",
+        "author": "autor 13",
+        "editorial": "Gabook",
+        "year": "2021",
+        "language": "Español",
+        "genre": "Misterio",
+        "price": "38000",
+        "discount": "20",
+        "description": "descripcion\"",
+        "image": ""
+    },
+    {
+        "id": 8,
+        "isbn": "12345678-34",
+        "title": "Las Criónicas del 15",
+        "author": "Jose",
+        "editorial": "Gabook",
+        "year": "2021",
+        "language": "Español",
+        "genre": "Misterio",
+        "price": "38000",
+        "discount": "20",
+        "description": "Esto a estar pesado"
+    },
+    {
+>>>>>>> dev
         "id": 9,
         "isbn": "123456789-1",
         "title": "Los Viajes de Gulliver",
@@ -110,5 +145,18 @@
         "discount": "80",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, ducimus magnam. Adipisci neque minus ut? Qui dolore illum tempora amet. Ipsam unde inventore ut harum tenetur corrupti praesentium tempora doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatem amet ratione qui, accusantium blanditiis iusto vitae earum, quaerat nemo est illo ab maiores eius architecto, esse exercitationem quos harum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis corrupti inventore iusto adipisci eaque at qui nemo excepturi aliquam, itaque alias delectus sit maiores laboriosam harum obcaecati, laborum voluptatibus quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem officiis eligendi nostrum nihil. Odit fugiat earum molestias, eaque fugit quam alias aliquid adipisci veritatis consectetur. Impedit vitae praesentium amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsum enim quidem perferendis eligendi similique veniam officia necessitatibus a tenetur! Illum quia assumenda sit itaque voluptatem a totam soluta accusantium! \"\"\"",
         "image": "Los-viajes-de-Gulliver-Jonathan-Swift.jpg"
+    },
+    {
+        "id": 10,
+        "isbn": "12345678-34",
+        "title": "Titulo.genrico.3",
+        "author": "Jose",
+        "editorial": "Gabook",
+        "year": "2021",
+        "language": "Español",
+        "genre": "Misterio",
+        "price": "38000",
+        "discount": "20",
+        "description": "No coments"
     }
 ]
