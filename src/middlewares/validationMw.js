@@ -1,4 +1,5 @@
 const {body} = require ('express-validator')
+const path = require('path');
 
 const validateResgisterUser = [
     body('name').notEmpty().withMessage('Debes escribir un nombre mayor a cuatro caracteres'),
@@ -13,6 +14,7 @@ const validateResgisterUser = [
         let fileExtension = path.extname(file.originalname)
         if (!acceptedExtensions.includes(fileExtension)){
           throw new Error('Las extensiones de archivos son .jpg, .png, .gif');
+          
         }
       }
       return true;

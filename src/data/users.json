@@ -45,5 +45,12 @@
         "loginMail": "Diego@gmail.com",
         "loginPasswd": "$2a$10$CwffwZvKiZrQd7Qgnz5sl.zW9soLhEpBD/J4rTzv1XFWAD/xNjgDG",
         "image": "1640046569872_img_.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Harold Sastoque",
+        "loginMail": "harold@gmail.com",
+        "loginPasswd": "$2a$10$xiioMT2YPO5g1yoEy.D71uTPPjuYwjH0u3XrSzPcp6qp8.jy3K8KC",
+        "image": "1640113992473_img_.jpg"
     }
 ]

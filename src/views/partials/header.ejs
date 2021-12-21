@@ -20,18 +20,20 @@
       </li>
 
       <% if (locals.isLogged ) {%>
-      <li><p><%= user.name%></p></li>
-      <%}%> <% if (locals.isLogged ) {%>
+      <li><p><%= locals.userLogged.name%></p></li>
+      <%}%> 
+      <% if (locals.isLogged ) {%>
       <li>
-        <div x>
+        <div>
           <img
             class="header-login-image"
-            src="/images/users/<%= user.image%>"
+            src="/images/users/<%= locals.userLogged.image%>"
             alt="ImageProfile"
           />
         </div>
       </li>
-      <%}%> <% if (locals.isLogged ) {%>
+      <%}%> 
+      <% if (locals.isLogged ) {%>
       <li>
         <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
       </li>

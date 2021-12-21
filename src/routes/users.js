@@ -10,6 +10,6 @@ router.get("/login", guestMiddleware, users.getLogin);
 router.post("/login", users.login);
 router.get("/logout", users.logout);
 router.get("/signIn",guestMiddleware, users.getSignIn);
-router.post("/signIn", uploadFile.single('loginImage'), validateResgisterUser, users.createUser);
+router.post("/signIn",  uploadFile.single('loginImage'), validateResgisterUser, users.createUser);
 
 module.exports = router;
