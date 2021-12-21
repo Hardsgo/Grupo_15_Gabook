@@ -2,13 +2,8 @@
     {
         "id": 0,
         "isbn": "123456789-1",
-<<<<<<< HEAD
-        "title": "Cien Años de Soledad",
-        "author": "Gabriel García Márquez ",
-=======
         "title": "Cien Años de Soledad-2022",
         "author": "Gabriel García Márquez - GaBo",
->>>>>>> dev
         "editorial": "Editorial Gabo",
         "year": "2021",
         "language": "Español",
@@ -103,22 +98,6 @@
         "image": "la-teoria-del-caos.jpg"
     },
     {
-<<<<<<< HEAD
-=======
-        "id": 7,
-        "isbn": "12345678-34",
-        "title": "titulo 13",
-        "author": "autor 13",
-        "editorial": "Gabook",
-        "year": "2021",
-        "language": "Español",
-        "genre": "Misterio",
-        "price": "38000",
-        "discount": "20",
-        "description": "descripcion\"",
-        "image": ""
-    },
-    {
         "id": 8,
         "isbn": "12345678-34",
         "title": "Las Criónicas del 15",
@@ -132,7 +111,6 @@
         "description": "Esto a estar pesado"
     },
     {
->>>>>>> dev
         "id": 9,
         "isbn": "123456789-1",
         "title": "Los Viajes de Gulliver",

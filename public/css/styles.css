@@ -119,6 +119,11 @@ li #down {
   color: rgb(138, 120, 120);
 }
 
+.header-user-log {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
 /* -------Banner------------------------------ */
 
 #index-banner {
@@ -1375,3 +1380,4 @@ h2 {
   height: 50px;
   border-radius: 50%;
 }
+

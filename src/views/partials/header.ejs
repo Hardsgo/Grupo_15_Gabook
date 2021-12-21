@@ -20,7 +20,7 @@
       </li>
 
       <% if (locals.isLogged ) {%>
-      <li><p><%= locals.userLogged.name%></p></li>
+      <li><p class="header-user-log"><%= locals.userLogged.name%></p></li>
       <%}%> 
       <% if (locals.isLogged ) {%>
       <li>
@@ -31,18 +31,6 @@
             alt="ImageProfile"
           />
         </div>
-<<<<<<< HEAD
-        <form class="search" action="/search" method="GET">
-            <input type="search" name="keywords" placeholder="  Búsqueda..." id="search-bar">
-            <i class="fas fa-search"></i>
-        </form>
-        <ul class="user-cart">
-            <li><a href="./cart"><i class="fas fa-shopping-cart"></i></a></li>
-            <li><a href="./signIn"><i class="fas fa-plus-circle"></i></a></li>
-            <li><a href="./login"><i class="fas fa-user-circle"></i></a></li>
-        </ul>
-
-=======
       </li>
       <%}%> 
       <% if (locals.isLogged ) {%>
@@ -61,4 +49,3 @@
     </ul>
   </nav>
 </header>
->>>>>>> dev
