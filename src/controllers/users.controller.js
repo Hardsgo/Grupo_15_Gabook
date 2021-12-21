@@ -85,7 +85,8 @@ const usersController = {
         oldData: req.body,
       });
     }else {
-      res.render("./index", {
+      req.session.userLogged = user;
+      res.rendirect("/", {
         oldData: req.body,
       });
     }

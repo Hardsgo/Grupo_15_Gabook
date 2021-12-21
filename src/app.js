@@ -1,7 +1,14 @@
 const express = require("express");
+const session = require('express-session');
 const path = require("path");
 const methodOverride = require("method-override");
 const app = express();
+
+app.use(session({
+  secret:'it is a secrect',
+  resave: false,
+  saveUninitialized: false,
+}))
 
 
 //Seleccción el motor de plantillas EJS y setear la carpeta de vistas (views)

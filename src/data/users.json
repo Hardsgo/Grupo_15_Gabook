@@ -38,5 +38,12 @@
         "loginMail": "jandres@gmail.com",
         "loginPasswd": "$2a$10$QEkTLb/sQVFsVJKSYMw7ouk/ItqF4TDrby3IlOP1elY/77cbLXDOi",
         "image": "1640044407011_img_.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Diego Castillo",
+        "loginMail": "Diego@gmail.com",
+        "loginPasswd": "$2a$10$CwffwZvKiZrQd7Qgnz5sl.zW9soLhEpBD/J4rTzv1XFWAD/xNjgDG",
+        "image": "1640046569872_img_.jpg"
     }
 ]
