@@ -52,7 +52,7 @@ const usersController = {
       console.log(newUser);
       usersModel.createUser(newUser);
 
-      res.redirect("/login");
+      res.render("./users/login",{newUser});
       // res.send(newUser)
     } else {
       res.render("./users/sign-in", {

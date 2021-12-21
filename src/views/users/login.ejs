@@ -10,7 +10,7 @@
           <a href="/"><i class="fas fa-arrow-circle-left"></i>Atrás</a>
         </div>
         <img src="./images/gabooklogo1.png" alt="" />
-        <h2>¡Hola Bienvenido! Inicia tu Sesión:</h2>
+        <h2>¡Hola <%= (locals.newUser) ? newUser.name : null %> Bienvenido! Inicia tu Sesión:</h2>
         <form action="/login" method="POST">
           <% if (locals.data ) {%>
             <p ><%= data.name%></p>

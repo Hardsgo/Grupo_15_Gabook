@@ -127,14 +127,15 @@
     {
         "id": 10,
         "isbn": "12345678-34",
-        "title": "Titulo.genrico.3",
-        "author": "Jose",
+        "title": "Titulo.genrico.40",
+        "author": "Jose Andres",
         "editorial": "Gabook",
-        "year": "2021",
+        "year": "2022",
         "language": "Español",
         "genre": "Misterio",
-        "price": "38000",
+        "price": "40000",
         "discount": "20",
-        "description": "No coments"
+        "description": "No coments ;)\"\"",
+        "image": "1640125578778_img_.png"
     }
 ]

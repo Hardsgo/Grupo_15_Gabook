@@ -33,7 +33,7 @@ router.get("/create-book", authMiddleware, main.getCreateBook);
 router.post('/create-book', authMiddleware, uploadFile.single('image'), main.createBook);
 //Update
 router.get("/edit-book/:id",authMiddleware, main.getUpdateBook);
-router.put("/edit-book/:id", authMiddleware,main.updateBook);
+router.put("/edit-book/:id", authMiddleware,uploadFile.single('image'),main.updateBook);
 router.delete("/:id", authMiddleware,main.deleteBook);
 
 

@@ -10,7 +10,7 @@
     <main class="main-adminProdcuts">
       <section class="main-crear-producto">
         <h1>Editar Libro</h1>
-        <form action="/edit-book/<%= oldBook.id %>?_method=PUT" method="POST">
+        <form action="/edit-book/<%= oldBook.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
           <div>
             <p>Titulo del libro:</p>
             <input type="text" name="title" value="<%= oldBook.title %>" />

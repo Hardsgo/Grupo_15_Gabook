@@ -77,11 +77,12 @@ const controller = {
   updateBook: function (req, res) {
     const { id } = req.params;
     const oldBook = booksModel.getBooks().find((book) => book.id == id);
+    let image = req.file.filename;
     const bookEdited = {
       id: oldBook.id,
       isbn: oldBook.isbn,
       ...req.body,
-      image: oldBook.image,
+      image,
     };
     console.log(bookEdited);
     booksModel.updateBook(bookEdited);
