@@ -28,6 +28,16 @@ const usersModel = {
     return user;
   },
 
+  getUserByMail: function (mail) {
+    const user = this.getUsers().find((item) => item.loginMail == mail);
+    return user;
+  },
+
+  getUserByName: function (name) {
+    const user = this.getUsers().find((item) => item.name == name);
+    return user;
+  },
+
   createUser: function (newUser) {
     let users = this.getUsers();
     if (this.exists(newUser.id)) return "Usuario ya existe";
@@ -35,27 +45,28 @@ const usersModel = {
     this.writeUsersList(users);
     return "Creado satisfactoriamente.";
   },
-//   updateBook: function (bookEdited) {
-//     const bookIndex = this.getBooks().findIndex(
-//       (book) => book.id == bookEdited.id
-//     );
-//     if (bookIndex < 0) return "No existe este libro en la base de datos";
-//     let newDb = this.getBooks();
-//     newDb[bookIndex] = bookEdited;
-//     this.writeBookList(newDb);
-//     return "Actualizado con éxito";
-//   },
-//   deleteBook: function (id) {
-//     if (!this.getBooks()) return "La base de datos está vacía";
+  updateUser: function (UserEdited) {
+    const UserIndex = this.getUsers().findIndex(
+      (user) => user.id == UserEdited.id
+    );
+    if (UserIndex < 0) return "No existe este Usuario en la base de datos";
+    let newDb = this.getUsers();
+    newDb[UserIndex] = UserEdited;
+    this.writeUsersList(newDb);
+    return "Actualizado con éxito";
+  },
+  deleteUser: function (id) {
+    if (!this.getUsers()) return "La base de datos está vacía";
 
-//     if (this.exists(id)) {
-//       const newDb = this.getBooks().filter((item) => item.id != id);
-//       this.writeBookList(newDb);
-//       return "Libro eliminado";
-//     } else {
-//       return "El libro no se encuentra en la base de datos";
-//     }
-//   },
+    if (this.exists(id)) {
+      const newDb = this.getUsers().filter((item) => item.id != id);
+      this.writeUsersList(newDb);
+      return "Usuario eliminado";
+    } else {
+      return "El Usuario no se encuentra en la base de datos";
+    }
+  },
 };
 
 module.exports = usersModel;
+

@@ -23,6 +23,15 @@
           </p>
           <br />
           <p>
+            <label for="loginMail">Correo/Email: *</label>
+            <br />
+            <input type="mail" name="loginMail" minlength="3" value="<%=locals.oldData ? oldData.loginMail : null %>"/>
+            <% if (locals.errors && errors.loginMail ) {%>
+              <p class="sign-in-error-text"><%= errors.loginMail.msg%></p>
+              <%}%>
+          </p>
+          <br />
+          <p>
             <label for="login-passwd">Contraseña: *</label>
             <br />
             <input type="password" name="loginPasswd" id="login-passwd" />

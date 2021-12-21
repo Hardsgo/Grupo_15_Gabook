@@ -11,12 +11,12 @@ const {body} = require ('express-validator')
 const validateResgisterUser = [
     body('name').notEmpty().withMessage('Debes escribir un nombre mayor a cuatro caracteres'),
     body('loginPasswd').isLength({ min: 6 }).withMessage('Debes escribir una contraseña con minimo 6 caracteres'),
-    // body('email').isEmail().withMessage('Debes colocar correo valido'),
+    body('loginMail').isEmail().withMessage('Debes colocar correo valido - User@mail.com -'),
     body('loginImage').custom((value,{req}) =>{
       let file = req.file;
       let acceptedExtensions = ['.jpg', '.png', '.gif'];
       if (!file){
-        throw new Error('Debes que subir una imagen');
+        throw new Error('Debes subir/cargar una imagen');
       }else{
         let fileExtension = path.extname(file.originalname)
         if (!acceptedExtensions.includes(fileExtension)){
@@ -41,6 +41,7 @@ const uploadFile = multer({ storage });
 // ---------------multer--------------------
 
 router.get("/login", users.getLogin);
+router.post("/login", users.login);
 router.get("/signIn", users.getSignIn);
 router.post("/signIn", uploadFile.single('loginImage'), validateResgisterUser, users.createUser);
 

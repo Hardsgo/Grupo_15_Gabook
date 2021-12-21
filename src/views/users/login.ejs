@@ -19,18 +19,23 @@
           <p>
             <label for="login-user">Nombre de usuario:</label>
             <br />
-            <input type="text" name="name" minlength="2" required />
+            <input type="text" name="name" value="<%=locals.oldData ? oldData.name : null %>"/>
+            <% if (locals.errors && errors.name ) {%>
+              <p class="sign-in-error-text"><%= errors.name.msg%></p>
+              <%}%>
           </p>
           <br />
           <p>
-            <label for="login-passwd">Contraseña:</label>
+            <label for="loginPasswd">Contraseña:</label>
             <br />
             <input
               type="password"
-              name="login-passwd"
+              name="loginPasswd"
               id="login-passwd"
-              required
             />
+            <% if (locals.errors && errors.loginPasswd ) {%>
+              <p class="sign-in-error-text"><%= errors.loginPasswd.msg%></p>
+              <%}%>
           </p>
           <br />
 
