@@ -85,13 +85,16 @@ const usersController = {
         oldData: req.body,
       });
     }else {
+      delete user.loginPasswd;
       req.session.userLogged = user;
-      res.rendirect("/", {
-        oldData: req.body,
-      });
+      res.redirect("/");
     }
     
 
+  },
+  logout: function(req, res){
+    req.session.destroy();
+    return res.redirect('/')
   }
 };
 

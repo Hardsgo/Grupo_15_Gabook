@@ -4,6 +4,7 @@ const multer = require("multer");
 const { main } = require("../controllers/index");
 const path = require('path');
 // const {body} = require ('express-validator')
+const authMiddleware = require('../middlewares/authMiddleware.js')
 
 // multer
 
@@ -34,9 +35,9 @@ router.post('/create-book', uploadFile.single('image'), main.createBook);
 router.get("/edit-book/:id", main.getUpdateBook);
 router.put("/edit-book/:id", main.updateBook);
 router.delete("/:id", main.deleteBook);
-// router.get('/adminProducts', main.getAdminProducts);
+
 
 //Listado de Productos
-router.get("/products", main.getProducts);
+router.get("/products", authMiddleware, main.getProducts);
 
 module.exports = router;

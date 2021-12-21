@@ -17,7 +17,10 @@ let createId = () => {
 
 const controller = {
   getIndex: function (req, res) {
-    res.render("index", { libros: booksModel.getBooks() });
+    console.log('profile')
+    console.log(req.session)
+    res.render("index", { libros: booksModel.getBooks() ,
+    user: req.session.userLogged });
   },
 
   getProducts: function (req, res) {
@@ -41,10 +44,11 @@ const controller = {
     const { id } = req.params;
     // const book = libros.find(libro => libro.id == id);
     // console.log(book);
-    res.render("./products/product-detail", { book: booksModel.getBook(id) });
+    res.render("./products/product-detail", { book: booksModel.getBook(id), user: req.session.userLogged });
   },
   getCart: function (req, res) {
-    res.render("./products/cart");
+    res.render("./products/cart", {
+      user: req.session.userLogged});
   },
 
   getCreateBook: function (req, res) {
