@@ -19,7 +19,10 @@ const storage = multer.diskStorage({
 });
 
 const uploadFile = multer({ storage });
-
+//test
+router.get("/test", function (req, res) {
+  res.render("./partials/header2")
+});
 
 router.get("/", main.getIndex);
 router.get("/search", main.search);
