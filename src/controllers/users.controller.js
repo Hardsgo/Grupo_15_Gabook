@@ -91,8 +91,8 @@ const usersController = {
         });
       }
       if (!bcryptjs.compareSync(req.body.loginPasswd, user[0].dataValues.password)) {
-        // console.log(user)
-        // console.log(user[0].dataValues.password)
+        console.log(user)
+        console.log(user[0].dataValues.password)
         res.render("./users/login", {
           errors: {
             loginPasswd: {
@@ -130,6 +130,32 @@ const usersController = {
       res.render("./users/list-of-users", { users });
     });
   },
+  getUserDetail: function(req, res){
+    const { id } = req.params;
+    db.Users.findByPk(id)
+    .then(function (user) {
+      res.render("./users/edit-user", { user });
+    });
+  },
+  editUser: function(req, res) {
+    const { id } = req.params;
+    let userImage = req.file.filename;
+    db.Users.update(
+      {
+      name: req.body.name,
+      last_name:req.body.last_name,
+      email:req.body.email ,
+      password:bcryptjs.hashSync(req.body.password, 10) ,
+      rol: req.body.rol,
+      image: userImage,
+      },
+      {
+       where: {id: id}
+      })
+      res.redirect("/admin/users/"+id)
+  }
 };
+
+
 
 module.exports = usersController;

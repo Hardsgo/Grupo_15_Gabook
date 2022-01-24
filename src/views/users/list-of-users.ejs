@@ -40,7 +40,7 @@
               <td class="author"><p><%= user.email %></p></td>
               <!-- <td class="author"><p><%= user.role %></p></td> -->
               <td>
-                <form action="./edit-book/<%= user.id %>" method="GET">
+                <form action="/admin/users/<%= user.id %>" method="GET">
                   <button class="edit" type="submit">
                     <p>Editar</p>
                   </button>
