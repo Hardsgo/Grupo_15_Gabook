@@ -17,3 +17,5 @@ router.get("/admin/users/:id", authMiddleware ,users.getUserDetail);
 router.put("/admin/users/:id",authMiddleware, uploadFile.single('image'), users.editUser);
 
 module.exports = router;
+
+
