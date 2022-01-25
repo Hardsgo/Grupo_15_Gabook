@@ -1,103 +1,116 @@
-const booksModel = require("../models/librosModel.js");
-
-const libros = booksModel.getBooks();
-
-//crear un ID
-let createId = () => {
-  let ID = 0;
-  booksModel.getBooks().forEach((book, index) => {
-    if (book.id == ID) {
-      ++ID;
-    } else {
-      ID;
-    }
-  });
-  return ID;
-};
+const booksModel = require('../models/productsModel');
+const { validationResult } = require('express-validator');
 
 const controller = {
-  getIndex: function (req, res) {
+  //----------------------Index---------------------------//
+  getIndex: async function (req, res) {
     console.log('profile')
     console.log(req.session)
-    res.render("index", { libros: booksModel.getBooks() ,
-    user: req.session.userLogged });
+    const libros = await booksModel.getBooks();
+    return res.render(
+      "index", { 
+        libros,
+        user: req.session.userLogged 
+      });
   },
 
-  getProducts: function (req, res) {
-    res.render("./products/list-of-books", { libros: booksModel.getBooks() });
+  //----------------------Lista de libros---------------------------//
+  getProducts: async function (req, res) {
+    const libros = await booksModel.getBooks();
+    console.log(libros);
+    return res.render("./products/list-of-books", { libros });
   },
-
-  
-  search: (req, res) => {
+  //----------------------Búsqueda---------------------------//
+  search: async (req, res) => {
     const textToSearch = req.query.keywords;
-    const result = [];
-    booksModel.getBooks().forEach((book) => {
-      let lowerBook = book.title.toLowerCase();
-      if (lowerBook.includes(textToSearch.toLowerCase())) {
-        result.push(book);
-      }
-    });
-    // console.log(textToSearch);
-    res.render("results", { result, textToSearch });
+    // const result = [];
+    const booksFound = await booksModel.searchBook(textToSearch);
+    // return console.log(booksFound);
+    return res.render("results", { result: booksFound, textToSearch });
   },
-  getProductDetail: function (req, res) {
+  //----------------------Vista detalle de libro---------------------------//
+  getProductDetail: async function (req, res) {
     const { id } = req.params;
     // const book = libros.find(libro => libro.id == id);
     // console.log(book);
-    res.render("./products/product-detail", { book: booksModel.getBook(id), user: req.session.userLogged });
+    console.log(id);
+    const book = await booksModel.getBook(id);
+    console.log(book);
+    return res.render("./products/product-detail", { book, user: req.session.userLogged });
   },
+
+  //----------------------Vista Carrito---------------------------//
   getCart: function (req, res) {
-    res.render("./products/cart", {
+    return res.render("./products/cart", {
       user: req.session.userLogged});
   },
 
+  //--------------------- Vista Crear libro-----------------------//
   getCreateBook: function (req, res) {
-    res.render("./products/create-book");
+    return res.render("./products/create-book");
   },
+
+  //---------------------Crear libro ------------------------//
   createBook: function (req, res) {
-    const id = createId();
     let image = req.file.filename
     const newBook = {
-      id,
+      id: null,
       ...req.body,
       image,
     };
-    console.log(newBook);
-    booksModel.createBook(newBook);
-    // Redirigiendo a la pagina
-    res.redirect("/products");
-  },
-  getUpdateBook: function (req, res) {
-    const { id } = req.params;
+    // return console.log(newBook);
+
+    let errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.render("./products/create-book", {
+        errors: errors.mapped(),
+        oldData: req.body,
+      });
+    } else {
+      booksModel.createBook(newBook);
+      // Redirigiendo a la pagina
+      return res.redirect("/products");
+    }
     
-    const oldBook = booksModel.getBooks().find((book) => book.id == id);
-    // console.log (oldBook)
-    res.render("./products/edit-book", { oldBook });
   },
-  updateBook: function (req, res) {
+
+  //----------------------Vista Modificar Libro---------------------------//
+  getUpdateBook: async function (req, res) {
     const { id } = req.params;
-    const oldBook = booksModel.getBooks().find((book) => book.id == id);
-    let image = req.file.filename;
+    const oldBook = await booksModel.getBook(id);
+    // console.log(oldBook);
+    return res.render("./products/edit-book", { oldBook });
+  },
+
+  //----------------------Modificar Libro---------------------------//
+  updateBook: async function (req, res) {
+    const { id } = req.params;
+    const oldBook = await booksModel.getBook(id);
     const bookEdited = {
       id: oldBook.id,
-      isbn: oldBook.isbn,
       ...req.body,
-      image,
+      image: (!req.file) ? oldBook.image : req.file.filename
     };
-    console.log(bookEdited);
+    // return console.log(bookEdited);
+    // console.log(bookEdited);
     booksModel.updateBook(bookEdited);
     // res.redirect("/");
-    res.redirect("/products");
+    return res.redirect("/products");
   },
-  deleteBook: function (req, res) {
+
+  //----------------------Eliminar Libro---------------------------//
+  deleteBook: async function (req, res) {
     const { id } = req.params;
-    booksModel.deleteBook(id);
+    await booksModel.deleteBook(id);
     console.log(id);
     // res.redirect("/");
-    res.redirect("/products");
+    return res.redirect("/products");
   },
+
+  //----------------------Admin Products---------------------------//
   getAdminProducts: function (req, res) {
-    res.render("adminProducts");
+    return res.render("adminProducts");
   },
 };
 

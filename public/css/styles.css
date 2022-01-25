@@ -1381,3 +1381,7 @@ h2 {
   border-radius: 50%;
 }
 
+.error-form{
+  color: red;
+  font-style: italic;
+}
