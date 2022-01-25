@@ -1,43 +1,10 @@
 [
     {
         "id": 0,
-        "name": "Jose Salcedo",
-        "loginPasswd": "1234",
-        "image": "1640029429106_img_.jpg"
-    },
-    {
-        "id": 1,
-        "name": "Harold",
-        "loginPasswd": 1234,
-        "image": "1640029429106_img_.jpg",
-        "admin": 1
-    },
-    {
-        "id": 2,
-        "name": "Diego",
-        "loginPasswd": 5678,
-        "image": "1640029429106_img_.jpg",
-        "admin": 0
-    },
-    {
-        "id": 3,
-        "name": "Jose  Salcedo ",
-        "loginPasswd": "$2a$10$89uNEIjJF0SX4cHZqF0cCennLVLahdj/XGy.l2ZQHdkSzMVdOURu.",
-        "image": "1640038491683_img_.jpg"
-    },
-    {
-        "id": 4,
-        "name": "Jose  Salcedo ",
-        "loginMail": "jandres1804@gmail.com",
-        "loginPasswd": "$2a$10$1mEIIy85lJ0zIEQogO8ufuQj/lZxs8t0GHaNva36serBiA.NIjAdW",
-        "image": "1640039025844_img_.jpg"
-    },
-    {
-        "id": 5,
-        "name": "Jose Andres",
-        "loginMail": "jandres@gmail.com",
-        "loginPasswd": "$2a$10$QEkTLb/sQVFsVJKSYMw7ouk/ItqF4TDrby3IlOP1elY/77cbLXDOi",
-        "image": "1640044407011_img_.jpg"
+        "name": "ghgjgjgj",
+        "loginMail": "lskidmore6@ted.com",
+        "loginPasswd": "$2a$10$bUCZKK4mHFRVSyniVsJjkudOsS2SrzUisMKJjOuh0AnP4PSt/3N5.",
+        "image": "1642917827863_img_.png"
     },
     {
         "id": 6,
@@ -45,5 +12,19 @@
         "loginMail": "Diego@gmail.com",
         "loginPasswd": "$2a$10$CwffwZvKiZrQd7Qgnz5sl.zW9soLhEpBD/J4rTzv1XFWAD/xNjgDG",
         "image": "1640046569872_img_.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Harold Sastoque",
+        "loginMail": "harold@gmail.com",
+        "loginPasswd": "$2a$10$xiioMT2YPO5g1yoEy.D71uTPPjuYwjH0u3XrSzPcp6qp8.jy3K8KC",
+        "image": "1640113992473_img_.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Jose Salcedo",
+        "loginMail": "jandres1804@gmail.com",
+        "loginPasswd": "$2a$10$SIMQh6KFdoWUqWlRj5pzD.5WjIBfgRC1hi3hZwAq9yZolSG4sLUm6",
+        "image": "1640126072298_img_.jpg"
     }
 ]
