@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "build": "sequelize-auto -h 45.79.201.214 -d Grupo-15-Gabook -u franAdmin -x Adrian12234.. -p 3306  --dialect mysql ",
     "test": "nodemon src/index.js",
     "start": "node src/index.js"
   },
