@@ -5,7 +5,7 @@ module.exports = {
     "database": "Grupo-15-Gabook",
     "host": "45.79.201.214",
     "dialect": "mysql",
-    "port": "3306"
+    "port": "3306",
   },
   "test": {
     "username": "root",

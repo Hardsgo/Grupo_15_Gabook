@@ -17,12 +17,12 @@
             <%}%>
           <br>
           <p>
-            <label for="login-user">Nombre de usuario:</label>
+            <label for="loginMail">Correo:</label>
             <br />
-            <input type="text" name="name" value="<%=locals.oldData ? oldData.name : null %>"/>
-            <% if (locals.errors && errors.name ) {%>
-              <p class="sign-in-error-text"><%= errors.name.msg%></p>
-            <%}%>
+            <input type="mail" name="loginMail" value="<%=locals.oldData ? oldData.loginMail : null %>"/>
+            <% if (locals.errors && errors.loginMail ) {%>
+              <p class="sign-in-error-text"><%= errors.loginMail.msg%></p>
+              <%}%>
           </p>
           <br />
           <p>
