@@ -11,7 +11,7 @@
       <h1>Listado de Libros</h1>
       <section class="editar-producto">
         <h1>Editar/Eliminar Producto</h1>
-        <!-- <form class="search-product-form" action="#" method="GET">
+         <form class="search-product-form" action="#" method="GET">
           <button type="submit"><i class="fas fa-search"></i></button>
           <input
             type="text"
@@ -19,7 +19,12 @@
             placeholder="Nombre del libro"
             required
           />
-        </form> -->
+        </form>
+        <form action="/create-book">
+          <div style="margin: 10px;">
+            <input type="submit" value="Crear Libro">
+          </div>
+        </form>
         <table>
           <tbody>
             <tr>
@@ -59,4 +64,4 @@
 
     <%- include('../partials/footer') %>
   </body>
-</html>
+</html> 

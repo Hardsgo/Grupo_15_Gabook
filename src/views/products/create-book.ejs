@@ -13,39 +13,76 @@
         <form action="/create-book" method="POST" enctype="multipart/form-data">
           <div>
             <p>ISBN:</p>
-            <input type="text" name="isbn" />
+            <input type="text" name="isbn" value="<%= (locals.oldData) ? oldData.isbn : null %>"/>
+            <% if (locals.errors && errors.isbn ) {%>
+              <p class="error-form"><%= errors.isbn.msg%></p>
+            <%}%>
           </div>
           <div>
             <p>Titulo del libro:</p>
-            <input type="text" name="title" />
+            <input type="text" name="title" value="<%= (locals.oldData) ? oldData.title : null %>"/>
+            <% if (locals.errors && errors.title ) {%>
+              <p class="error-form"><%= errors.title.msg%></p>
+            <%}%>
           </div>
           <div>
             <p>Autor:</p>
-            <input type="text" name="author" />
+            <input type="text" name="author" value="<%= locals.oldData ? oldData.author : null %>"/>
+            <% if (locals.errors && errors.author ) {%>
+              <p class="error-form"><%= errors.author.msg%></p>
+            <%}%>
           </div>
           <div>
             <p>Editorial:</p>
-            <input type="text" name="editorial" />
+            <input type="text" name="editorial" value="<%= locals.oldData ? oldData.editorial : null %>"/>
+            <% if (locals.errors && errors.editorial ) {%>
+              <p class="error-form"><%= errors.editorial.msg%></p>
+            <%}%>
           </div>
           <div>
             <p>Año de publicación:</p>
-            <input type="text" name="year" />
+            <input type="text" name="year" value="<%= locals.oldData ? oldData.year : null %>"/>
+            <% if (locals.errors && errors.year ) {%>
+              <p class="error-form"><%= errors.year.msg%></p>
+            <%}%>
           </div>
           <div>
             <p>Idioma</p>
-            <input type="text" name="language" />
+            <select name="languages_id">
+              <% let lenguajes = ["Seleccionar", "Español", "Inglés" ] %>
+              <% lenguajes.forEach((lenguaje, index) => { %>
+                <option value="<%= index === 0 ? null : index %>"> <%= lenguaje %> </option> 
+              <% })%>
+            </select>
+            <% if (locals.errors && errors.languages_id ) {%>
+              <p class="error-form"><%= errors.languages_id.msg%></p>
+            <%}%>
           </div>
           <div>
             <p>Género:</p>
-            <input type="text" name="genre" />
+            <select name="genres_id">
+              <% let generos = ["Seleccionar", "Acción", "Romance", "Aventura", "Suspenso", "Terror", "Biografía", "Literatura", "Científico", "Ciencia Ficción", "Fantástica"] %>
+              <% generos.forEach((genero, index) => { %>
+                <option value="<%= index === 0 ? null : index %>"> <%= genero %> </option> 
+              <% })%>
+            </select>
+            <% if (locals.errors && errors.genres_id ) {%>
+              <p class="error-form"><%= errors.genres_id.msg%></p>
+            <%}%>
           </div>
           <div>
             <p>Precio:</p>
-            <input type="text" name="price" />
+            <input type="text" name="price" value="<%= locals.oldData ? oldData.price : null %>"/>
+            <% if (locals.errors && errors.price ) {%>
+              <p class="error-form"><%= errors.price.msg%></p>
+            <%}%>
           </div>
           <div>
             <p>Descuento:</p>
-            <input type="text" name="discount" />
+            <input type="text" name="discount" value="<%= locals.oldData ? oldData.discount : null %>"/>
+            <% if (locals.errors && errors.discount ) {%>
+              <p class="error-form"><%= errors.discount.msg%></p>
+            <%}%>
           </div>
           <div class="description">
             <p>Descripción:</p>
@@ -53,10 +90,16 @@
               type="text"
               name="description"
               placeholder="Escribe la descripción"
-            ></textarea>
+            ><%= locals.oldData ? oldData.description : null %></textarea>
+            <% if (locals.errors && errors.description ) {%>
+              <p class="error-form"><%= errors.description.msg%></p>
+            <%}%>
           </div>
           <br />
           <input type="file" value="Subir" name="image" /><br />
+          <% if (locals.errors && errors.image ) {%>
+            <span class="error-form"><%= errors.image.msg%></span>
+          <%}%>
           <input class="new-product" type="submit" value="Enviar" />
         </form>
       </section>

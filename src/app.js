@@ -4,6 +4,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const app = express();
 const userLoggedMiddleware=require('./middlewares/userLoggedMiddleware.js')
+const morgan = require('morgan');
 
 app.use(session({
   secret:'it is a secrect',
@@ -11,7 +12,8 @@ app.use(session({
   saveUninitialized: false,
 }))
 
-app.use (userLoggedMiddleware);
+app.use(userLoggedMiddleware);
+app.use(morgan('dev'));
 
 //Seleccción el motor de plantillas EJS y setear la carpeta de vistas (views)
 app.set("view engine", "ejs");

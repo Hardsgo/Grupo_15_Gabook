@@ -1323,6 +1323,12 @@ h2 {
   width: 95%;
 }
 
+#profile-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 761px) {
   .main-adminProdcuts section form div {
     width: 45%;
@@ -1381,3 +1387,7 @@ h2 {
   border-radius: 50%;
 }
 
+.error-form{
+  color: red;
+  font-style: italic;
+}
