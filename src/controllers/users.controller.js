@@ -9,19 +9,6 @@ const {
 
 const users = usersModel.getUsers();
 
-//crear un ID
-// let createId = () => {
-//   let ID = 0;
-//   users.forEach((user, index) => {
-//     if (user.id == ID) {
-//       ++ID;
-//     } else {
-//       ID;
-//     }
-//   });
-//   return ID;
-// };
-
 const usersController = {
   getSignIn: function (req, res) {
     res.render("./users/sign-in");
@@ -31,11 +18,12 @@ const usersController = {
   },
   createUser: function (req, res) {
     let errors = validationResult(req);
-    db.Users.findAll({
-      where: {
-        email: req.body.loginMail,
-      },
-    })
+    db.users
+      .findAll({
+        where: {
+          email: req.body.loginMail,
+        },
+      })
       .then(function (user) {
         if (user.length > 0) {
           console.log("correo existe");
@@ -55,16 +43,18 @@ const usersController = {
       .then(function (errors) {
         if (errors.isEmpty()) {
           let userImage = req.file.filename;
-          db.Users.create({
-            name: req.body.name,
-            last_name: "Undefined",
-            email: req.body.loginMail,
-            password: bcryptjs.hashSync(req.body.loginPasswd, 10),
-            role: 1,
-            image: userImage,
-          }).then(function (newUser) {
-            res.render("./users/login", { newUser });
-          });
+          db.users
+            .create({
+              name: req.body.name,
+              last_name: "Undefined",
+              email: req.body.loginMail,
+              password: bcryptjs.hashSync(req.body.loginPasswd, 10),
+              role: 1,
+              image: userImage,
+            })
+            .then(function (newUser) {
+              res.render("./users/login", { newUser });
+            });
         } else {
           res.render("./users/sign-in", {
             errors: errors.mapped(),
@@ -75,39 +65,45 @@ const usersController = {
   },
 
   login: function (req, res) {
-    db.Users.findAll({
-      where: {
-        email: req.body.loginMail,
-      },
-    }).then(function (user) {
-      if (user.length == 0) {
-        res.render("./users/login", {
-          errors: {
-            loginMail: {
-              msg: "¡Correo no encontrado!",
+    db.users
+      .findAll({
+        where: {
+          email: req.body.loginMail,
+        },
+      })
+      .then(function (user) {
+        if (user.length == 0) {
+          res.render("./users/login", {
+            errors: {
+              loginMail: {
+                msg: "¡Correo no encontrado!",
+              },
             },
-          },
-          oldData: req.body,
-        });
-      }
-      if (!bcryptjs.compareSync(req.body.loginPasswd, user[0].dataValues.password)) {
-        console.log(user)
-        console.log(user[0].dataValues.password)
-        res.render("./users/login", {
-          errors: {
-            loginPasswd: {
-              msg: "¡Contraseña Incorrecta!",
+            oldData: req.body,
+          });
+        }
+        if (
+          !bcryptjs.compareSync(
+            req.body.loginPasswd,
+            user[0].dataValues.password
+          )
+        ) {
+          console.log(user);
+          console.log(user[0].dataValues.password);
+          res.render("./users/login", {
+            errors: {
+              loginPasswd: {
+                msg: "¡Contraseña Incorrecta!",
+              },
             },
-          },
-          oldData: req.body,
-        });
-      } 
-      else {
-        delete user[0].dataValues.password;
-        req.session.userLogged = user;
-        res.redirect("/");
-      }
-    });
+            oldData: req.body,
+          });
+        } else {
+          delete user[0].dataValues.password;
+          req.session.userLogged = user;
+          res.redirect("/");
+        }
+      });
   },
 
   logout: function (req, res) {
@@ -115,47 +111,48 @@ const usersController = {
     return res.redirect("/");
   },
   getUsers: function (req, res) {
-    db.Users.findAll().then(function (users) {
+    db.users.findAll().then(function (users) {
       // res.json(users)
       res.render("./users/list-of-users", { users });
     });
   },
   getUser: function (req, res) {
     const textToSearch = req.query.keywords;
-    db.Users.findAll({
-      where: {
-        name: { [Op.substring]: `${textToSearch}` },
-      },
-    }).then(function (users) {
-      res.render("./users/list-of-users", { users });
-    });
+    db.users
+      .findAll({
+        where: {
+          name: { [Op.substring]: `${textToSearch}` },
+        },
+      })
+      .then(function (users) {
+        res.render("./users/list-of-users", { users });
+      });
   },
-  getUserDetail: function(req, res){
+  getUserDetail: function (req, res) {
     const { id } = req.params;
-    db.Users.findByPk(id)
-    .then(function (user) {
+    db.users.findByPk(id).then(function (user) {
       res.render("./users/edit-user", { user });
     });
   },
-  editUser: function(req, res) {
+  editUser: function (req, res) {
     const { id } = req.params;
     let userImage = req.file.filename;
-    db.Users.update(
+    db.users.update(
       {
-      name: req.body.name,
-      last_name:req.body.last_name,
-      email:req.body.email ,
-      password:bcryptjs.hashSync(req.body.password, 10) ,
-      rol: req.body.rol,
-      image: userImage,
+        name: req.body.name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        password: bcryptjs.hashSync(req.body.password, 10),
+        rol: req.body.rol,
+        image: userImage,
       },
       {
-       where: {id: id}
-      })
-      res.redirect("/admin/users/"+id)
-  }
+        where: { id: id },
+      }
+    );
+
+    res.redirect("/admin/users/" + id);
+  },
 };
-
-
 
 module.exports = usersController;
