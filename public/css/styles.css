@@ -1327,6 +1327,16 @@ h2 {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid rgb(158, 158, 158);
+  padding: 8px;
+}
+
+#profile-image img{
+  height: 255px;
+  width: 255px;
+  border-radius: 8px;
 }
 
 @media (max-width: 761px) {
@@ -1337,6 +1347,7 @@ h2 {
   .main-adminProdcuts .editar-producto table tbody tr .author {
     display: none;
   }
+
 }
 
 @media (max-width: 481px) {
