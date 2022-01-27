@@ -6,7 +6,7 @@ const booksModel = {
   //-------------------Mirar si el id existe-----------------------//
   exists: async function (id) {
     try {
-      const found = await db.Products.findByPk(id);
+      const found = await db.products.findByPk(id);
     // console.log(found ? true : false);
       return found ? true : false;  
     } catch (error) {
@@ -16,15 +16,15 @@ const booksModel = {
   //---------------------Buscar todos los libros-------------------------//
   getBooks: async function () {
     try {
-      const allBooks = await db.Products.findAll({
+      const allBooks = await db.products.findAll({
         include: [
-          { model: db.Genres, as: 'genre'},
-          { model: db.Languages, as: 'language'}
+          { model: db.genres, as: 'genre'},
+          { model: db.languages, as: 'language'}
         ]
       });
       // const allBooks = await db.Products.findAll();
       // console.log(allBooks.map(book =>  book.dataValues));
-      // console.log(allBooks)
+      console.log(allBooks)
       // return JSON.stringify(allBooks, null, 4);
       return allBooks.map(book =>  book.dataValues);
     } catch (error) {
@@ -34,10 +34,10 @@ const booksModel = {
 //-------------------------Buscar un libro---------------------------//
   getBook: async function (id) {
     try {
-      const book = await db.Products.findOne({
+      const book = await db.products.findOne({
         include: [
-          { model: db.Genres, as: 'genre'},
-          { model: db.Languages, as: 'language'}
+          { model: db.genres, as: 'genre'},
+          { model: db.languages, as: 'language'}
         ],
           where: {
               id
@@ -57,7 +57,7 @@ const booksModel = {
   //-----------------------Crear libro--------------------//
   createBook: async function (newBook) {
     try {
-      const bookCreated = await db.Products.create(newBook);
+      const bookCreated = await db.products.create(newBook);
       console.log(`El libro ${bookCreated.title} fue reado satisfactoriamente.`);
       return "Creado satisfactoriamente.";
     } catch (error) {
@@ -67,7 +67,7 @@ const booksModel = {
 //--------------------Actualizar libro-----------------------------//
   updateBook: async function (bookEdited) {
     try {
-      const bookUpdated = await db.Products.update({
+      const bookUpdated = await db.products.update({
         ...bookEdited,
       },
       {
@@ -84,7 +84,7 @@ const booksModel = {
   //------------------------Eliminar libro----------------------------//
   deleteBook: async function (id) {
     try {
-      await db.Products.destroy({
+      await db.products.destroy({
         where: { id }
       });
       return "Libro eliminado";
@@ -95,7 +95,7 @@ const booksModel = {
   //------------------Buscar libro segun titulo y autor--------------------//
   searchBook: async (text) => {
     try {
-      const bookFound = await db.Products.findAll({
+      const bookFound = await db.products.findAll({
         where: {
           [ Op.or ] : [{ 
               title: {

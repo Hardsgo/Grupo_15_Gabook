@@ -4,9 +4,11 @@ const { validationResult } = require('express-validator');
 const controller = {
   //----------------------Index---------------------------//
   getIndex: async function (req, res) {
+
     console.log('profile')
     console.log(req.session)
     const libros = await booksModel.getBooks();
+    console.log(libros)
     return res.render(
       "index", { 
         libros,
