@@ -11,7 +11,6 @@ body {
   background-color: whitesmoke;
   font-family: "ubuntu", sans-serif;
   min-width: 350px;
-  margin: auto;
   overflow-x: hidden;
 }
 
@@ -20,57 +19,47 @@ body {
 /* ---header INDEX ---*/
 header {
   background: rgb(150, 1, 1);
-  width: 100vw;
-  height: 100px;
-  /* border: 2px solid yellow; */
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+  padding: 12px;
 }
 
 nav {
-  height: 160%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  /* border: 1px dotted royalblue; */
-  min-width: 350px;
-  max-width: 1500px;
-  position: relative;
-}
-
-nav > div {
-  height: 100px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  max-width: 1200px;
+  z-index: 9998;
 }
 
 .logo {
   width: 200px;
   height: 70px;
   margin: auto;
-  /* border: 2px solid palevioletred; */
-  position: relative;
-  top: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  /* position: relative; */
+  /* top: 10px; */
 }
 
-.burger,
 .search {
-  width: 70px;
+  width: 90%;
   height: 100px;
-  /* border: 2px solid violet; */
-  list-style: none;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid brown;
+  height: 40px;
+  border-radius: 7px;
 }
 
-.burger a {
-  text-decoration: none;
-}
-
-.burger a p {
-  display: none;
-}
-
-.burger i,
-.search i,
 .user-cart a {
   display: block;
   text-align: center;
@@ -79,57 +68,63 @@ nav > div {
   color: white;
 }
 
-ul.burger {
-  order: -1;
-}
-
 .search input {
-  display: none;
-  border: 2px solid brown;
-  height: 35px;
+  width: 90%;
+  border: none;
+  height: 100%;
   border-radius: 7px;
 }
 
 .search i {
   cursor: pointer;
+  display: block;
+  width: 10%;
+  text-align: center;
+  font-size: 24px;
+  color: rgb(94, 93, 93);
 }
 
 ul.user-cart {
-  width: 85%;
+  width: 100%;
   list-style: none;
   display: flex;
-  /* border: 2px solid yellowgreen; */
+  justify-content: center;
+  align-items: center;
 }
 
 .user-cart li {
-  position: relative;
-  left: 65%;
-  margin-right: 20px;
+  margin: 10px; 
 }
 
-li #down {
-  scale: 0.5;
-}
 
 .user-cart ul li a {
   display: block;
 }
 
 .user-cart li a i {
-  color: rgb(138, 120, 120);
+  color: rgb(255, 255, 255);
 }
 
 .header-user-log {
   color: rgb(255, 255, 255);
   font-weight: bold;
 }
+.header-login-image {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+
 
 /* -------Banner------------------------------ */
 
 #index-banner {
   width: 100vw;
-  position: relative;
-  top: 55px;
+ max-width: 1440px;
+ margin-left:auto;
+ margin-right:auto;
 }
 
 #index-banner img {
@@ -141,7 +136,7 @@ li #down {
 main.main-home {
   width: 100%;
   margin: auto;
-  padding-top: 60px;
+  /* padding-top: 60px; */
 }
 
 .filter {
@@ -427,26 +422,21 @@ footer #footer-options a {
   /* --- Index-Header --- */
   nav {
     justify-content: space-around;
-    flex-wrap: nowrap;
+
   }
 
-  .burger {
-    width: 70px;
-    min-width: 70px;
-  }
-
-  .burger i,
   .search i {
     font-size: 23px;
   }
 
   .search {
-    margin-left: 7%;
-    width: 40%;
+    /* width: 80%; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
+    order: 2; 
+    margin-bottom: 20px;
   }
 
   .search input {
@@ -462,11 +452,8 @@ footer #footer-options a {
   }
 
   ul.user-cart {
-    margin-left: 5%;
-    justify-content: flex-start;
-    align-items: center;
     height: 100px;
-    width: 150px;
+    width: auto; 
   }
 
   .user-cart li {
@@ -563,9 +550,13 @@ footer #footer-options a {
 
 @media (min-width: 770px) {
   /* --- Index Header ----------------- */
+  nav {
+    justify-content: space-between;
+  }
   .search {
-    max-width: 450px;
-    margin-left: 30px;
+    order: initial;
+    width: 40%;
+    margin-top: 28px;
   }
 
   ul.burger {
@@ -1333,7 +1324,7 @@ h2 {
   padding: 8px;
 }
 
-#profile-image img{
+#profile-image img {
   height: 255px;
   width: 255px;
   border-radius: 8px;
@@ -1347,7 +1338,6 @@ h2 {
   .main-adminProdcuts .editar-producto table tbody tr .author {
     display: none;
   }
-
 }
 
 @media (max-width: 481px) {
@@ -1386,19 +1376,12 @@ h2 {
   font-size: 28px;
 }
 
-.sign-in-error-text{
+.sign-in-error-text {
   color: rgb(138, 0, 0);
   font-weight: bold;
 }
 
-.header-login-image{
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
-.error-form{
+.error-form {
   color: red;
   font-style: italic;
 }
