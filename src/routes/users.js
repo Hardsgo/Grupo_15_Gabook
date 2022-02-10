@@ -14,8 +14,8 @@ router.get("/signIn",guestMiddleware, users.getSignIn);
 router.post("/signIn",  uploadFile.single('loginImage'), validateResgisterUser, users.createUser);
 router.get("/admin/users", authMiddleware, users.getUsers);
 router.get("/admin/users/search", authMiddleware, users.getUser);
-router.get("/admin/users/:id", authMiddleware ,users.getUserDetail);
-router.put("/admin/users/:id",authMiddleware, uploadFile2.single('image'), users.editUser);
+router.get("/admin/users/:id", authMiddleware, users.getUserDetail);
+router.put("/admin/users/:id", authMiddleware,uploadFile2.single('image'), users.editUser);
 
 module.exports = router;
 

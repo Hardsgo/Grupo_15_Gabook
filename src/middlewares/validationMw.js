@@ -2,7 +2,7 @@ const {body} = require ('express-validator')
 const path = require('path');
 
 const validateResgisterUser = [
-    body('name').notEmpty().withMessage('Debes escribir un nombre mayor a cuatro caracteres'),
+    body('name').isLength({ min: 3 }).withMessage('Debes escribir un nombre mayor a tres caracteres'),
     body('loginPasswd').isLength({ min: 6 }).withMessage('Debes escribir una contraseña con minimo 6 caracteres'),
     body('loginMail').isEmail().withMessage('Debes colocar correo valido - User@mail.com -'),
     body('loginImage').custom((value,{req}) =>{

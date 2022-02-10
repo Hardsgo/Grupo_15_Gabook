@@ -1,72 +1,87 @@
-const fs = require("fs");
-const path = require("path");
+let db = require("../database/models");
+const Op = db.Sequelize.Op;
+const bcryptjs = require("bcryptjs");
+const {
+  validateResgisterUser,
+  validationResult,
+} = require("express-validator");
 
 const usersModel = {
-  //Mirar si el id existe
-  exists: function (id) {
-    const found = this.getUsers().find((user) => user.id == id);
-    return found ? true : false;
-  },
-  //Escribir el nuevo archivo JSON
-  writeUsersList: function (usersList) {
-    fs.writeFileSync(
-      path.resolve(__dirname, "../data/users.json"),
-      JSON.stringify(usersList, null, 4),
-      { encoding: "utf-8" }
-    );
-  },
-  getUsers: function () {
-    return JSON.parse(
-      fs.readFileSync(path.resolve(__dirname, "../data/users.json"), {
-        encoding: "utf-8",
-      })
-    );
+  getUsers: async () => {
+    try {
+      const result = await db.users.findAll();
+      return result;
+    } catch (error) {
+      return console.log(error);
+    }
   },
 
-  getUser: function (id) {
-    const user = this.getUsers().find((item) => item.id == id);
-    return user;
+  valitateEmail: async (email) => {
+    try {
+      const result = await db.users.findAll({
+        where: {
+          email: email,
+        },
+      });
+      return result;
+    } catch (error) {
+      return console.log(error);
+    }
   },
 
-  getUserByMail: function (mail) {
-    const user = this.getUsers().find((item) => item.loginMail == mail);
-    return user;
+  createUser: async (user) => {
+    try {
+      const result = await db.users.create(user);
+      return "Creado";
+    } catch (error) {
+      return console.log(error);
+    }
   },
 
-  getUserByName: function (name) {
-    const user = this.getUsers().find((item) => item.name == name);
-    return user;
+  loginUserVerification: async (loginEmail) => {
+    try {
+      const user = await db.users.findAll({
+        where: { email: loginEmail },
+      });
+      return user;
+    } catch (error) {
+      return console.log(error);
+    }
   },
 
-  createUser: function (newUser) {
-    let users = this.getUsers();
-    if (this.exists(newUser.id)) return "Usuario ya existe";
-    users.splice(newUser.id, 0, newUser);
-    this.writeUsersList(users);
-    return "Creado satisfactoriamente.";
+  searchUser: async (textToSearch) => {
+    try {
+      const users = await db.users.findAll({
+        where: {
+          name: { [Op.substring]: `${textToSearch}` },
+        },
+      });
+      return users;
+    } catch (error) {
+      return console.log(error);
+    }
   },
-  updateUser: function (UserEdited) {
-    const UserIndex = this.getUsers().findIndex(
-      (user) => user.id == UserEdited.id
-    );
-    if (UserIndex < 0) return "No existe este Usuario en la base de datos";
-    let newDb = this.getUsers();
-    newDb[UserIndex] = UserEdited;
-    this.writeUsersList(newDb);
-    return "Actualizado con éxito";
-  },
-  deleteUser: function (id) {
-    if (!this.getUsers()) return "La base de datos está vacía";
 
-    if (this.exists(id)) {
-      const newDb = this.getUsers().filter((item) => item.id != id);
-      this.writeUsersList(newDb);
-      return "Usuario eliminado";
-    } else {
-      return "El Usuario no se encuentra en la base de datos";
+  getUserDetail: async (id) => {
+    try {
+      const user = await db.users.findByPk(id);
+      return user;
+    } catch (error) {
+      return console.log(error);
+    }
+  },
+
+  updateUser: async (idToEdit,  userToUpdate ) => {
+    try {
+        console.log (userToUpdate)
+      const user = await db.users.update(userToUpdate, {
+        where: { id: idToEdit },
+      });
+      return `Usuario Actualizado`;
+    } catch (error) {
+      return console.log(error);
     }
   },
 };
 
 module.exports = usersModel;
-

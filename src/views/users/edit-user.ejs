@@ -12,8 +12,10 @@
         <h1>Detalle Usuario</h1>
           <form action="/admin/users/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div id="profile-image">
-              <img src="/images/users/<%= user.image%>" alt="User-image">
-            </div>
+         
+              <img src="/images/users/<%= user.image%>" alt="User-image" height="225px" width="225px">
+    
+          </div>
           <div>
             <p>Nombre:</p>
             <input type="text" name="name" value="<%= user.name %>" />
@@ -27,8 +29,8 @@
             <input type="email" name="email" value="<%= user.email %>" />
           </div>
           <div>
-            <p>Contraseña:</p>
-            <input type="password" name="password" value="<%= user.password %>" />
+            <p>Cambiar contraseña:</p>
+            <input type="password" name="password"  />
           </div>
           <div>
             <p>Rol:</p>
@@ -41,9 +43,9 @@
         </div>
           <input class="edit-product" type="submit" value="Editar Perfil" />
         </form>
-        <form action="/#?_method=DELETE" method="POST">
+        <!-- <form action="/#?_method=DELETE" method="POST">
           <button class="delete-product">Eliminar Perfil</button>
-        </form>
+        </form> -->
       </section>
     </main>
     <%- include('../partials/footer') %>

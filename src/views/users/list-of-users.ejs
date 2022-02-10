@@ -24,10 +24,10 @@
             <tr>
               <td>Id</td>
               <td>Nombre</td>
-              <td>email</td>
+              <td class="author">email</td>
               <!-- <td>Rol</td> -->
               <td></td>
-              <td></td>
+              <!-- <td>Eliminar</td> -->
             </tr>
 
             <% if(locals.users && users.length) { %> <% users.forEach(user=> {
@@ -35,7 +35,8 @@
             <tr>
               <td><p><%= user.id %></p></td>
               <td class="tittle">
-                <p><%= user.name %> <%= user.last_name %></p>
+                <img src="/images/users/<%= user.image%>"" alt="user-image" height="30px" width="30px">
+                <p> <%= user.name %> <%= user.last_name %></p>
               </td>
               <td class="author"><p><%= user.email %></p></td>
               <!-- <td class="author"><p><%= user.role %></p></td> -->
@@ -46,11 +47,11 @@
                   </button>
                 </form>
               </td>
-              <td>
+              <!-- <td>
                 <form action="/<%= user.id %>?_method=DELETE" method="POST">
                   <button class="delete">Eliminar</button>
                 </form>
-              </td>
+              </td> -->
             </tr>
             <% }); %> <% } else { %>
             <h4>No se encontraron datos de los libros</h4>

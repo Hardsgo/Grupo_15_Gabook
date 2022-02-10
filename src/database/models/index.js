@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
@@ -13,7 +13,7 @@ const config = require(__dirname + '/../config/config.js')[env];
 //   "host": `${process.env.DBHOST}`,
 //   "dialect": "mysql",
 // }
-
+const initModels = require('./init-models')
 let db = {};
 
 let sequelize;
@@ -38,6 +38,8 @@ Object.keys(db).forEach(modelName => {
     db[modelName].associate(db);
   }
 });
+
+db = initModels(sequelize)
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

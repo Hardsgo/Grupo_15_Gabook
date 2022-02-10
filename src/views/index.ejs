@@ -1,73 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- HEAD -->
-<%- include('./partials/head', {title : 'Home'}) %>
-<!-- HEAD -->
-<body class="index-body">
-
-            <%- include('./partials/header') %> 
-            <ul class="burger">
+  <!-- HEAD -->
+  <%- include('./partials/head', {title : 'Home'}) %>
+  <!-- HEAD -->
+  <body class="index-body">
+    <%- include('./partials/header') %>
+    <!-- <ul class="burger">
                 <li><a href="#"><i class="fas fa-bars"></i><p>Categorías</p></a></li>
-            </ul>
+            </ul> -->
 
     <div id="index-banner">
-        <img src="./images/book-banner.jpg" alt="">
+      <img src="./images/book-banner.jpg" alt="" />
     </div>
     <main class="main-home">
-        <div class="top-bar">
-            <div class="filter">
-                <select name="ordenar-por" id="order-by">
-                    <option value="lower-to-higher">Menor a Mayor</option>
-                    <option value="higher-to-lower">Mayor a Menor</option>
-                    <option value="recommended">Recomendados</option>
-                    <option value="top-rated">Mejores Calificados</option>
-                </select>
-            </div>
-            <div class="pagination">
-                <a href="#" id="left"><i class="fas fa-chevron-left"></i></a>
-                <a href="#" class="one">1</a>
-                <a href="#" class="number" >2</a>
-                <a href="#"class="number">3</a>
-                <a href="#" id="right"><i class="fas fa-chevron-right"></i></a>
-            </div>
+      <div class="top-bar">
+        <div class="filter">
+          <select name="ordenar-por" id="order-by">
+            <option value="lower-to-higher">Menor a Mayor</option>
+            <option value="higher-to-lower">Mayor a Menor</option>
+            <option value="recommended">Recomendados</option>
+            <option value="top-rated">Mejores Calificados</option>
+          </select>
         </div>
-        <h2>LIBROS GABOOK</h2>
-        <section>
-            <% if(locals.libros && libros.length) { %>
-                <% libros.forEach(libro => { %>
-                    <article>
-                        <img src="./images/<%= libro.image %>" alt="">
-                        <div class="details">
-                            <h4><%= libro.title %></h4>
-                            <p><%= libro.editorial %></p>
-                            <div class="stars">
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <p class="price">$ <%= libro.price %><p>
-                        </div>
-                        <div id="detalle--carrito">
-                            <button type="submit"><a href="./productDetail/<%= libro.id %> ">Detalles</a></button>
-                            <button type="submit"><a href="./cart">Añadir al Carrito</a></button>
-                        </div>
-                    </article>
-                <% }); %> 
-            <% } else { %>
-                <h4>No se encontraron datos de los libros</h4>
-            <% } %> 
-        </section>
-        <div class="pagination" id="pag-down">
-            <a href="#" id="left"><i class="fas fa-chevron-left"></i></a>
-            <a href="#" class="one">1</a>
-            <a href="#" class="number" >2</a>
-            <a href="#"class="number">3</a>
-            <a href="#" id="right"><i class="fas fa-chevron-right"></i></a>
+        <div class="pagination">
+          <a href="#" id="left"><i class="fas fa-chevron-left"></i></a>
+          <a href="#" class="one">1</a>
+          <a href="#" class="number">2</a>
+          <a href="#" class="number">3</a>
+          <a href="#" id="right"><i class="fas fa-chevron-right"></i></a>
         </div>
+      </div>
+      <h2>LIBROS GABOOK</h2>
+      <section>
+        <% if(locals.libros && libros.length) { %> <% libros.forEach(libro => {
+        %>
+        <article>
+          <img src="./images/<%= libro.image %>" alt="" />
+          <div class="details">
+            <h4><%= libro.title %></h4>
+            <p><%= libro.editorial %></p>
+            <div class="stars">
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <p class="price">$ <%= libro.price %></p>
+            <p></p>
+          </div>
+
+          <div id="detalle--carrito">
+            <button type="submit">
+              <a href="./productDetail/<%= libro.id %> ">Detalles</a>
+            </button>
+            <button type="submit">
+              <a href="./cart">Añadir al Carrito</a>
+            </button>
+          </div>
+        </article>
+        <% }); %> <% } else { %>
+        <h4>No se encontraron datos de los libros</h4>
+        <% } %>
+      </section>
+      <div class="pagination" id="pag-down">
+        <a href="#" id="left"><i class="fas fa-chevron-left"></i></a>
+        <a href="#" class="one">1</a>
+        <a href="#" class="number">2</a>
+        <a href="#" class="number">3</a>
+        <a href="#" id="right"><i class="fas fa-chevron-right"></i></a>
+      </div>
     </main>
     <!-- footer -->
-    <%- include('./partials/footer') %> 
-</body>
+    <%- include('./partials/footer') %>
+  </body>
 </html>
