@@ -5,14 +5,14 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-// const config = require(__dirname + '/../config/config.js')[env];
-const config = {
-  "username": `${process.env.DBUSER}`,
-  "password": `${process.env.DBPASSWORD}`,
-  "database": `${process.env.DBNAME}`,
-  "host": `${process.env.DBHOST}`,
-  "dialect": "mysql",
-}
+const config = require(__dirname + '/../config/config.js')[env];
+// const config = {
+//   "username": `${process.env.DBUSER}`,
+//   "password": `${process.env.DBPASSWORD}`,
+//   "database": `${process.env.DBNAME}`,
+//   "host": `${process.env.DBHOST}`,
+//   "dialect": "mysql",
+// }
 
 let db = {};
 
