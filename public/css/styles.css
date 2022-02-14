@@ -10,8 +10,10 @@
 body {
   background-color: whitesmoke;
   font-family: "ubuntu", sans-serif;
+  width: 100%;
   min-width: 350px;
   overflow-x: hidden;
+  
 }
 
 /* ------ INDEX------------------------------ */
@@ -115,6 +117,7 @@ ul.user-cart {
   height: 50px;
   border-radius: 50%;
 }
+
 
 
 
@@ -1382,6 +1385,21 @@ h2 {
 }
 
 .error-form {
-  color: red;
+  color: rgb(255, 0, 0);
   font-style: italic;
 }
+
+.name-error-text , .password-error-text, .email-error-text, .image-error-text{
+  display: none;
+  color: rgb(255, 0, 0);
+  display: none;
+}
+
+.input-valid {
+background-color: rgba(199, 248, 126, 0.589);
+}
+
+.input-invalid {
+  background-color: rgba(255, 0, 0, 0.397);
+}
+

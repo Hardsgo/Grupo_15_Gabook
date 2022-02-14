@@ -12,23 +12,25 @@
         <img src="./images/gabooklogo1.png" alt="" />
         <h2>¡Bienvenido! Registrate:</h2>
 
-        <form action="/signIn" method="POST" enctype="multipart/form-data">
-          <p>
+        <form action="/signIn" method="POST" enctype="multipart/form-data" class="signInForm">
+          <p class="signInName">
             <label for="login-user">Usuario: *</label>
             <br />
-            <input type="text" name="name" minlength="3" value="<%=locals.oldData ? oldData.name : null %>"/>
+            <input class="inputName" type="text" name="name" minlength="3" value="<%=locals.oldData ? oldData.name : null %>" />
             <% if (locals.errors && errors.name ) {%>
               <p class="sign-in-error-text"><%= errors.name.msg%></p>
               <%}%>
+              <p class="name-error-text"><small>Debe ingresar un nombre de usuario mayor a 3 caracteres.</small></p>
           </p>
           <br />
           <p>
             <label for="loginMail">Correo/Email: *</label>
             <br />
-            <input type="mail" name="loginMail" minlength="3" value="<%=locals.oldData ? oldData.loginMail : null %>"/>
+            <input class="inputEmail" type="mail" name="loginMail" minlength="3" value="<%=locals.oldData ? oldData.loginMail : null %>"/>
             <% if (locals.errors && errors.loginMail ) {%>
               <p class="sign-in-error-text"><%= errors.loginMail.msg%></p>
               <%}%>
+              <p class="email-error-text"><small>Inserte un correo valido, correo@dominio.com</small></p>
           </p>
           <br />
           <p>
@@ -38,15 +40,17 @@
             <% if (locals.errors && errors.loginPasswd ) {%>
               <p class="sign-in-error-text"><%= errors.loginPasswd.msg%></p>
               <%}%>
+              <p class="password-error-text"><small>La contraseña debe tener MAYUSCULAS, minúsculas, números, caracteres especiales y al menos 8 caracteres!</small></p>
           </p>
           <br />
           <p>
             <label for="login-image">Imagen:</label>
             <br />
-            <input type="file" name="loginImage" id="login-image" />
+            <input  type="file" name="loginImage" id="login-image"  />
             <% if (locals.errors && errors.loginImage) {%>
               <p class="sign-in-error-text"><%= errors.loginImage.msg%></p>
               <%}%>
+              <p class="image-error-text"><small>La Imagen debe ser .jpg .pgn .gif</small></p>
           </p>
           <button type="submit">Registrarme</button>
         </form>
