@@ -24,7 +24,7 @@ const usersController = {
         last_name: "Undefined",
         email: req.body.loginMail,
         password: bcryptjs.hashSync(req.body.loginPasswd, 10),
-        role: 1,
+        role: 0,
         image: userImage,
       };
       let errors = validationResult(req);

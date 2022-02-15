@@ -11,7 +11,7 @@
         </div>
         <img src="./images/gabooklogo1.png" alt="" />
         <h2>¡Hola <%= (locals.newUser) ? newUser.name : null %> Bienvenido! Inicia tu Sesión:</h2>
-        <form action="/login" method="POST">
+        <form class="loginForm" action="/login" method="POST">
           <% if (locals.data ) {%>
             <p ><%= data.name%></p>
             <%}%>
@@ -19,10 +19,11 @@
           <p>
             <label for="loginMail">Correo:</label>
             <br />
-            <input type="mail" name="loginMail" value="<%=locals.oldData ? oldData.loginMail : null %>"/>
+            <input class="inputEmaillogin" type="mail" name="loginMail" value="<%=locals.oldData ? oldData.loginMail : null %>"/>
             <% if (locals.errors && errors.loginMail ) {%>
               <p class="sign-in-error-text"><%= errors.loginMail.msg%></p>
               <%}%>
+              <p class="email-error-text"><small>Inserte un correo valido, correo@dominio.com</small></p>
           </p>
           <br />
           <p>
@@ -36,6 +37,7 @@
             <% if (locals.errors && errors.loginPasswd ) {%>
               <p class="sign-in-error-text"><%= errors.loginPasswd.msg%></p>
               <%}%>
+              <p class="password-error-text"><small>Escriba su contraseña</small></p>
           </p>
           <br />
 
@@ -52,5 +54,6 @@
         </div>
       </div>
     </main>
+    <script src="js/login.js"></script>
   </body>
 </html>

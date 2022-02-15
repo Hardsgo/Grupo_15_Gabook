@@ -11,13 +11,13 @@
       <h1>Listado de Usuarios</h1>
       <section class="editar-producto">
         <h1>Editar Usuarios</h1>
-        <form class="search-product-form" action="/admin/users/search" method="GET">
+        <form
+          class="search-product-form"
+          action="/admin/users/search"
+          method="GET"
+        >
           <button type="submit"><i class="fas fa-search"></i></button>
-          <input
-            type="search"
-            name="keywords"
-            placeholder="Nombre Usuario"
-          />
+          <input type="search" name="keywords" placeholder="Nombre Usuario" />
         </form>
         <table>
           <tbody>
@@ -35,8 +35,9 @@
             <tr>
               <td><p><%= user.id %></p></td>
               <td class="tittle">
-                <img src="/images/users/<%= user.image%>"" alt="user-image" height="30px" width="30px">
-                <p> <%= user.name %> <%= user.last_name %></p>
+                <img src="/images/users/<%= user.image%>"" alt="user-image"
+                height="30px" width="30px">
+                <p><%= user.name %> <%= user.last_name %></p>
               </td>
               <td class="author"><p><%= user.email %></p></td>
               <!-- <td class="author"><p><%= user.role %></p></td> -->

@@ -60,6 +60,7 @@ nav {
   border: 2px solid brown;
   height: 40px;
   border-radius: 7px;
+  padding-left: 5px;
 }
 
 .user-cart a {
@@ -75,6 +76,7 @@ nav {
   border: none;
   height: 100%;
   border-radius: 7px;
+  outline: none;
 }
 
 .search i {
@@ -1396,10 +1398,30 @@ h2 {
 }
 
 .input-valid {
-background-color: rgba(199, 248, 126, 0.589);
+background-color: rgba(153, 255, 0, 0.178);
 }
 
 .input-invalid {
   background-color: rgba(255, 0, 0, 0.397);
 }
 
+.back-button {
+  text-decoration: none;
+  display: block;
+  width: 100px;
+  border-radius: 4px;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 8px;
+  background-color: rgb(104, 207, 0);
+  margin-bottom: 20px;
+  text-align: center;
+  color: black;
+  
+}
+
+.back-button:hover {
+  transition: 0.3s;
+  border: 1px solid rgb(156, 241, 71);
+  
+
+}
