@@ -10,41 +10,56 @@
     <main class="main-adminProdcuts">
       <section class="main-crear-producto">
         <h1>Editar Libro</h1>
-        <form action="/edit-book/<%= oldBook.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form id="product-form" action="/edit-book/<%= oldBook.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
           <div>
             <p>ISBN:</p>
-            <input type="text" name="isbn" value="<%= (locals.oldBook) ? oldBook.isbn : null %>"/>
+            <input type="text" id="isbn" class="input-text" name="isbn" value="<%= (locals.oldBook) ? oldBook.isbn : null %>"/>
             <% if (locals.errors && errors.isbn ) {%>
               <p class="error-form"><%= errors.isbn.msg%></p>
             <%}%>
+            <div id="warning-text-isbn" class="message">
+              <p>Sólo se aceptan números</p>
+            </div>
           </div>
           <div>
             <p>Titulo del libro:</p>
-            <input type="text" name="title" value="<%= (locals.oldBook) ? oldBook.title : null %>"/>
+            <input type="text" id="title" class="input-text" name="title" value="<%= (locals.oldBook) ? oldBook.title : null %>"/>
             <% if (locals.errors && errors.title ) {%>
               <p class="error-form"><%= errors.title.msg%></p>
             <%}%>
+            <div id="warning-text-title"  class="message">
+              <p>Escribe un título de al menos 5 caracteres</p>
+            </div>
           </div>
           <div>
             <p>Autor:</p>
-            <input type="text" name="author" value="<%= locals.oldBook ? oldBook.author : null %>"/>
+            <input type="text" id="author" class="input-text" name="author" value="<%= locals.oldBook ? oldBook.author : null %>"/>
             <% if (locals.errors && errors.author ) {%>
               <p class="error-form"><%= errors.author.msg%></p>
             <%}%>
+            <div id="warning-text-author"  class="message">
+              <p>Escribe un nombre de autor</p>
+            </div>
           </div>
           <div>
             <p>Editorial:</p>
-            <input type="text" name="editorial" value="<%= locals.oldBook ? oldBook.editorial : null %>"/>
+            <input type="text" id="editorial" class="input-text" name="editorial" value="<%= locals.oldBook ? oldBook.editorial : null %>"/>
             <% if (locals.errors && errors.editorial ) {%>
               <p class="error-form"><%= errors.editorial.msg%></p>
             <%}%>
+            <div id="warning-text-editorial"  class="message">
+              <p>Escribe un nombre de editorial</p>
+            </div>
           </div>
           <div>
             <p>Año de publicación:</p>
-            <input type="text" name="year" value="<%= locals.oldBook ? oldBook.year : null %>"/>
+            <input type="text" class="input-text" id="year" name="year" value="<%= locals.oldBook ? oldBook.year : null %>"/>
             <% if (locals.errors && errors.year ) {%>
               <p class="error-form"><%= errors.year.msg%></p>
             <%}%>
+            <div id="warning-text-year"  class="message">
+              <p>Se acepta número de 4 digitos</p>
+            </div>
           </div>
           <div>
             <p>Idioma</p>
@@ -72,35 +87,49 @@
           </div>
           <div>
             <p>Precio:</p>
-            <input type="text" name="price" value="<%= locals.oldBook ? oldBook.price : null %>"/>
+            <input type="text" class="input-text" id="price" name="price" value="<%= locals.oldBook ? oldBook.price : null %>"/>
             <% if (locals.errors && errors.price ) {%>
               <p class="error-form"><%= errors.price.msg%></p>
             <%}%>
+            <div id="warning-text-price"  class="message">
+              <p>Sólo se aceptan números</p>
+            </div>
           </div>
           <div>
             <p>Descuento:</p>
-            <input type="text" name="discount" value="<%= locals.oldBook ? oldBook.discount : null %>"/>
+            <input type="text" class="input-text" id="discount" name="discount" value="<%= locals.oldBook ? oldBook.discount : null %>"/>
             <% if (locals.errors && errors.discount ) {%>
               <p class="error-form"><%= errors.discount.msg%></p>
             <%}%>
+            <div id="warning-text-discount"  class="message">
+              <p>Sólo se aceptan números</p>
+            </div>
           </div>
           <div class="description">
             <p>Descripción:</p>
             <textarea
               type="text"
+              id="description"
+              class="input-text"
               name="description"
               placeholder="Escribe la descripción"
             ><%= locals.oldBook ? oldBook.description : null %></textarea>
             <% if (locals.errors && errors.description ) {%>
               <p class="error-form"><%= errors.description.msg%></p>
             <%}%>
+            <div id="warning-text-description"  class="message">
+              <p>Se aceptan al menos 20 caracteres</p>
+            </div>
           </div>
           <div style="height: 200px; margin: auto">
             <img src="/images/<%= oldBook.image %> " alt="" style="display: block; height: 100%; margin:auto">
-          <input type="file" value="Subir" name="image"/>
+          <input type="file" class="input-text" id="file" value="Subir" name="image"/>
           <% if (locals.errors && errors.image ) {%>
             <span class="error-form"><%= errors.image.msg%></span>
           <%}%>
+          <div id="warning-text-description"  class="message">
+            <p>Se aceptan formatos de imagen (gif, jpg, png o jpeg)</p>
+          </div>
           </div>
           <input class="edit-product" type="submit" value="Editar" style="margin-top: 50px;"/>
         </form>
@@ -110,5 +139,6 @@
       </section>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/books.js"></script>
   </body>
 </html>

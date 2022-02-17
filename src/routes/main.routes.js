@@ -13,10 +13,10 @@ router.get("/productDetail/:id", main.getProductDetail);
 // router.get("/signIn", main.getSignIn);
 router.get("/cart", authMiddleware, main.getCart);
 //Create
-router.get("/create-book", authMiddleware,main.getCreateBook);
+router.get("/create-book",main.getCreateBook); //******* */
 router.post('/create-book',uploadFile.single('image'), validateBook, main.createBook);
 //Update
-router.get("/edit-book/:id", authMiddleware,main.getUpdateBook);
+router.get("/edit-book/:id",main.getUpdateBook); //++++++++++
 router.put("/edit-book/:id", uploadFile.single('image'), validateBook,main.updateBook);
 router.delete("/:id", main.deleteBook);
 

@@ -1,10 +1,10 @@
 window.addEventListener("load", function () {
-  console.log("hola"); //probar la vinculacion
+  // console.log("hola"); //probar la vinculacion
 
   // Selecinando el input del nombre
   let nameErrorText = document.querySelector(".name-error-text");
   let inputName = document.querySelector(".inputName");
-  console.log(inputName);
+  // console.log(inputName);
   //Validando el nombre > 3 caracteres cada vez que se incluye un nuevo cracter en el input
   inputName.addEventListener("keyup", function () {
     if (inputName.value.length < 3) {
@@ -78,8 +78,10 @@ window.addEventListener("load", function () {
   let validInputs = document.querySelectorAll(".input-valid");
   console.log(validInputs.length);
   signInForm.addEventListener("submit", function (event) {
+    event.preventDefault();
     let validInputs = document.querySelectorAll(".input-valid");
     if (validInputs.length != 4) {
+    
       nameErrorText.style.display = "inline";
       emailErrorText.style.display = "inline";
       passwordErrorText.style.display = "inline";

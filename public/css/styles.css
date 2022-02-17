@@ -1389,7 +1389,7 @@ h2 {
   font-style: italic;
 }
 
-.name-error-text , .password-error-text, .email-error-text, .image-error-text{
+.name-error-text , .password-error-text, .email-error-text, .image-error-text, .input-error{
   display: none;
   color: rgb(255, 0, 0);
   display: none;
@@ -1402,4 +1402,21 @@ background-color: rgba(199, 248, 126, 0.589);
 .input-invalid {
   background-color: rgba(255, 0, 0, 0.397);
 }
+
+.message {
+  display: none;
+}
+
+#warning-text-isbn, 
+#warning-text-title,
+#warning-text-author,
+#warning-text-editorial,
+#warning-text-year,
+#warning-text-description,
+#warning-text-price,
+#warning-text-discount{
+  width: 100%;
+  margin: 0;
+}
+
 
