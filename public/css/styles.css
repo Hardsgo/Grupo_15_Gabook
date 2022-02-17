@@ -1464,8 +1464,7 @@ h2 {
 }
 
 .sign-in-error-text {
-  color: rgb(138, 0, 0);
-  font-weight: bold;
+  color: rgb(255, 0, 0);
 }
 
 .error-form {
