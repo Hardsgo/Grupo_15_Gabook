@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- HEAD -->
+  <%- include('../partials/head', {title : 'Editar Usuario'}) %>
+  <!-- HEAD -->
+  <body>
+    <%- include('../partials/header') %>
+    <main class="main-adminProdcuts">
+      <section class="main-crear-producto">
+        <h1>Detalle Usuario </h1> <a class="back-button" href="/admin/users">
+          Volver
+        </a>
+       
+        <i class="fa-solid fa-square-caret-left"></i>
+        <form
+          action="/admin/users/<%= user.id %>?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div id="profile-image">
+            <img
+              src="/images/users/<%= user.image%>"
+              alt="User-image"
+              height="225px"
+              width="225px"
+            />
+          </div>
+          <div>
+            <p>Nombre:</p>
+            <input type="text" name="name" value="<%= user.name %>" />
+          </div>
+          <div>
+            <p>Apellido:</p>
+            <input type="text" name="last_name" value="<%= user.last_name %>" />
+          </div>
+          <div>
+            <p>Correo:</p>
+            <input type="email" name="email" value="<%= user.email %>" />
+          </div>
+          <div>
+            <p>Cambiar contraseña:</p>
+            <input type="password" name="password" />
+          </div>
+          <div>
+            <p>Rol:</p>
+            <input type="text" name="role" value="<%= user.role %>" />
+          </div>
+
+          <div>
+            <p>Nueva Imagen:</p>
+            <input type="file" value="Subir" name="image" /><br />
+          </div>
+          <input class="edit-product" type="submit" value="Editar Perfil" />
+        </form>
+      </section>
+    </main>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

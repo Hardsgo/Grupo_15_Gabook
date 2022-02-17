@@ -1,6 +1,6 @@
 const expresiones = {
     isbn: /^[\d]+$/,
-    title: /^[a-z0-9áéíóúñü]{5,}/i, //Letras, puntos, comas y espacios mayores a 5 caracteres
+    title: /^[a-z0-9áéíóúñü\s]{5,}/i, //Letras, puntos, comas y espacios mayores a 5 caracteres
     author: /^[a-záéíóúñü ]+$/i,
     editorial: /^[a-záéíóúñü ]+$/i,
     year: /^(\d){4}$/,
@@ -85,16 +85,16 @@ inputImage.addEventListener("change", function () {
     if (!inputImage.value.match(validImage)) {
         inputImage.classList.remove("input-valid");
         inputImage.classList.add("input-invalid");
-        campos[file] = false
+        campos.file = false
     } else {
         inputImage.classList.remove("input-invalid");
         inputImage.classList.add("input-valid");
-        campos[file] = true
+        campos.file = true
     }
 });
 
 productsForm.addEventListener("submit", (e) => {
-
+console.log(campos)
     if(!(campos.isbn && campos.title && campos.author && campos.editorial && 
     campos.description && campos.year && campos.price && campos.discount && campos.file)){
         e.preventDefault();
