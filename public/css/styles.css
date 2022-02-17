@@ -13,7 +13,6 @@ body {
   width: 100%;
   min-width: 350px;
   overflow-x: hidden;
-  
 }
 
 /* ------ INDEX------------------------------ */
@@ -60,6 +59,7 @@ nav {
   border: 2px solid brown;
   height: 40px;
   border-radius: 7px;
+  padding-left: 5px;
 }
 
 .user-cart a {
@@ -75,6 +75,7 @@ nav {
   border: none;
   height: 100%;
   border-radius: 7px;
+  outline: none;
 }
 
 .search i {
@@ -95,9 +96,8 @@ ul.user-cart {
 }
 
 .user-cart li {
-  margin: 10px; 
+  margin: 10px;
 }
-
 
 .user-cart ul li a {
   display: block;
@@ -118,16 +118,13 @@ ul.user-cart {
   border-radius: 50%;
 }
 
-
-
-
 /* -------Banner------------------------------ */
 
 #index-banner {
-  width: 100vw;
- max-width: 1440px;
- margin-left:auto;
- margin-right:auto;
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #index-banner img {
@@ -275,14 +272,14 @@ section article #detalle--carrito {
 }
 
 div#pag-down {
-  width: 100vw;
+  width: 100%;
   margin: 25px 0;
   padding: 0;
 }
 
 /* --- Footer-Index ----------------------------------- */
 footer {
-  width: 100vw;
+  width: 100%;
   background-color: rgb(26, 22, 22);
   color: gainsboro;
   font-size: 15px;
@@ -425,7 +422,6 @@ footer #footer-options a {
   /* --- Index-Header --- */
   nav {
     justify-content: space-around;
-
   }
 
   .search i {
@@ -438,7 +434,7 @@ footer #footer-options a {
     justify-content: center;
     flex-wrap: wrap;
     position: relative;
-    order: 2; 
+    order: 2;
     margin-bottom: 20px;
   }
 
@@ -456,7 +452,7 @@ footer #footer-options a {
 
   ul.user-cart {
     height: 100px;
-    width: auto; 
+    width: auto;
   }
 
   .user-cart li {
@@ -502,7 +498,7 @@ footer #footer-options a {
   }
 
   .main-home h2 {
-    width: 90vw;
+    width: 90%;
     margin-bottom: 0;
     padding-bottom: 0;
   }
@@ -539,7 +535,7 @@ footer #footer-options a {
   }
 
   footer > h4 {
-    width: 85vw;
+    width: 85%;
     padding: 10px 0;
     border-top: 1px solid gray;
   }
@@ -618,6 +614,7 @@ footer #footer-options a {
 
 .main-product-detail {
   width: 100%;
+  max-width: 1200px;
   text-align: center;
   padding: 5px;
   margin: auto;
@@ -638,6 +635,7 @@ footer #footer-options a {
   width: 100%;
   margin: 0;
   padding: 10px 0px 10px;
+  border-bottom: 1px solid rgb(117, 117, 117);
 }
 
 .main-product-detail .main-info-libro h2 {
@@ -648,11 +646,15 @@ footer #footer-options a {
 }
 
 .main-product-detail .main-info-libro .main-div--img {
-  padding: 10px;
+  padding: 16px;
+  margin: 5px auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80%;
+  background-color: rgba(153, 0, 0, 0.062);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 4px;
 }
 
 .main-product-detail .main-info-libro .main-div--img img {
@@ -671,6 +673,7 @@ footer #footer-options a {
 .main-product-detail section article p {
   padding: 5px;
 }
+
 .main-product-detail section article .precio {
   padding: 5px;
   font-size: 1.65em;
@@ -685,33 +688,59 @@ footer #footer-options a {
   align-items: center;
 }
 
-.main-product-detail section article.comprar input {
-  width: 60px;
-  padding: 4px;
-}
-
-.main-product-detail section article.comprar a {
-  text-decoration: none;
-  padding: 8px;
-  color: rgb(0, 0, 0);
-}
-
-.main-product-detail section article.comprar a:hover {
-  text-decoration: none;
-  padding: 8px;
-  color: rgb(10, 182, 4);
-}
-
-.main-product-detail section article.comprar button {
-  border: 0px;
-  width: 100%;
-  background-color: rgb(10, 182, 4);
-  color: rgb(255, 255, 255);
+.plus-minus-button {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 2px solid rgb(0, 0, 0);
+  justify-content: space-between;
+  padding: 0;
+  margin: 10px;
   border-radius: 4px;
 }
 
-.main-product-detail section article.comprar button:hover {
-  background-color: rgb(4, 128, 0);
+.minus,
+.plus,
+.input-minus-plus {
+  width: 33%;
+  text-align: center;
+  border: none;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  font-size: x-large;
+  height: 60px;
+}
+
+.minus,
+.plus {
+  background-color: rgb(163, 163, 163);
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+}
+
+.minus:hover,
+.plus:hover {
+  background-color: rgb(150, 1, 1);
+  color: rgb(255, 255, 255);
+}
+
+.main-product-detail section article.comprar .button-comprar {
+  border: 1px solid rgb(0, 0, 0);
+  width: 80%;
+  height: 60px;
+  background-color: #f50202;
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: x-large;
+}
+
+.main-product-detail section article.comprar .button-comprar:hover {
+  background-color: #02f547;
+  transition: 0.5s;
+  width: 90%;
 }
 
 .main-product-detail section .sipnosis p {
@@ -755,7 +784,20 @@ footer #footer-options a {
   display: none;
 }
 
-@media (min-width: 481px) {
+.main-product-detail section article p.precio {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.precio-desktop {
+  display: none;
+}
+
+.book-detail-table-desktop {
+  display: none;
+}
+
+/* @media (min-width: 481px) {
   .main-product-detail .main-info-libro {
     display: flex;
     flex-wrap: wrap;
@@ -798,7 +840,7 @@ footer #footer-options a {
     border: 0px;
     display: flex;
     justify-content: flex-start;
-    /* align-items: center; */
+ 
     flex-direction: column;
     text-align: left;
   }
@@ -811,6 +853,7 @@ footer #footer-options a {
   .main-product-detail section article p.precio {
     font-size: 18px;
     font-weight: bold;
+    
   }
 
   .main-product-detail .main-info-libro .comprar {
@@ -844,7 +887,7 @@ footer #footer-options a {
     color: rgb(41, 243, 0);
   }
 
-  .main-product-detail section article.comprar button {
+  .main-product-detail section .comprar button-comprar {
     border: 0px;
     width: 100%;
     background-color: rgb(0, 168, 14);
@@ -893,6 +936,7 @@ footer #footer-options a {
   .main-product-detail .comentarios {
     padding: 5px;
     margin-top: 10px;
+    display: none;
   }
   .main-product-detail .comentarios article {
     width: 100%;
@@ -912,29 +956,69 @@ footer #footer-options a {
     font-size: 16px;
     width: 100%;
   }
-}
+} */
 
 @media (min-width: 760px) {
-  .main-product-detail .main-info-libro .main-div--img {
+  .main-product-detail section table {
+    text-align: left;
     padding: 5px;
-    margin: 0;
-    width: 30%;
-    background-color: rgb(236, 236, 236);
+    width: 25%;
+    border: none;
   }
-
+  .book-details {
+    display: none;
+  }
+  .main-product-detail .main-info-libro .main-div--img {
+    padding: 12px;
+    margin: 0;
+    width: 28%;
+  }
+  .main-product-detail .main-info-libro {
+    justify-content: space-around;
+  }
   .main-product-detail .main-info-libro .main-div--img img {
     max-width: 100%;
     max-height: 320px;
+  }
+  .main-product-detail section article.comprar {
+    border: 1px solid rgb(197, 197, 197);
+    width: 35%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .book-detail-table-mobile {
+    display: none;
+  }
+
+  .precio-desktop {
+    display: block;
+    font-size: 24px;
+  }
+
+  .book-detail-table-desktop {
+    display: flex;
+    align-items: center;
+  }
+  .sipnosis h2 {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    text-align: left;
+    
+  }
+  .sipnosis p {
+    
+    margin-bottom: 20px;
+    
+    
   }
 }
 
 .main-cart {
   font-family: "ubuntu", sans-serif;
-  /* max-width debe ir ates del width para que se aplique */
-  /* max-width: 1200px; */
-  /* Con 100vw en desktop parece la barra horizontal */
   width: 100%;
-  /* margin: auto; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -1380,8 +1464,7 @@ h2 {
 }
 
 .sign-in-error-text {
-  color: rgb(138, 0, 0);
-  font-weight: bold;
+  color: rgb(255, 0, 0);
 }
 
 .error-form {
@@ -1396,7 +1479,7 @@ h2 {
 }
 
 .input-valid {
-background-color: rgba(199, 248, 126, 0.589);
+  background-color: rgba(153, 255, 0, 0.178);
 }
 
 .input-invalid {
@@ -1420,3 +1503,20 @@ background-color: rgba(199, 248, 126, 0.589);
 }
 
 
+.back-button {
+  text-decoration: none;
+  display: block;
+  width: 100px;
+  border-radius: 4px;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 8px;
+  background-color: rgb(104, 207, 0);
+  margin-bottom: 20px;
+  text-align: center;
+  color: black;
+}
+
+.back-button:hover {
+  transition: 0.3s;
+  border: 1px solid rgb(156, 241, 71);
+}
