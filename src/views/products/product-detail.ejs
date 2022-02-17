@@ -1,76 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
-    <!-- HEAD -->
-    <%- include('../partials/head', {title : 'Detalle del Producto'}) %>
-    <!-- HEAD -->
-    <body>
-    <header>
-      <nav>
-        <%- include('../partials/header') %> 
-      </nav>
-  </header>
-
+  <!-- HEAD -->
+  <%- include('../partials/head', {title : 'Detalle del Producto'}) %>
+  <!-- HEAD -->
+  <body>
+    <%- include('../partials/header') %>
     <main class="main-product-detail">
       <section class="main-info-libro">
-        <% if (locals.book) { %> 
+        <% if (locals.book) { %>
         <h1 class="titulo"><%= book.title %></h1>
         <h2 class="autor"><%= book.author %> - <%= book.editorial %></h2>
         <div class="main-div--img">
           <img src="/images/<%= book.image %> " alt="Imagen del libro" />
         </div>
-        <article>
-          <h1 class="titulo"><%= book.title %></h1>
-          <h2 class="autor"><%= book.author %> - <%= book.editorial %></h2>
-          <p class="precio">$ <%= book.price %> COP</p>
-          <p>Valoración</p>
-          <p>10/10</p>
-        </article>
-        <article class="comprar">
-          <input type="number" placeholder="1" />
-          <a href="#">
-            <i class="fas fa-shopping-cart"></i> Agregar al carrito
-          </a>
-          <button>COMPRAR</button>
-        </article>
-      </section>
-      <section class="sipnosis-table">
-        <article class="sipnosis">
-          <h2>Sipnosis</h2>
-          <p>
-            <%= book.description %> 
-          </p>
-        </article>
-        <table>
+        <table class="book-detail-table-desktop">
           <tr>
             <td>Autor:</td>
             <td><%= book.author %></td>
           </tr>
           <tr>
             <td>Género:</td>
-            <td><%= book.genre %> </td>
+            <td><%= book.genre %></td>
           </tr>
           <tr>
             <td>Editorial:</td>
-            <td><%= book.editorial %> </td>
+            <td><%= book.editorial %></td>
           </tr>
           <tr>
             <td>Año:</td>
-            <td><%= book.year %> </td>
+            <td><%= book.year %></td>
           </tr>
           <tr>
             <td>Idioma:</td>
-            <td><%= book.language %> </td>
+            <td><%= book.language %></td>
           </tr>
           <tr>
             <td>ISBN:</td>
-            <td><%= book.isbn %> </td>
+            <td><%= book.isbn %></td>
+          </tr>
+        </table>
+        <article class="book-details">
+          <h1 class="titulo"><%= book.title %></h1>
+          <h2 class="autor"><%= book.author %> - <%= book.editorial %></h2>
+          <p class="precio precio-mobile">$ <%= book.price %> COP</p>
+        </article>
+        <article class="comprar">
+          <p class="precio precio-desktop">$ <%= book.price %> COP</p>
+          <div class="plus-minus-button">
+            <button class="minus" type="button">  -  </button>
+            <input class="input-minus-plus" type="text" value="1" readonly="true"/>
+            <button class="plus" type="button">  +  </button>
+          </div>
+          <button class="button-comprar"><i class="fas fa-shopping-cart"></i> Agregar al carrito</button>
+          <button class="button-comprar">Comprar Ahora</button>
+        </article>
+      </section>
+      <section class="sipnosis-table">
+        <article class="sipnosis">
+          <h2>Sipnosis</h2>
+          <p><%= book.description %></p>
+        </article>
+        <table class="book-detail-table-mobile">
+          <tr>
+            <td>Autor:</td>
+            <td><%= book.author %></td>
+          </tr>
+          <tr>
+            <td>Género:</td>
+            <td><%= book.genre %></td>
+          </tr>
+          <tr>
+            <td>Editorial:</td>
+            <td><%= book.editorial %></td>
+          </tr>
+          <tr>
+            <td>Año:</td>
+            <td><%= book.year %></td>
+          </tr>
+          <tr>
+            <td>Idioma:</td>
+            <td><%= book.language %></td>
+          </tr>
+          <tr>
+            <td>ISBN:</td>
+            <td><%= book.isbn %></td>
           </tr>
         </table>
         <% } else { %>
-          <p>Detalles de libro inexistente</p>
-        <% } %> 
+        <p>Detalles de libro inexistente</p>
+        <% } %>
       </section>
-      <section class="comentarios">
+      <!-- <section class="comentarios">
         <h2>Comentarios</h2>
         <article>
           <p class="nombre">Diego Castillo</p>
@@ -89,13 +109,23 @@
           </p>
         </article>
         <p>Ver más ...</p>
-      </section>
+      </section> -->
     </main>
-
     <!-- footer -->
-    <%- include('../partials/footer') %> 
+    <%- include('../partials/footer') %>
 
-    <!-- <h1>Detalle del producto - Gabook</h1>
-    <img src="./images/gabooklogo1.png" alt="" /> -->
+    <script>
+      let inputMinusPlus = document.querySelector(".input-minus-plus");
+      document.querySelector(".minus").addEventListener("click", function () {
+        if (inputMinusPlus.value >= 2) {
+          inputMinusPlus.value--;
+        }
+      });
+      document.querySelector(".plus").addEventListener("click", function () {
+        if (inputMinusPlus.value <= 99) {
+          inputMinusPlus.value++;
+        }
+      });
+    </script>
   </body>
 </html>
