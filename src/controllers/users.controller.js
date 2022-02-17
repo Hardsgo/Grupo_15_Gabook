@@ -34,7 +34,8 @@ const usersController = {
         return res.render("./users/sign-in", {
           errors: {
             loginMail: {
-              msg: "¡Este correo ya existe!",
+              // msg: "¡Este correo ya existe!",
+              msg: ("¡El correo " + newUser.email + " ya esta registrado."),
             },
           },
           oldData: req.body,
@@ -61,7 +62,7 @@ const usersController = {
       if (user.length == 0) {
         return res.render("./users/login", {
           errors: {
-            loginMail: { msg: "¡Correo no encontrado!" },
+            loginMail: { msg: ("El correo  "+ req.body.loginMail + "  no esta registrado.")},
           },
           oldData: req.body,
         });

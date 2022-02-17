@@ -1,0 +1,2 @@
+LINK DE CONFIGURACIÓN DE VARIABLES DE ENTORNO EN HEROKU
+https://es.stackoverflow.com/questions/200261/como-configurar-variable-de-entorno-en-heroku 

@@ -4,19 +4,14 @@
 <%- include('./partials/head', {title : 'Resultados de la búsqueda'}) %>
 <!-- HEAD -->
 <body class="index-body">
-    <header>
-        <nav>
+   
             <%- include('./partials/header') %> 
-            <ul class="burger">
-                <li><a href="#"><i class="fas fa-bars"></i><p>Categorías</p></a></li>
-            </ul>
-        </nav>
-    </header>
+    
     <div id="index-banner">
         <img src="./images/book-banner.jpg" alt="">
     </div>
     <main class="main-home">
-        <div class="top-bar">
+        <!-- <div class="top-bar">
             <div class="filter">
                 <select name="ordenar-por" id="order-by">
                     <option value="lower-to-higher">Menor a Mayor</option>
@@ -31,7 +26,7 @@
                 <a href="#" class="number" >2</a>
                 <a href="#"class="number">3</a>
                 <a href="#" id="right"><i class="fas fa-chevron-right"></i></a>
-            </div>
+            </div> -->
         </div>
         <h2>RESULTADOS DE LA BÚSQUEDA: <span style="margin-left: 20px; font-style: italic;"><%= textToSearch %></span></h2> 
         <section>
@@ -63,13 +58,13 @@
                 </div>
             <% } %> 
         </section>
-        <div class="pagination" id="pag-down">
+        <!-- <div class="pagination" id="pag-down">
             <a href="#" id="left"><i class="fas fa-chevron-left"></i></a>
             <a href="#" class="one">1</a>
             <a href="#" class="number" >2</a>
             <a href="#"class="number">3</a>
             <a href="#" id="right"><i class="fas fa-chevron-right"></i></a>
-        </div>
+        </div> -->
     </main>
     <!-- footer -->
     <%- include('./partials/footer') %> 

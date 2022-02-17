@@ -70,9 +70,9 @@ const controller = {
         oldData: req.body,
       });
     } else {
-      booksModel.createBook(newBook);
+      booksModel.createBook(newBook)
       // Redirigiendo a la pagina
-      return res.redirect("/products");
+      .then(res.redirect("/products"));
     }
     
   },

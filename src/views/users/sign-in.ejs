@@ -2,6 +2,7 @@
 <html lang="es">
   <!-- HEAD -->
   <%- include('../partials/head', {title : 'Inicio de Sesión'}) %>
+  <script src="js/index.js"></script>
   <!-- HEAD -->
   <body id="body-login">
     <main id="main-login">
@@ -18,7 +19,7 @@
             <br />
             <input class="inputName" type="text" name="name" minlength="3" value="<%=locals.oldData ? oldData.name : null %>" />
             <% if (locals.errors && errors.name ) {%>
-              <p class="sign-in-error-text"><%= errors.name.msg%></p>
+              <p class="sign-in-error-text"><small><%= errors.name.msg%></small></p>
               <%}%>
               <p class="name-error-text"><small>Debe ingresar un nombre de usuario mayor a 3 caracteres.</small></p>
           </p>
@@ -28,9 +29,10 @@
             <br />
             <input class="inputEmail" type="mail" name="loginMail" minlength="3" value="<%=locals.oldData ? oldData.loginMail : null %>"/>
             <% if (locals.errors && errors.loginMail ) {%>
-              <p class="sign-in-error-text"><%= errors.loginMail.msg%></p>
+              <p class="sign-in-error-text"><small><%= errors.loginMail.msg%></small></p>
               <%}%>
               <p class="email-error-text"><small>Inserte un correo valido, correo@dominio.com</small></p>
+            
           </p>
           <br />
           <p>
@@ -38,7 +40,7 @@
             <br />
             <input type="password" name="loginPasswd" id="login-passwd" />
             <% if (locals.errors && errors.loginPasswd ) {%>
-              <p class="sign-in-error-text"><%= errors.loginPasswd.msg%></p>
+              <p class="sign-in-error-text"><small><%= errors.loginPasswd.msg%></small></p>
               <%}%>
               <p class="password-error-text"><small>La contraseña debe tener MAYUSCULAS, minúsculas, números, caracteres especiales (!"#$%&/=?¡) y al menos 8 caracteres!</small></p>
           </p>
@@ -48,7 +50,7 @@
             <br />
             <input  type="file" name="loginImage" id="login-image"  />
             <% if (locals.errors && errors.loginImage) {%>
-              <p class="sign-in-error-text"><%= errors.loginImage.msg%></p>
+              <p class="sign-in-error-text"><small><%= errors.loginImage.msg%></small></p>
               <%}%>
               <p class="image-error-text"><small>La Imagen debe ser .jpg .pgn .gif</small></p>
           </p>
@@ -61,6 +63,5 @@
         </div>
       </div>
     </main>
-    <script src="js/index.js"></script>
   </body>
 </html>

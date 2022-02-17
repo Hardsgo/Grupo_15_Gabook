@@ -22,7 +22,8 @@ const validateResgisterUser = [
 ];
 
 const validateBook = [
-    body('title').notEmpty().withMessage('Por favor debes escribir un título'),
+    body('title').notEmpty().withMessage('Por favor debes escribir un título').bail()
+    .isLength({ min: 5 }).withMessage('Debes digitar un nombre de al menos 5 caracteres'),
     body('isbn').notEmpty().withMessage('Por favor debes digitar el isbn'),
     body('author').notEmpty().withMessage('Por favor debes escribir el nombre de un autor'),
     body('editorial').notEmpty().withMessage('Por favor debes escribir un título'),
@@ -35,7 +36,8 @@ const validateBook = [
       .toInt(),
     body('discount').notEmpty().withMessage('Por favor debes escribir el descuento').bail()
       .toInt(),
-    body('description').notEmpty().withMessage('Por favor debes escribir la descripción'),
+    body('description').notEmpty().withMessage('Por favor debes escribir la descripción').bail()
+      .isLength({ min: 20 }).withMessage('Debes digitar un nombre de al menos 20 caracteres'),
     body('image').custom((value,{req}) =>{
       let file = req.file;
       // return console.log(file)
