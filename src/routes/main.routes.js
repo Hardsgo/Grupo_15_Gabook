@@ -17,11 +17,15 @@ router.get("/cart", authMiddleware, main.getCart);
 router.get("/create-book", authMiddleware,adminMiddleware,main.getCreateBook);
 router.post('/create-book',adminMiddleware,uploadFile.single('image'), validateBook, main.createBook);
 //Update
-router.get("/edit-book/:id", authMiddleware,adminMiddleware,main.getUpdateBook);
-router.put("/edit-book/:id", uploadFile.single('image'), adminMiddleware,validateBook,main.updateBook);
+// router.get("/edit-book/:id", authMiddleware,adminMiddleware,main.getUpdateBook);
+router.get("/edit-book/:id",main.getUpdateBook);//para pruebas!!!!
+// router.put("/edit-book/:id", uploadFile.single('image'), adminMiddleware,validateBook,main.updateBook);
+router.put("/edit-book/:id", uploadFile.single('image'),main.updateBook);//para pruebas!!!
 router.delete("/:id",adminMiddleware, main.deleteBook);
 
 //Listado de Productos
-router.get("/products",authMiddleware,adminMiddleware, main.getProducts);
+
+// router.get("/products",authMiddleware,adminMiddleware, main.getProducts);
+router.get("/products", main.getProducts);//pruebas
 
 module.exports = router;

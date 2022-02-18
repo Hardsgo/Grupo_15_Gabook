@@ -63,10 +63,19 @@
           </div>
           <div>
             <p>Idioma</p>
-            <select name="languages_id">
+            <select name="languages_id" >
+
+              <% if (locals.oldBook ) {%>
+              <option value="<%= locals.oldBook.languages_id %>" selected> <%= locals.oldBook.language %> </option> 
+              <%}%>
+
               <% let lenguajes = ["Seleccionar", "Español", "Inglés" ] %>
               <% lenguajes.forEach((lenguaje, index) => { %>
+                <% if (index != locals.oldBook.languages_id) {%>
+                  <% if (index != 0) {%>
                 <option value="<%= index === 0 ? null : index %>"> <%= lenguaje %> </option> 
+                <%}%>
+                <%}%>
               <% })%>
             </select>
             <% if (locals.errors && errors.languages_id ) {%>
@@ -75,10 +84,17 @@
           </div>
           <div>
             <p>Género:</p>
-            <select name="genres_id">
+            <select id="edit-book-genres-select" name="genres_id">
+              <% if (locals.oldBook ) {%>
+                <option value="<%= locals.oldBook.genres_id %>" selected> <%= locals.oldBook.genre %> </option> 
+                <%}%>
               <% let generos = ["Seleccionar", "Acción", "Romance", "Aventura", "Suspenso", "Terror", "Biografía", "Literatura", "Científico", "Ciencia Ficción", "Fantástica"] %>
               <% generos.forEach((genero, index) => { %>
+                <% if (index != locals.oldBook.genres_id) {%>
+                  <% if (index != 0) {%>
                 <option value="<%= index === 0 ? null : index %>"> <%= genero %> </option> 
+                <%}%>
+                <%}%>
               <% })%>
             </select>
             <% if (locals.errors && errors.genres_id ) {%>
@@ -122,7 +138,7 @@
             </div>
           </div>
           <div style="height: 200px; margin: auto">
-            <img src="/images/<%= oldBook.image %> " alt="" style="display: block; height: 100%; margin:auto">
+            <img id="edit-book-img" src="/images/<%= oldBook.image %> " alt="" style="display: block; height: 100%; margin:auto">
           <input type="file" class="input-text" id="file" value="Subir" name="image"/>
           <% if (locals.errors && errors.image ) {%>
             <span class="error-form"><%= errors.image.msg%></span>
