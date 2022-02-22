@@ -42,8 +42,9 @@ const validateBook = [
       let file = req.file;
       // return console.log(file)
       let acceptedExtensions = ['.jpg', '.png', '.gif'];
-      if (!file){
+      if (!req.file){
         throw new Error('Debes subir/cargar una imagen');
+        
       }else{
         let fileExtension = path.extname(file.originalname)
         if (!acceptedExtensions.includes(fileExtension)){

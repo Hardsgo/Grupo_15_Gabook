@@ -1524,10 +1524,16 @@ h2 {
 #warning-text-year,
 #warning-text-description,
 #warning-text-price,
-#warning-text-discount{
+#warning-text-discount,
+#warning-form-send{
   width: 100%;
   margin: 0;
 }
+
+#warning-form-send p {
+ margin: auto;
+}
+
 
 
 .back-button {

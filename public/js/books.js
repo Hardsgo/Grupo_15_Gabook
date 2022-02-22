@@ -110,9 +110,11 @@ let editBookGenre = document.getElementById("edit-book-genres-select");
 console.log(editBookGenre)
 
 inputText.forEach((input) => {
-  productsForm.addEventListener("submit", validarForm);
+  input.addEventListener("submit", validarForm);
 });
 
+
+let errorMessajeSendForm = document.getElementById("warning-form-send");
 productsForm.addEventListener("submit", (e) => {
   console.log(campos);
 
@@ -129,6 +131,7 @@ productsForm.addEventListener("submit", (e) => {
       campos.file
     )
   ) {
+    errorMessajeSendForm.style.display = "flex"
     e.preventDefault();
   }
 });
