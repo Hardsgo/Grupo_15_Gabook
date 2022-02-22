@@ -54,7 +54,7 @@ const controller = {
 
   //---------------------Crear libro ------------------------//
   createBook: function (req, res) {
-    let image = req.file.filename
+    let image = !req.file ? "GenericUserImage.png" : req.file.filename; // agregar imagen generica para libros
     const newBook = {
       id: null,
       ...req.body,

@@ -14,8 +14,10 @@ router.get("/productDetail/:id", main.getProductDetail);
 // router.get("/signIn", main.getSignIn);
 router.get("/cart", authMiddleware, main.getCart);
 //Create
-router.get("/create-book", authMiddleware,adminMiddleware,main.getCreateBook);
-router.post('/create-book',adminMiddleware,uploadFile.single('image'), validateBook, main.createBook);
+// router.get("/create-book", authMiddleware,adminMiddleware,main.getCreateBook);
+// router.post('/create-book',adminMiddleware,,adminMiddleware, uploadFile.single('image'), validateBook, main.createBook);
+router.get("/create-book",main.getCreateBook);
+router.post('/create-book',uploadFile.single('image'), validateBook, main.createBook);
 //Update
 // router.get("/edit-book/:id", authMiddleware,adminMiddleware,main.getUpdateBook);
 router.get("/edit-book/:id",main.getUpdateBook);//para pruebas!!!!
