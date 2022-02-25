@@ -7,6 +7,7 @@ const {api} = require("../controllers/index");
 
 router.get("/api/users", api.getUsersApi);
 router.get("/api/user/:id", api.getUserApi);
+router.get("/api/products",api.getProductsApi)
 
 
 
