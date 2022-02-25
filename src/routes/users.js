@@ -18,6 +18,12 @@ router.get("/admin/users/search", authMiddleware,adminMiddleware, users.getUser)
 router.get("/admin/users/:id", authMiddleware, adminMiddleware,users.getUserDetail);
 router.put("/admin/users/:id", authMiddleware, adminMiddleware,uploadFile2.single('image'), users.editUser);
 
+
+
+
+
+
+
 module.exports = router;
 
 
