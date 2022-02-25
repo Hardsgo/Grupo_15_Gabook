@@ -35,6 +35,9 @@ app.use((req, res, next) => {
   res.status(404).render("404-page");
   next();
 });
+ 
+// Formato para API
+app.set("json spaces", 2)
 
 
 
