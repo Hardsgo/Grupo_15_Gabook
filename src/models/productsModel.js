@@ -116,11 +116,23 @@ const booksModel = {
     } catch (error) {
       return ("Ocurrió un error " + error);
     }
+  },
+  //------------------Géneros--------------------//
+  getGenres : async () => {
+    try {
+      const allGenres = await db.genres.findAll();
+      const genres = allGenres.map( genre => genre.dataValues.name )
+      // console.log(genres);
+      return genres;
+    } catch (error) {
+      return ("Ocurrió un error " + error);
+    }
   }
 }
 
 module.exports = booksModel;
 
+// booksModel.getGenres();
 // booksModel.exists(1);
 // booksModel.getBooks();
 // booksModel.createBook(
