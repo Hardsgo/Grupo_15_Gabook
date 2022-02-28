@@ -11,7 +11,8 @@ const apiController = {
           id: user.id,
           user_name: user.name,
           user_email: user.email,
-          user_url_detail: `https://gabook.herokuapp.com/api/user/${user.id}`,
+          // user_url_detail: `https://gabook.herokuapp.com/api/user/${user.id}`,
+          user_url_detail: `localhost:3001/api/user/${user.id}`,
         })
       );
       res.status(200).json({ count: result.length, users });
@@ -30,7 +31,8 @@ const apiController = {
         name: user.name,
         last_name: user.last_name,
         email: user.email,
-        image: `https://gabook.herokuapp.com/images/users/${userImage}`,
+        // image: `https://gabook.herokuapp.com/images/users/${userImage}`,
+        image: `localhost:3001/images/users/${userImage}`,
       };
       res.status(200).json(user_detail);
     } catch (error) {
