@@ -43,7 +43,7 @@ const validarCampo = (expresion, input, campo) => {
       .classList.remove("message");
     document
       .getElementById(`warning-text-${campo}`)
-      .classList.add("error-form");
+      .classList.add("error-form"); 
     campos[campo] = false;
   }
 };
