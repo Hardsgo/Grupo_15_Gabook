@@ -16,7 +16,7 @@ const apiController = {
           user_url_detail: `https://gabook.herokuapp.com/api/user/${user.id}`,
         })
       );
-      res.status(200).json([{count: result.length}, {users} ]);
+      res.status(200).json({count: result.length, users:users });
     } catch (error) {
       res.status(404).json("No se encontraron datos");
       //   console.log(error);
@@ -81,7 +81,7 @@ const apiController = {
         })
       );
       
-      res.status(200).json([ { count: result.length } , { countByCategory }, { books } ]);
+      res.status(200).json({ count: result.length  ,  countByCategory ,  books } );
     } catch (error) {
       res.status(404).json("No se encontraron datos");
       //   console.log(error);
@@ -101,7 +101,7 @@ const apiController = {
 
       console.log(book);
 
-      res.status(200).json([ { book } ]);
+      res.status(200).json( book );
     } catch (error) {
       res.status(404).json("No se encontraron datos");
     }
