@@ -13,6 +13,7 @@ const apiController = {
           id: user.id,
           user_name: user.name,
           user_email: user.email,
+          user_role: user.role,
           user_url_detail: `https://gabook.herokuapp.com/api/user/${user.id}`,
         })
       );
@@ -77,6 +78,7 @@ const apiController = {
           title: book.title,
           description: book.description,
           genre: book.genre,
+          author:book.author,
           detail: `https://gabook.herokuapp.com/api/products/${book.id}`
         })
       );
