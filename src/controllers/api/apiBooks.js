@@ -1,6 +1,47 @@
 const booksModel = require("../../models/productsModel");
 
 const apiController = {
+<<<<<<< HEAD:src/controllers/api/apiBooks.js
+=======
+  getUsersApi: async (req, res) => {
+    try {
+      const result = await usersModel.getUsers();
+      let users = [];
+      result.forEach((user) =>
+        users.push({
+          id: user.id,
+          user_name: user.name,
+          user_email: user.email,
+          user_role: user.role,
+          user_url_detail: `https://gabook.herokuapp.com/api/user/${user.id}`,
+        })
+      );
+      res.status(200).json({count: result.length, users:users });
+    } catch (error) {
+      res.status(404).json("No se encontraron datos");
+      //   console.log(error);
+    }
+  },
+
+  getUserApi: async function (req, res) {
+    try {
+      const user = await usersModel.getUserDetail(req.params.id);
+      let userImage = user.image;
+      const user_detail = {
+        id: user.id,
+        name: user.name,
+        last_name: user.last_name,
+        email: user.email,
+        image: `https://gabook.herokuapp.com/images/users/${userImage}`,
+      };
+      res.status(200).json(user_detail);
+    } catch (error) {
+      res.status(404).json("No se encontraron datos");
+      //   console.log(error);
+    }
+  },
+
+>>>>>>> 7b63fc1f51549090384050d5d42348e783a91acb:src/controllers/api/api.js
   getProductsApi: async function (req, res) {
     try {
       const result = await booksModel.getBooks();
@@ -35,11 +76,12 @@ const apiController = {
           title: book.title,
           description: book.description,
           genre: book.genre,
+          author:book.author,
           detail: `https://gabook.herokuapp.com/api/products/${book.id}`
         })
       );
       
-      res.status(200).json([ { count: result.length } , { countByCategory }, { books } ]);
+      res.status(200).json({ count: result.length  ,  countByCategory ,  books } );
     } catch (error) {
       res.status(404).json("No se encontraron datos");
       //   console.log(error);
@@ -59,7 +101,7 @@ const apiController = {
 
       // console.log(book);
 
-      res.status(200).json([ { book } ]);
+      res.status(200).json( book );
     } catch (error) {
       res.status(404).json("No se encontraron datos");
     }
