@@ -1,10 +1,5 @@
 let db = require("../database/models");
 const Op = db.Sequelize.Op;
-const bcryptjs = require("bcryptjs");
-const {
-  validateResgisterUser,
-  validationResult,
-} = require("express-validator");
 
 const usersModel = {
   getUsers: async () => {
@@ -73,7 +68,7 @@ const usersModel = {
 
   updateUser: async (idToEdit,  userToUpdate ) => {
     try {
-        console.log (userToUpdate)
+        // console.log (userToUpdate)
       const user = await db.users.update(userToUpdate, {
         where: { id: idToEdit },
       });
@@ -82,6 +77,29 @@ const usersModel = {
       return console.log(error);
     }
   },
+
+  paginationUsers: async(page, size) => {
+    try {
+      let users = await db.users.findAndCountAll({
+        limit: size,
+        offset: page * size
+      });
+      // console.log(users);
+      const usersPages = {
+        total_users: users.count,
+        total_pages: Math.ceil(users.count / size),
+        content: users.rows.map(user => user.dataValues)
+      }
+      // console.log(usersPages);
+      
+      return usersPages;
+    } catch (error) {
+      return console.log(error);
+    }
+  } 
 };
 
 module.exports = usersModel;
+
+// usersModel.paginationUser(0, 3)
+

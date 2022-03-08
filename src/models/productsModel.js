@@ -24,7 +24,7 @@ const booksModel = {
       });
       // const allBooks = await db.Products.findAll();
       // console.log(allBooks.map(book =>  book.dataValues));
-      console.log(allBooks)
+      // console.log(allBooks)
       // return JSON.stringify(allBooks, null, 4);
       return allBooks.map(book =>  book.dataValues);
     } catch (error) {
@@ -127,44 +127,35 @@ const booksModel = {
     } catch (error) {
       return ("Ocurrió un error " + error);
     }
+  },
+  //------------------Paginación de libros--------------------//
+  paginationBooks : async function (page, size){
+    try {
+      let books = await db.products.findAndCountAll({
+        include: [
+          { model: db.genres, as: 'genre'},
+          { model: db.languages, as: 'language'}
+        ],
+        limit: size,
+        offset: page * size
+      });
+
+      const content = books.rows.map(book => book.dataValues);
+      // console.log(books);
+      const booksPages = {
+        total_books: books.count,
+        total_pages: Math.ceil(books.count / size),
+        content
+      }
+      // console.log(booksPages);
+      
+      return booksPages;
+    } catch (error) {
+      return console.log(error);
+    }
   }
 }
 
 module.exports = booksModel;
 
-// booksModel.getGenres();
-// booksModel.exists(1);
-// booksModel.getBooks();
-// booksModel.createBook(
-//     {
-//         id: null,
-//         title: "El Diario de Ana Frank",
-//         description: "Lorem ipsum dolor sit amet consectetur apisicing elit. Numquam, ducimus magnam. Adipisci neque minus ut? Qui dolore illum tempora amet. Ipsam unde inventore ut harum tenetur corrupti praesentium tempora doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatem amet ratione qui, accusantium blanditiis iusto vitae earum, quaerat nemo est illo ab maiores eius architecto, esse exercitationem quos harum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis corrupti inventore iusto adipisci eaque at qui nemo excepturi aliquam, itaque alias delectus sit maiores laboriosam harum obcaecati, laborum vol",
-//         isbn: "456789-1",
-//         year: "2021",
-//         author: "Ana Frank",
-//         price: 50000,
-//         discount: 30,
-//         image: "El-Diario-de-Ana-Frank..jpg",
-//         languages_id: 1,
-//         genres_id: 2
-//     }
-// );
-
-// booksModel.updateBook({
-//         id: 6,
-//         title: "El Diario de Ana Frank",
-//         description: "Lorem ipsum dolor sit amet consectetur apisicing elit. Numquam, ducimus magnam. Adipisci neque minus ut? Qui dolore illum tempora amet. Ipsam unde inventore ut harum tenetur corrupti praesentium tempora doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptatem amet ratione qui, accusantium blanditiis iusto vitae earum, quaerat nemo est illo ab maiores eius architecto, esse exercitationem quos harum. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis corrupti inventore iusto adipisci eaque at qui nemo excepturi aliquam, itaque alias delectus sit maiores laboriosam harum obcaecati, laborum vol",
-//         isbn: "456789-1",
-//         year: "1986",
-//         author: "Ana Frank",
-//         price: 40000,
-//         discount: 30,
-//         image: "El-Diario-de-Ana-Frank..jpg",
-//         languages_id: 1,
-//         genres_id: 2
-//     });
-
-// booksModel.deleteBook(3);
-
-// booksModel.searchBook('da')
+// booksModel.paginationBooks(0, 2);

@@ -1,14 +1,19 @@
 const express = require("express");
 const router = express.Router();
-const {api} = require("../controllers/index");
+const {apiUsers, apiBooks} = require("../controllers/index");
 
 
 
 
-router.get("/api/users", api.getUsersApi);
-router.get("/api/user/:id", api.getUserApi);
-router.get("/api/products",api.getProductsApi);
-router.get("/api/products/:id",api.getProductApi);
+router.get("/api/users", apiUsers.getUsersApi);
+router.get("/api/user/:id", apiUsers.getUserApi);
+router.get("/api/users/pags", apiUsers.paginationUsersApi);
+
+router.get("/api/products",apiBooks.getProductsApi);
+router.get("/api/product/:id",apiBooks.getProductApi);
+router.get("/api/products/pags", apiBooks.paginationBooksApi);
+
+
 
 
 
