@@ -1,8 +1,6 @@
 const booksModel = require("../../models/productsModel");
 
 const apiController = {
-<<<<<<< HEAD:src/controllers/api/apiBooks.js
-=======
   getUsersApi: async (req, res) => {
     try {
       const result = await usersModel.getUsers();
@@ -41,7 +39,6 @@ const apiController = {
     }
   },
 
->>>>>>> 7b63fc1f51549090384050d5d42348e783a91acb:src/controllers/api/api.js
   getProductsApi: async function (req, res) {
     try {
       const result = await booksModel.getBooks();
